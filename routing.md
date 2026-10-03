@@ -1,6 +1,8 @@
 # 量測知識導航
 
-目前尚無經驗條目。先依實際問題建立第一條經驗，再增加需要的 domain 入口。
+## Pulse calibration
+
+Length Rabi有振盪但fit曲線不符，或π pulse候選不在第一個峰時，讀[Rabi fit驗證](experiences/rabi-fit-validation/README.md)。案例比較同一份資料的固定／自由phase與衰減模型，說明拒絕錯誤writeback的方法。
 
 新增入口時，說明它處理什麼判斷問題、何時值得讀，以及連到哪個經驗資料夾的 README。正常表現與異常辨別都可以成為入口，不必先有診斷名稱。
 
