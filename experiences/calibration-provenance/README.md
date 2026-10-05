@@ -42,6 +42,12 @@ Writeback 前讀目的地和完整候選集合，不推測未勾選候選一定�
 
 ## Repeat 與條件比較的標記
 
+### Reps 與 rounds 的成本／觀察取捨
+
+2026-10-05 使用者說明本平台的 reps 為硬體掃描平均、rounds 為軟體掃描，liveplot 以 round 更新；主要平均數交給 reps 通常較快，需要觀看過程時再分配一些 rounds，例如10。使用者的實務經驗是長時間量測 reps 超過30000可能報錯，控制10000內通常可行。這是本平台的操作經驗，不保證其他韌體或任何資料量皆安全，也不能把兩個門檻當成已量測出的通用硬體常數。
+
+規劃時分開記錄總平均數與其分配。保持reps×rounds不變仍可能改變漂移平均、更新頻率和軟體開銷；若要歸因於某個設定，核對實際條件和時間戳。只有一個round時，沒有即時曲線更新不代表Run停住；按公開operation進度判斷。Flux外圈每點的進度仍可幫助觀察，但不能在未完成round時假定該點已有完整平均。
+
 嚴格 repeat 要保持工作點、pulse、readout、等待、actual sweep、人工 fringe 及分析方法可比較。為了改善結果而一起改 pulse length、gain、drive frequency、窗口或平均數，應標成「條件比較」；它可以支持新條件下仍有某特徵，不能把差異唯一歸因於其中一項。
 
 每個 scalar 校準連到產生它的 raw、模型與生效的 module。若只更新 MetaDict 而 library 存的是固定 frequency，下一次 Run 可能仍使用舊 frequency；更新後重新展開相關 π／π2 等模組核對，不只看 parameter 表。
