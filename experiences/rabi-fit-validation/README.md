@@ -49,5 +49,31 @@ Length Rabi 已顯示振盪，但自動 fit 幾乎平坦、擬合頻率與目視
 
 該案例先前的 Amp Rabi 候選 π gain 約 0.3256，與使用的 0.3 不一致且有 residual，沒有接受它。Length／amplitude 交叉檢查應在相同 pulse shape、頻率、讀出與起始狀態下比較旋轉角，不強迫兩個有偏模型給出相同答案。找出不一致值得補驗證，但不等於已完成第二種校準。
 
+## 交叉檢查pulse，而不只檢查Rabi fit
+
+使用者於2026-10-05建議用zigzag檢查Rabi產生的pulse。後續已完成 [Zigzag／AllXY mock 對照](cases/sim-zigzag-allxy-20261005/README.md)，觀察到 Rabi 候選仍有 sequence-dependent 偏離。先讀當前公開experiment guide，確認sequence要驗證π、π/2或哪一種誤差，再選代表工作點對照。沒有可用入口時保留缺口，不把普通Rabi或coherence repeat重新命名為zigzag。
+
+[30點案例](../coherence-bringup/cases/sim-30flux-20261005/README.md) 的live adapter清單沒有zigzag，因而沒有執行。每點Rabi都有可辨認的約四個週期，且pulse候選與曲線相符；這仍不構成gate fidelity量測。
+
+Zigzag 的平坦度與 AllXY 的模型偏差應共同檢查。改 gain 時記錄是只改 repeated pulse，還是連 X90 preparation 一起改。兩種實驗選到不同候選時，先保留不一致，不挑一個較漂亮的指標當作校準完成。AllXY 的 power_err／detune_err 在本次 guide 是模型的 mean state deviation，不是 gate infidelity，也不是直接可套用的 gain／frequency 修正量。Fit g/e levels 的選項會影響數值，須保留分析敏感性。
+
+振盪取樣也要核對。使用者建議連續時間 fringe 每週期至少10點，算法及aliasing限制見[背景辨別的取樣說明](../coherence-background-validation/README.md#振盪取樣)。不要只增加averages來補救時間網格過疏。Zigzag 的整數 repetition 與 AllXY 的 gate-pair index 是離散 sequence，不能套用相同的時間取樣判準。
+
+## Sequence 時序與分析模型要一致
+
+Gate 名稱不完整描述實驗。核對 pulse duration、identity 的等待時間、gate slot、padding、pre/post delay 及 pulse 間隔。I 表示不旋轉，不保證零時間。Fixed-slot 與 back-to-back 在有耗散或 detuning 時不同，不能預設其中一種一定正確。先確認要執行的 sequence，再決定分析模型；不能把非預期等待一律交給更多 fit 參數吸收。
+
+時間資訊應來自該筆 Run 的保存條件，不由目前 library 反推。Length-calibrated π／π2 改成等長、不同 gain，需要新的 amplitude calibration，不能當作無影響的實作調整。
+
+## 用 residual 判斷是否缺少物理
+
+固定 pulse／讀出條件做 repeat，將 trace 差異與 fit residual 比較。Residual 有可重現結構、且大於 repeat-noise 時，先檢查模型與時序，不只增加 averages。兩次獨立、相近雜訊的 repeat 可用差值 RMS 除以 sqrt(2) 估單次 noise；漂移、相關噪音與樣本不足會影響這個估計，不設跨器件的固定倍數門檻。
+
+T1／T2 在 pulse 和 idle 中都會作用。只看理想階梯，或只用振幅／detuning 參數擬合，可能把耗散歸因為 gate error。使用獨立 coherence 校準作固定條件，再檢查其不確定性；不預設單條 21 點 AllXY 能同時辨識 coherence、兩個 pulse error、detuning 和讀出尺度。Echo 的有效 T2 也不在所有噪音環境下等於 homogeneous T2。
+
+資料 min/max 可作讀出尺度初值，不能當作獨立 g/e 校準。重新正規化後 error 變小，需同時核對 residual 與參數穩定性。參數名稱也不足以決定單位；確認回報的是 gain 百分比、角度、population、Bloch z，還是 fidelity。不能將模型中的 mean deviation 直接作 gain correction。
+
+[本次 mock 案例](cases/sim-zigzag-allxy-20261005/README.md) 保留後續 DEVELOPMENT 排查與量測的區別。實作／模擬真值可以用於已授權的工具診斷，不能反過來補成實驗已驗證的校準，也不擴張 MEASUREMENT 的權限。
+
 ## 證據
 Qubit-measure-gui repo的`.agent_state/measurement-tasks/half-flux-t1-20261003/`保存run16.json、run16-final-analysis.json、對應PNG與verified-results.json。raw位於`Database/mcp_half_flux_20261003/sim/2026/10/Data_1003/sim_len_rabi_1003@half_flux_t1_clean_1.hdf5`。這些是repo-local路徑，跨主機重用前核對可讀性。

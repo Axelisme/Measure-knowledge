@@ -1,0 +1,42 @@
+[
+  {
+    "run": "integer-probe-verify",
+    "amplitude": 155.1734893169821,
+    "noise_mad": 2.998396293618125,
+    "snr": 51.75216152956764,
+    "projection_rad": 0.7519766370864125,
+    "source": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_qubit_freq_1005@integer_to_half_20261005.hdf5"
+  },
+  {
+    "run": "integer-probe-opt-0",
+    "amplitude": 194.91234145976694,
+    "noise_mad": 3.151478937243653,
+    "snr": 61.847895969198895,
+    "projection_rad": 1.4795506161727794,
+    "source": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_qubit_freq_1005@integer_to_half_20261005_1.hdf5"
+  },
+  {
+    "run": "integer-probe-opt-1",
+    "amplitude": 468.1290594323046,
+    "noise_mad": 4.6081145783687925,
+    "snr": 101.5879816942433,
+    "projection_rad": 1.481139872240635,
+    "source": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_qubit_freq_1005@integer_to_half_20261005_2.hdf5"
+  },
+  {
+    "run": "integer-probe-opt-2",
+    "amplitude": 576.9675938159647,
+    "noise_mad": 5.644660623522919,
+    "snr": 102.21475342761536,
+    "projection_rad": 1.4792441051401148,
+    "source": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_qubit_freq_1005@integer_to_half_20261005_3.hdf5"
+  },
+  {
+    "run": "integer-probe-opt-3",
+    "amplitude": 581.2808663894849,
+    "noise_mad": 7.928335492961045,
+    "snr": 73.31688560676565,
+    "projection_rad": 1.480883314132703,
+    "source": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_qubit_freq_1005@integer_to_half_20261005_4.hdf5"
+  }
+]

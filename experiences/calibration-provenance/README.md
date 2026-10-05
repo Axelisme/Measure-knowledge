@@ -66,6 +66,18 @@ Writeback 前讀目的地和完整候選集合，不推測未勾選候選一定�
 
 2026-10-05 Q1 的5.8mA案例：早期1–2GHz map局部複數fit約1575.53MHz，同pulse／RO的固定點、窗口／步距／reps控制及單點adapter、短正反向map約1568.5–1569.3MHz。約7MHz差異沒有被控制重現，原因保持未知。任務來源為 `.agent_state/measurement-tasks/20261005-q1-twotone-fluxdep/compare_nqz1_repeat.py` 與 journal 17:20–17:49；原始flux檔 `_6`、`_9`–`_11`及freq檔 `_11`、`_22`–`_25`。這是比較流程的反例，不是平台固有偏移量。
 
+## 同名欄位也要核對單位
+
+2026-10-05的flux與30點模擬任務中，twotone/freq保存的Frequency欄以MHz表示，twotone/flux_dep的同名欄則以Hz表示，兩者單位欄都空白。先比對Run cfg、realized axis及數值範圍，再轉換單位。不能把某一adapter的schema假定套到所有檔案；也不能因為這次觀察就認定未來版本永遠如此。
+
+分析輸出要保留raw路徑、方法與轉換。批次處理遇到schema或解析失敗，停止依賴該結果的步驟。缺少搜尋中心時不能默默退回GUI預設值，否則可能在錯的頻段取得看似完成的資料。
+
+## 定期清理已保存的工作頁
+
+相同adapter連續量測時重用tab。只在需要並排對照或保留獨立狀態時增加工作頁。使用者於30點任務要求定時清理，agent在批次間核對未使用tab的完整artifact狀態，補存後以不丟棄資料的方式關閉13個舊頁。
+
+曾有last_saved_path不代表目前內容已保存。看到unsaved_changes時，先依當前保存契約處理並核對終態。關閉前確認raw、必要圖片與來源紀錄齊全；canonical圖可能已被重新分析覆寫。具體guard、save和close步驟仍以當前工具契約為準，不照抄案例的tab ID。
+
 ## 模擬反例
 
 [2026-10-05 simulate 案例](../coherence-bringup/cases/sim-integer-20261005/README.md) 中，echo 的 π phase local override 保留了舊 frequency。Run 前讀取完整 cfg 才發現，隨後把 frequency 和 length 一起更新，最終 raw 確認使用新值。

@@ -1,0 +1,42 @@
+[
+  {
+    "source": ".agent_state/measurement-tasks/sim-coherence-30flux-20261005/analysis/coherence-vs-flux.png",
+    "copy": "coherence-vs-flux.png",
+    "sha256": "66c7972a21dcf1ea2da9f4c342a4bc21e2964369d0dd817e8df07d5f6adb2e1f"
+  },
+  {
+    "source": ".agent_state/measurement-tasks/sim-coherence-30flux-20261005/analysis/coherence-vs-flux.csv",
+    "copy": "coherence-vs-flux.csv",
+    "sha256": "3e69db7b2cadc56ccc367a63a2a4ef6f1830071cbcf733a8f34d42af8ea751a7"
+  },
+  {
+    "source": ".agent_state/measurement-tasks/sim-coherence-30flux-20261005/analysis/audit-summary.json",
+    "copy": "audit-summary.json",
+    "sha256": "cced5a7c8a8bb3177bb6616625105505935820422c33d261ebe31dc376a26dfc"
+  },
+  {
+    "source": ".agent_state/measurement-tasks/sim-coherence-30flux-20261005/analysis/p03-echo-detune.png",
+    "copy": "p03-echo-detune.png",
+    "sha256": "da266e5cce81ba3c6b4c59f77f85de6834e70b6457ee7746f9b85b7d8437957f"
+  },
+  {
+    "source": ".agent_state/measurement-tasks/sim-coherence-30flux-20261005/analysis/p03-echo-detune.json",
+    "copy": "p03-echo-detune.json",
+    "sha256": "3bb2e1a361dfbd60e5737eab5f362a6fd0eb167cb9b6155b2a1b6475b88dcb0a"
+  },
+  {
+    "source": ".agent_state/measurement-tasks/sim-coherence-30flux-20261005/analysis/p03-echo-fringe.png",
+    "copy": "p03-echo-fringe.png",
+    "sha256": "d56cc622f471f83912180c744802ff74de58525ec3084b98b30138a8e4ce0bc4"
+  },
+  {
+    "source": ".agent_state/measurement-tasks/sim-coherence-30flux-20261005/analysis/p03-echo-fringe.json",
+    "copy": "p03-echo-fringe.json",
+    "sha256": "3c7a6382ab9c06084bf5a2d913fb4327b9dfde706ee59f6c6ba0d571166e4335"
+  },
+  {
+    "source": ".agent_state/measurement-tasks/sim-fluxdep-half-20261005/evidence/integer-probe-comparison.json",
+    "copy": "integer-probe-comparison.json",
+    "sha256": "28689bf97ea3104203c8ea9819542b18d902a91212dd8f34fbac547fb55c4b28"
+  }
+]

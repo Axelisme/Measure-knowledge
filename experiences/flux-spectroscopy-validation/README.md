@@ -102,7 +102,21 @@ Two-tone 以較大 gain 找到候選後，可降低 gain 並加密頻率以減�
 
 [真實案例](../coherence-bringup/cases/real-integer-20261005/README.md) 的 resonator 鏡像候選約 −0.244 mA，局部 qubit 極值候選約 −0.530 mA；採後者量 coherence，但未驗證磁滯或絕對 flux 編號。此案例支持 map 辨認分支、局部 spectroscopy 精修的分工，數值差異不是固定修正量。
 
-## 模擬證據
+## 大範圍掃描前先確認局部對比
+
+使用者建議先在已定位的integer工作點最佳化讀出與two-tone probe gain／length，再花成本做fluxdep。可先比較實際g/e對比或定義清楚的局部spectroscopy contrast，不能只靠bare resonator峰判斷qubit讀出是否有效。
+
+[30點案例的前置量測](../coherence-bringup/cases/sim-30flux-20261005/README.md#局部最佳化與轉移限制) 在固定probe條件下，換讀出後的中心contrast／off-resonant MAD比值約從51.8變成102.2。這是該定義下的比較，不是通用SNR門檻。Probe長度也會改變譜形；做survey和精修中心的需求不同。
+
+有界optimizer回傳的是最佳已量候選。解靠近搜尋邊界時，明說尚未找到全域最佳，不能自行越過功率或時間限制擴張搜尋。Integer有效的讀出不保證一路到half仍有效。改flux後用局部spectroscopy和Rabi核對，訊號不足再比較讀出調整、probe調整與averages的成本。
+
+## 多點coverage
+
+分段掃描保留重疊flux或頻率區間，核對譜線位置、距離窗口邊緣與局部對比。每片資料的最大值可能只是雜訊，不直接把所有argmax連成已確認的f01。重疊一致和連續性是證據，不能代替弱片段的局部驗證。
+
+需要每個flux點的coherence時，控制座標均勻不代表qubit頻率均勻。先固定所需的flux網格，依實測譜線選各點的頻率窗口，再逐點校準與量測。插值只提供下次搜尋中心，不提供未量點的T1或T2。
+
+## 模擬案例能支持什麼
 
 [2026-10-05 案例](../coherence-bringup/cases/sim-integer-20261005/README.md) 先從 resonator map 找到 native 約 0.002515 的候選，再用局部 qubit spectroscopy 收斂到約 0.002500。中心的 qubit frequency 高於兩側，支持該已選分支上的局部極大值。這不證明絕對 integer 編號。
 
