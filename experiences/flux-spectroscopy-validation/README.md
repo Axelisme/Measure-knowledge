@@ -42,7 +42,9 @@ Two-tone 以較大 gain 找到候選後，可降低 gain 並加密頻率以減�
 - 跨drive channel時核對實體接線、NQZ、可用DDS頻帶及mixer。低頻mixer可取掃描中間，但以當次SoC與路徑限制為準。不同channel的相同數字gain不代表同樣物理drive。
 - 用flux連續性、功率依賴和half兩側minimum共同辨別候選。多光子線、高階transition或強plasma線可能比f01亮；不能直接取每欄最強點串起來。
 
-當次Q12_2D[10]/Q1測量的ch2適用>1GHz、ch14適用<1GHz及±10mA是使用者對該硬體的授權條件，不是本知識的通用硬體設定。整合多段map時記錄各段channel/mixer/probe/readout/averages，不讓分段色階造成對比可直接互比的錯覺。
+當次Q12_2D[10]/Q1測量的ch2適用>1GHz、ch14適用<1GHz及±10mA是使用者對該硬體的授權條件，不是本知識的通用硬體設定。使用者其後另指出NQZ1適合<2GHz、NQZ2適合>2GHz；所以同一ch2在1–2GHz與>2GHz仍需分段切NQZ，不能把「同一channel」等同「同一NQZ」。Agent最初將integer的ch2/NQZ2一路沿用到1–2GHz，留下不適用的弱訊號／雜訊條件。修正後也必須重新觀測，不可宣稱一定修復所有弱訊號。此反例提醒先核對channel、NQZ、mixer三個不同條件，再歸因於matrix element。
+
+整合多段map時記錄各段channel/NQZ/mixer/probe/readout/averages，不讓分段色階造成對比可直接互比的錯覺。
 
 [真實案例](../coherence-bringup/cases/real-integer-20261005/README.md) 的 resonator 鏡像候選約 −0.244 mA，局部 qubit 極值候選約 −0.530 mA；採後者量 coherence，但未驗證磁滯或絕對 flux 編號。此案例支持 map 辨認分支、局部 spectroscopy 精修的分工，數值差異不是固定修正量。
 
