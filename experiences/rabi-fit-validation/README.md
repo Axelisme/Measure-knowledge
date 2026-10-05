@@ -27,6 +27,8 @@ Length Rabi 已顯示振盪，但自動 fit 幾乎平坦、擬合頻率與目視
 
 ## 選 gain 與核對量化
 
+2026-10-05使用者補充：在本平台，length Rabi的時長掃描有約10ns量級的量化，而gain解析度更細，故X180／X90等gate優先使用amplitude Rabi；length Rabi先用於選擇合適固定時長與gain搜尋範圍。這是使用者的硬體經驗與操作偏好；實際量化仍以各channel保存的軸及公開硬體資訊核對，不把10ns當成所有channel的精確常數。固定時長後分別驗證π／π2 gain，必要時以Zigzag檢查累積誤差；gain數位解析度較細本身不等於已證明gate fidelity較高。
+
 若同一工作點已有可信 Rabi 週期，在局部近似線性 drive 響應下，可用 `g_new ≈ g_old × t_pi_old / t_pi_target` 提出下一個 gain。這只用於設計下一輪；非線性、失諧、pulse shaping 與 leakage 都會破壞比例，必須重新量測。目標需同時容納 π、π/2 的建議時長，並符合執行時的設定限制。
 
 分清最後使用的 pulse 長度與 Rabi 掃描窗口。前者應落在有效範圍；後者需涵蓋可解析振盪，以估計週期與 phase。過長窗口可能因 T2 使後半段只剩雜訊，過密窗口也可能量化成重複或不符請求的點。擬合用 actual axis，檢查首點、step、終點和獨立點數。
