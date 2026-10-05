@@ -31,6 +31,19 @@ Resonator map 可提供對稱點和分支候選。哪一個候選是目標 integ
 
 Two-tone 以較大 gain 找到候選後，可降低 gain 並加密頻率以減少功率展寬，同時檢查峰中心穩定性與旁峰。線寬變小支持搜尋條件的影響，不足以換算 intrinsic T2。
 
+## Fluxonium 大頻寬 map 的採樣與 drive 分段
+
+2026-10-05 使用者補充的專家判斷：fluxonium integer 的 f01 常約4–6GHz，half 常低於1GHz；01 charge matrix element 在integer較大，在half較小，plasma transition轉入fluxon transition時可能陡降。這些是規劃線索，不是每顆器件的固定數值或完整能階辨識。
+
+- 先在integer校準readout，比較spectroscopy probe gain/length的對比和展寬。此處適用的drive不一定能看見fluxon段；清楚的plasma支線也不等於全程f01。
+- 用少量flux點作較寬頻率搜尋，保留同一flux下的多個候選；再依已測分支收窄頻帶並加密flux。網格成本約為flux點數×frequency點數×averages×sequence時間，另有ramp、編譯和傳輸成本。以實測耗時更新估算。
+- 頻率步距要與搜尋條件下的linewidth和SNR一起衡量。粗掃用於發現，不能把一兩個點構成的峰當成精準linewidth；大空窗不代表躍遷不存在。
+- Plasma→fluxon附近失去對比時，除readout失效與未覆蓋窗口，也考慮charge matrix element下降。在已確認的硬體限制內提高gain或延長spectroscopy probe，必要時增加averages；找到後用較低gain或局部細掃核對中心、展寬和分支。不能不斷增加averages來代替錯誤drive路徑或頻帶的修正。
+- 跨drive channel時核對實體接線、NQZ、可用DDS頻帶及mixer。低頻mixer可取掃描中間，但以當次SoC與路徑限制為準。不同channel的相同數字gain不代表同樣物理drive。
+- 用flux連續性、功率依賴和half兩側minimum共同辨別候選。多光子線、高階transition或強plasma線可能比f01亮；不能直接取每欄最強點串起來。
+
+當次Q12_2D[10]/Q1測量的ch2適用>1GHz、ch14適用<1GHz及±10mA是使用者對該硬體的授權條件，不是本知識的通用硬體設定。整合多段map時記錄各段channel/mixer/probe/readout/averages，不讓分段色階造成對比可直接互比的錯覺。
+
 [真實案例](../coherence-bringup/cases/real-integer-20261005/README.md) 的 resonator 鏡像候選約 −0.244 mA，局部 qubit 極值候選約 −0.530 mA；採後者量 coherence，但未驗證磁滯或絕對 flux 編號。此案例支持 map 辨認分支、局部 spectroscopy 精修的分工，數值差異不是固定修正量。
 
 ## 模擬證據
