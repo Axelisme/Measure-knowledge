@@ -41,6 +41,16 @@ T1 的衰減時間與掃描窗口接近、尾端尚未穩定、參數誤差大�
 
 證據：repo-local `.agent_state/measurement-tasks/20261005-q1-40flux-coherence/p14_t1{,_dense}.json`、對應 `_provenance.json`／`_analysis_fit.png` 及 `p14_reviewed.json`。這是單一工作點的診斷案例，不是全域量測模板。對結果模型已明顯失效的點，空白加原因比填入未限定的 fit 數字更能保留資料意義；空白不表示未量測或零壽命。
 
+## 同一 Run 的窗口敏感性與 recovery 對照
+
+先固定由整份複數 IQ 決定的線性投影，再截取不同 delay 上限擬合，可把「同一資料的窗口敏感性」與「不同 Run 的漂移」分開。固定投影不會修正模型本身；比較的重點包含殘差形狀、offset 與時間常數，不只 stderr。
+
+2026-10-06 Q12_2D[10]/Q1 的 p18（3.0323 mA）在相同 recovery 150 µs 下，把 T1 掃描延長到 300 µs。對這份 raw 固定 IQ 投影，75／150／300 µs 窗口的單 exp 時間常數約22.42／27.93／34.91 µs。只把 recovery 改為500 µs再測，慢尾仍存在，同樣三窗口得到19.52／25.41／31.40 µs。它支持「所測較長 recovery 未消除慢尾」；不證明已充分 reset，也不能把兩個獨立 Run 的差異唯一歸因於 recovery。
+
+該點雙 exp 在第一份長窗口得到約16.24±0.70與78.36±4.54 µs，較長 recovery 的 Run 卻得到約26.51±1.60與179±215 µs；後者慢分量不可辨識，亦須保留局部最佳解的可能。較好的雙 exp residual 不等於已找到兩個物理鬆弛通道。本次單一 T1 欄留空，條件式模型和完整 raw 保存。鄰近p19在recovery300 µs下仍有窗口敏感性（25.45／30.08／33.46 µs），不是每個flux點都能用唯一單exp壽命概括。
+
+證據：repo-local `.agent_state/measurement-tasks/20261005-q1-40flux-coherence/p18_t1*.json`、`p19_t1_windows.json/png`、`compare_t1_windows.py`及`p18_reviewed.json`／`p19_reviewed.json`。數值與recovery長度只屬於此案例，不能當通用reset門檻。
+
 ## 擬合品質指標
 
 從目前 MCP estimate 的 `quality.fit` 或 GUI analysis summary 的 `fit_quality.fit` 讀 `r2`、`normalized_residual_rms`、`relative_parameter_errors` 及 `invalid`。這些數值只描述真正送入 fit 的樣本，需連同 skip/mask 與分析條件解讀。
