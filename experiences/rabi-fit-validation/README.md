@@ -41,6 +41,10 @@ Length Rabi 已顯示振盪，但自動 fit 幾乎平坦、擬合頻率與目視
 
 ## 恢復等待條件的對照
 
+2026-10-05使用者補充真實硬體經驗：length Rabi若呈現多個U字形拼接，而非sin/cos形狀，常見原因是relax delay不夠長。將此形狀作為優先檢查恢復等待的線索；保持frequency、gain、pulse掃描、readout與分析相同，只延長relax delay比較形狀、週期及pulse候選。這是使用者專家建議，不是看到U形就已證明機制。
+
+同日使用者提醒：amplitude Rabi在低gain的振幅小於高gain時，其中一個原因是drive frequency存在detune。優先重核共振頻率，再在相同pulse時長及讀出條件下比较；不要先把gain依賴振幅全部歸因於讀出或功率非線性。此現象也不唯一識別detuning，須用頻率對照驗證。
+
 已有足夠振盪而 residual 仍有結構時，不要只增加 fit 自由度。用暫定 pulse 取得 T1 初估後，檢查 repetition／recovery wait 是否影響起始狀態。確認等待時間在 sequence 中的位置，以及實際 repetition interval 是否包含 pulse、讀出與額外 delay。T1 只提供一個時間尺度，不能單靠固定倍數保證 reset；熱激發、leakage 或其他慢過程仍需另外辨別。
 
 在同工作點固定 pulse、讀出、實際軸及分析模型，比較不同等待時間。若週期、contrast、候選或 residual 變動，就以驗證後的等待條件重新校準，再進入 coherence。真實硬體還需考慮 duty cycle、加熱與總量測時間。改善不唯一證明「未充分 reset」，沒有改善也不能排除所有起始狀態問題。
