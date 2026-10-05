@@ -33,6 +33,14 @@ T1 的衰減時間與掃描窗口接近、尾端尚未穩定、參數誤差大�
 
 [真實案例](../coherence-bringup/cases/real-integer-20261005/README.md) 在改長 recovery／窗口、改短 pulse 及 zero-drive 差分後仍有慢尾端。部分設定同時改變，證據支持「在測過的條件下仍存在」，不構成排除各機制的單因素實驗。最後保留單 exp 有效值，沒有把 GUI 雙 exp 第一個分量自動寫回唯一 `t1`。
 
+## 最初幾點陡降時，先解析時間結構
+
+長窗口不等於早期解析度足夠。若第一、第二點差異很大，且後續有慢尾，先補同一 flux／pulse／readout／recovery 條件的密集短時間掃描；它回答的是早期結構，不取代原長窗口的基線證據。若解析出振盪，不應只換成雙指數或刪掉前幾點來強迫得到單一 T1。排查模型時保留兩份 raw、實際量化時間軸及相同 IQ 投影。
+
+2026-10-05 Q12_2D[10]/Q1 真實 p14（2.2407 mA、4432.835194 MHz）在 0–150 µs／181 點的 T1 前段陡降。補 0–10 µs／201 點後看見約 0.6–0.7 µs 週期的衰減振盪。長、短窗單 exp 條件式估計分別約15.37與2.75 µs，不能當成兩個已辨認的壽命；本次 CSV 的單一 T1/error 留空，status 標記 measured_nonexponential_t1，raw 和條件式 fit 仍保存。振盪與鄰近光譜弱峰同時存在，不足以唯一識別耦合、其他躍遷或驅動誤差等機制。
+
+證據：repo-local `.agent_state/measurement-tasks/20261005-q1-40flux-coherence/p14_t1{,_dense}.json`、對應 `_provenance.json`／`_analysis_fit.png` 及 `p14_reviewed.json`。這是單一工作點的診斷案例，不是全域量測模板。對結果模型已明顯失效的點，空白加原因比填入未限定的 fit 數字更能保留資料意義；空白不表示未量測或零壽命。
+
 ## 擬合品質指標
 
 從目前 MCP estimate 的 `quality.fit` 或 GUI analysis summary 的 `fit_quality.fit` 讀 `r2`、`normalized_residual_rms`、`relative_parameter_errors` 及 `invalid`。這些數值只描述真正送入 fit 的樣本，需連同 skip/mask 與分析條件解讀。
