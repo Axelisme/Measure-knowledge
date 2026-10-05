@@ -16,6 +16,8 @@ Coherence 曲線尾端有趨勢、residual 有結構，或同一工作點改 pha
 
 ## Ramsey 的模型比較
 
+2026-10-05使用者補充本平台的校準前提：用Ramsey估計detune時，須先確認π與π/2使用同一drive frequency；不一致時detune推斷可能不準。以Run前展開cfg與保存raw核對實際使用頻率，不只看MetaDict q_f或module名稱。若Ramsey序列只包含π/2，raw只證明那個pulse的頻率；另核對同工作點π module及相關sequence，不能聲稱raw含有未執行的π pulse。修正頻率時同步更新相關pulse，重新讀取各tab overrides，再進coherence或Zigzag確認。
+
 先用同一份 raw、同一 projection 比較常數 baseline 模型與有理由的候選模型。不要同時改 projection、窗口和模型後，把改善全部歸因於新 baseline。
 
 案例比較的是：
