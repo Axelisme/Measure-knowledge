@@ -1,0 +1,251 @@
+{
+  "method": "Fixed complex linear projection calibrated from baseline AllXY II and mean of last four excited pairs. Values are contrast-normalized signals, not independently calibrated probabilities or gate fidelity.",
+  "reference_ground_iq": [
+    462.36293249574123,
+    680.4726527683143
+  ],
+  "reference_excited_iq": [
+    382.41043960817734,
+    626.4548718022434
+  ],
+  "runs": {
+    "allxy-baseline-repeat": {
+      "raw": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_allxy_1005@coh30_p29_5.hdf5",
+      "sha256": "0c932a785797243111a71dcfaa9cdb7fb642c016844037054bdb56881342cacb",
+      "points": 21,
+      "gain_pi": 0.3,
+      "gain_pi2": 0.3,
+      "repeat_on": null,
+      "normalized_mean": 0.5485100364131059,
+      "normalized_std": 0.30792359799089314,
+      "normalized_peak_to_peak": 1.01020084314665,
+      "ideal_staircase_rmse": 0.10358783232237466,
+      "gui_analysis": {
+        "params": {
+          "fit_ge": false
+        },
+        "estimates": {},
+        "details": {
+          "power_param": -0.13936195805326831,
+          "detune_param": 0.003283257063368055,
+          "power_err": 0.15089785366389624,
+          "detune_err": 0.0012573628396896767
+        },
+        "warnings": []
+      }
+    },
+    "allxy-baseline": {
+      "raw": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_allxy_1005@coh30_p29_1.hdf5",
+      "sha256": "a5061771d5a0709e746304c063f650db3bac6460320e50034656bef4547069d4",
+      "points": 21,
+      "gain_pi": 0.3,
+      "gain_pi2": 0.3,
+      "repeat_on": null,
+      "normalized_mean": 0.5498752430801416,
+      "normalized_std": 0.30973223327400234,
+      "normalized_peak_to_peak": 1.0035854585160373,
+      "ideal_staircase_rmse": 0.10687164930238606,
+      "gui_analysis": {
+        "params": {
+          "fit_ge": false
+        },
+        "estimates": {},
+        "details": {
+          "power_param": -0.13930562377209224,
+          "detune_param": 0.009193368642219223,
+          "power_err": 0.1508241504567495,
+          "detune_err": 0.0035539688909899925
+        },
+        "warnings": []
+      }
+    },
+    "allxy-candidate": {
+      "raw": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_allxy_1005@coh30_p29_6.hdf5",
+      "sha256": "f36edbf198c0b67c07db2293e52902c6a95fb55e2ee093acf5097b62de580eaf",
+      "points": 21,
+      "gain_pi": 0.32091192089360926,
+      "gain_pi2": 0.32091192089360926,
+      "repeat_on": null,
+      "normalized_mean": 0.5161934218515045,
+      "normalized_std": 0.3106182973399381,
+      "normalized_peak_to_peak": 1.0283620006504328,
+      "ideal_staircase_rmse": 0.05115762511907723,
+      "gui_analysis": {
+        "params": {
+          "fit_ge": false
+        },
+        "estimates": {},
+        "details": {
+          "power_param": -0.037465940074298223,
+          "detune_param": 0.0021055353688325435,
+          "power_err": 0.03438631466521423,
+          "detune_err": 0.0008048222977172796
+        },
+        "warnings": []
+      }
+    },
+    "allxy-minus5pct": {
+      "raw": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_allxy_1005@coh30_p29_2.hdf5",
+      "sha256": "ba2845b37dfd8aa7bede51718bbe930f8869ef750273d7efe4a0a8aece714596",
+      "points": 21,
+      "gain_pi": 0.285,
+      "gain_pi2": 0.285,
+      "repeat_on": null,
+      "normalized_mean": 0.5738295668588302,
+      "normalized_std": 0.30457949007234203,
+      "normalized_peak_to_peak": 1.0181821295245688,
+      "ideal_staircase_rmse": 0.15288375186968564,
+      "gui_analysis": {
+        "params": {
+          "fit_ge": false
+        },
+        "estimates": {},
+        "details": {
+          "power_param": -0.19999999999999998,
+          "detune_param": 0.010293389225200315,
+          "power_err": 0.23619047619047615,
+          "detune_err": 0.003986145224732061
+        },
+        "warnings": []
+      }
+    },
+    "allxy-plus10pct": {
+      "raw": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_allxy_1005@coh30_p29_4.hdf5",
+      "sha256": "8028c7e05479310e385af4e111130f78189427130505e7b969fad4e0d92490b8",
+      "points": 21,
+      "gain_pi": 0.33,
+      "gain_pi2": 0.33,
+      "repeat_on": null,
+      "normalized_mean": 0.5025951814427624,
+      "normalized_std": 0.3087448021868829,
+      "normalized_peak_to_peak": 1.0349002066511557,
+      "ideal_staircase_rmse": 0.04881003087422138,
+      "gui_analysis": {
+        "params": {
+          "fit_ge": false
+        },
+        "estimates": {},
+        "details": {
+          "power_param": 0.019439701403049448,
+          "detune_param": -0.001440463767978952,
+          "power_err": 0.017274442520792403,
+          "detune_err": 0.000550018158762459
+        },
+        "warnings": []
+      }
+    },
+    "allxy-plus5pct": {
+      "raw": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_allxy_1005@coh30_p29_3.hdf5",
+      "sha256": "34264aa4f9ae6f7a39fe9237e7d0dae471685834637c70bcac88bef593e240de",
+      "points": 21,
+      "gain_pi": 0.315,
+      "gain_pi2": 0.315,
+      "repeat_on": null,
+      "normalized_mean": 0.5240506359197045,
+      "normalized_std": 0.308786714396782,
+      "normalized_peak_to_peak": 1.0161868645981427,
+      "ideal_staircase_rmse": 0.06084726567442443,
+      "gui_analysis": {
+        "params": {
+          "fit_ge": false
+        },
+        "estimates": {},
+        "details": {
+          "power_param": -0.06539733495394952,
+          "detune_param": -0.0011519254125103777,
+          "power_err": 0.06297921987713233,
+          "detune_err": 0.0004396409363205459
+        },
+        "warnings": []
+      }
+    },
+    "zigzag-pi-baseline": {
+      "raw": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_zigzag_1005@coh30_p29_1.hdf5",
+      "sha256": "a3d614f97be41492c530917bda14e82966ac0d43e97d402b5a2515dbe70682c3",
+      "points": 11,
+      "gain_pi": 0.3,
+      "gain_pi2": 0.3,
+      "repeat_on": "X180_pulse",
+      "normalized_mean": 0.5452671659233993,
+      "normalized_std": 0.24825660454436715,
+      "normalized_peak_to_peak": 0.6178202732593571
+    },
+    "zigzag-pi-candidate": {
+      "raw": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_zigzag_1005@coh30_p29_7.hdf5",
+      "sha256": "db5843f7bb19f17f735a2a21e27edeca6ee1e163b4cfa46bbd0f0ca6a16dc4ff",
+      "points": 11,
+      "gain_pi": 0.32091192089360926,
+      "gain_pi2": 0.32091192089360926,
+      "repeat_on": "X180_pulse",
+      "normalized_mean": 0.5644326209949144,
+      "normalized_std": 0.06181734140530255,
+      "normalized_peak_to_peak": 0.16694257751028269
+    },
+    "zigzag-pi-minus5pct": {
+      "raw": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_zigzag_1005@coh30_p29_3.hdf5",
+      "sha256": "d46c57b28eb37bd9de1d099bb51f5a9015c4470c9588e9fc5a45a6203a36e90d",
+      "points": 11,
+      "gain_pi": 0.285,
+      "gain_pi2": 0.3,
+      "repeat_on": "X180_pulse",
+      "normalized_mean": 0.5638070422244194,
+      "normalized_std": 0.25441611019242644,
+      "normalized_peak_to_peak": 0.7553049014761823
+    },
+    "zigzag-pi-plus10pct": {
+      "raw": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_zigzag_1005@coh30_p29_5.hdf5",
+      "sha256": "0fbf3e9a6a7f429f7447d7257d36de15c8b7d64b34ce4d4d4ec0684b245d5e2e",
+      "points": 11,
+      "gain_pi": 0.33,
+      "gain_pi2": 0.3,
+      "repeat_on": "X180_pulse",
+      "normalized_mean": 0.5645316216884506,
+      "normalized_std": 0.17182859227302785,
+      "normalized_peak_to_peak": 0.45725239505681
+    },
+    "zigzag-pi-plus5pct": {
+      "raw": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_zigzag_1005@coh30_p29_4.hdf5",
+      "sha256": "e14a01eb9798d4061ef32d551b3ff07e92177ac913069c130ec97213c8e214d8",
+      "points": 11,
+      "gain_pi": 0.315,
+      "gain_pi2": 0.3,
+      "repeat_on": "X180_pulse",
+      "normalized_mean": 0.5449311387701509,
+      "normalized_std": 0.07904411697449451,
+      "normalized_peak_to_peak": 0.1940556619454532
+    },
+    "zigzag-pi2-baseline": {
+      "raw": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_zigzag_1005@coh30_p29_2.hdf5",
+      "sha256": "41ade2b1b164af5f12bb2b30a5a3002c01c17d98e9b90c6bb48d4a9467183a8d",
+      "points": 11,
+      "gain_pi": 0.3,
+      "gain_pi2": 0.3,
+      "repeat_on": "X90_pulse",
+      "normalized_mean": 0.5450866106447492,
+      "normalized_std": 0.24516655453790578,
+      "normalized_peak_to_peak": 0.5907331345649043
+    },
+    "zigzag-pi2-candidate": {
+      "raw": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_zigzag_1005@coh30_p29_8.hdf5",
+      "sha256": "ce3bee55b8f1fb81dfeb048d14b9e46d5ce549701d675ab43af61757e9b96804",
+      "points": 11,
+      "gain_pi": 0.32091192089360926,
+      "gain_pi2": 0.32091192089360926,
+      "repeat_on": "X90_pulse",
+      "normalized_mean": 0.5615130843206336,
+      "normalized_std": 0.08555355012030647,
+      "normalized_peak_to_peak": 0.24092970714282075
+    },
+    "zigzag-pi2-plus10pct": {
+      "raw": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_zigzag_1005@coh30_p29_6.hdf5",
+      "sha256": "c5daf5864b53a8d8f4e102041a76b780baafe3158987d9864923bb9a8375a63c",
+      "points": 11,
+      "gain_pi": 0.33,
+      "gain_pi2": 0.33,
+      "repeat_on": "X90_pulse",
+      "normalized_mean": 0.5743331946005606,
+      "normalized_std": 0.21709059854373075,
+      "normalized_peak_to_peak": 0.5386223807240335
+    }
+  }
+}
