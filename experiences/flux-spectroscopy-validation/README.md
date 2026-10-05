@@ -94,13 +94,21 @@ Two-tone 以較大 gain 找到候選後，可降低 gain 並加密頻率以減�
 
 1. **設定與來源是否可信？** 核對當前flux actual、channel、NQZ、mixer、local overrides，以及Run對應的raw。修正頻段錯誤後，以鄰近已知有線的點作控制；設定合法不等於訊號一定恢復。
 2. **搜尋窗口是否只靠外插？** 用少量固定flux作寬搜，與從另一側靠近的已測分支對照。窄窗預測不是測量結果；跨NQZ或channel邊界仍要分開。擴頻後仍沒有線時，記錄搜尋範圍與解析度，不反覆原樣窄掃。
-3. **哪個條件值得辨別？** 在已確認硬體範圍內比較probe gain／length，或讀出frequency／gain／window。One-tone有清楚共振只驗證共振位置，沒有證明當地g/e對比足夠。為求搜尋效率一起改數項條件時，標明是條件組合；成功後再作需要的單項比較。
+3. **哪個條件值得辨別？** 在已確認硬體範圍內比較probe gain／length、recovery wait，或讀出frequency／gain／window。長T1區尤其核對實際等待，不能只增加probe與averages。One-tone有清楚共振只驗證共振位置，沒有證明當地g/e對比足夠。為求搜尋效率一起改數項條件時，標明是條件組合；成功後再作需要的單項比較。
 4. **原始IQ支持什麼？** 查看I與Q是否有共同且可重複的局部結構，不能只看取絕對值後的最高尖點。平滑只作診斷；平滑產生的峰、一次帶很小formal error的fit，都不能代替獨立重測或相鄰flux連續性。不同flux訊號方向相反可以提出對比過零假說，但不能唯一診斷chi、T1、磁滯或儀器原因。
 5. **繼續此點或改掃邊界？** 幾組有辨別力的控制仍無可信線時，先量相鄰可見邊界與其他有進展的區段。對缺口列明已測窗口、條件與未排除原因；若再加平均，要有新資料顯示可檢驗的微弱特徵，而非因為已投入時間。必要硬體資訊缺失或所有可行路線皆無辨別力時求助。
 
 2026-10-05真實Q1案例中，修正NQZ後5.8mA控制點明顯有線，5.5mA的寬頻、長probe及較強較長讀出仍未解析。再找相鄰點，5.7mA有清楚線、5.6mA仍弱；從另一側5.0mA重新取得線後可補出中頻分支。這支持先找可見邊界、保存缺口的策略，沒有證明弱區的物理原因。來源為量測repo的 `.agent_state/measurement-tasks/20261005-q1-twotone-fluxdep/journal.md`（16:10至16:42），raw `Q1_qubit_freq_1005@100515_twotone_fluxdep_11` 至 `_18.hdf5`。
 
 [真實案例](../coherence-bringup/cases/real-integer-20261005/README.md) 的 resonator 鏡像候選約 −0.244 mA，局部 qubit 極值候選約 −0.530 mA；採後者量 coherence，但未驗證磁滯或絕對 flux 編號。此案例支持 map 辨認分支、局部 spectroscopy 精修的分工，數值差異不是固定修正量。
+
+## 長T1區的 spectroscopy recovery 對照
+
+2026-10-06 Q12_2D[10]/Q1 p27（4.8135mA）固定probe gain.06/5us、2636.48–2640.48MHz/101點、500×2與DPM讀出，relax1us時無可信峰；只改relax1000us後出現清楚峰，中心2638.448717±.007929MHz、linewidth.40098MHz。附近T1約200us。此控制支持所測等待條件影響可見度，不能唯一識別未充分reset、讀出記憶或其他機制，也不是所有光譜都需要1000us。每條件只有一Run，漂移未以交錯repeat隔離。
+
+第一次預先edit等待後再呼叫recipe，recipe把它重建回1us，從raw才發現。該次不能當長等待證據；後來使用公開cfg observation/edit/Run流程，核對保存的1000us才形成對照。這是[校準來源核對](../calibration-provenance/README.md)中recipe可能重建cfg的具體反例。
+
+證據：repo-local `.agent_state/measurement-tasks/20261005-q1-40flux-coherence/p27_spec_fine.json`（短等待，noise fit rejected）與`p27_spec_recovery.json`（長等待），對應provenance與analysis圖。搜尋階段強probe找到候選的`p27_spec_strong`同時有不同gain/length/averages，不能混入只改等待的因果比較。
 
 ## 大範圍掃描前先確認局部對比
 
