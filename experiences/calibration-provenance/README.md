@@ -58,6 +58,14 @@ Writeback 前讀目的地和完整候選集合，不推測未勾選候選一定�
 
 每個 scalar 校準連到產生它的 raw、模型與生效的 module。若只更新 MetaDict 而 library 存的是固定 frequency，下一次 Run 可能仍使用舊 frequency；更新後重新展開相關 π／π2 等模組核對，不只看 parameter 表。
 
+### 固定點與 flux map 峰位不一致
+
+先用保存的實際軸、同一局部窗口與同一複數模型比較，避免把全頻自動選峰、背景模型或功率展寬差異誤認成頻率漂移。核對 raw 中完整 pulse、readout、等待、averages 及時間；只比 tab 當前設定不足以還原舊 Run。
+
+可以依成本逐步控制：回到相同工作點重測；分別比較頻率步距、掃描窗口與 reps；用 flux adapter 的單一電流點；再作包含該點的短正反向 map。這些控制能縮小候選解釋，未重現差異卻不能證明原資料錯誤，也不能由正反向一致就排除所有磁滯或 settling 問題。需要更可靠的主圖時，以新條件重掃並保留來源，不對舊 map 套用未證實的常數修正。
+
+2026-10-05 Q1 的5.8mA案例：早期1–2GHz map局部複數fit約1575.53MHz，同pulse／RO的固定點、窗口／步距／reps控制及單點adapter、短正反向map約1568.5–1569.3MHz。約7MHz差異沒有被控制重現，原因保持未知。任務來源為 `.agent_state/measurement-tasks/20261005-q1-twotone-fluxdep/compare_nqz1_repeat.py` 與 journal 17:20–17:49；原始flux檔 `_6`、`_9`–`_11`及freq檔 `_11`、`_22`–`_25`。這是比較流程的反例，不是平台固有偏移量。
+
 ## 模擬反例
 
 [2026-10-05 simulate 案例](../coherence-bringup/cases/sim-integer-20261005/README.md) 中，echo 的 π phase local override 保留了舊 frequency。Run 前讀取完整 cfg 才發現，隨後把 frequency 和 length 一起更新，最終 raw 確認使用新值。
