@@ -1,0 +1,262 @@
+{
+  "a": {
+    "parameters": {
+      "offset": -1.0830066659621156,
+      "amplitude": 986.8052249681261,
+      "tau_us": 14.502926664643033,
+      "fringe_mhz": 0.20258691391604522,
+      "phase_rad": -0.02890469776962136
+    },
+    "stderr": {
+      "offset": 0.26990180624712135,
+      "amplitude": 1.9180497225028932,
+      "tau_us": 0.0405573550012154,
+      "fringe_mhz": 3.157625460182855e-05,
+      "phase_rad": 0.0020470571987542844
+    },
+    "r2": 0.9992268612564381,
+    "residual_rms": 5.3615515471816675,
+    "max_abs_parameter_correlation": 0.7135007095488209,
+    "time_range_us": [
+      0.0,
+      98.58630952380952
+    ],
+    "n": 401,
+    "sources": [
+      "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/coh30_p03-echo-fringe90-b_2.hdf5",
+      "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/coh30_p03-echo-fringe90-a_1.hdf5"
+    ],
+    "applied_detune_mhz": 0.2,
+    "projection_angle_rad": 1.4329679188584337,
+    "method": "Complex phase90-minus-phase0, common linear projection, constant-offset exponential fringe",
+    "window_checks": [
+      {
+        "parameters": {
+          "offset": -1.8766796531981242,
+          "amplitude": 986.6918494791086,
+          "tau_us": 14.508712932739034,
+          "fringe_mhz": 0.2025844906169696,
+          "phase_rad": -0.029011456474007727
+        },
+        "stderr": {
+          "offset": 0.39170050435387493,
+          "amplitude": 1.9927245060291878,
+          "tau_us": 0.04280391260694861,
+          "fringe_mhz": 3.344772437891367e-05,
+          "phase_rad": 0.002135213882222477
+        },
+        "r2": 0.9995890981221555,
+        "residual_rms": 5.490118517901124,
+        "max_abs_parameter_correlation": 0.7209859217609721,
+        "time_range_us": [
+          0.0,
+          49.7860863095238
+        ],
+        "n": 203
+      },
+      {
+        "parameters": {
+          "offset": -1.2970607111399943,
+          "amplitude": 986.8082017727935,
+          "tau_us": 14.502952001621201,
+          "fringe_mhz": 0.20259001446704752,
+          "phase_rad": -0.029083879203310962
+        },
+        "stderr": {
+          "offset": 0.31242199286431194,
+          "amplitude": 1.9363842783665062,
+          "tau_us": 0.0409829309741704,
+          "fringe_mhz": 3.192258639585837e-05,
+          "phase_rad": 0.002068012395989041
+        },
+        "r2": 0.9994036069574713,
+        "residual_rms": 5.398876549865634,
+        "max_abs_parameter_correlation": 0.7141749858984643,
+        "time_range_us": [
+          0.0,
+          74.92559523809524
+        ],
+        "n": 305
+      },
+      {
+        "parameters": {
+          "offset": -1.057349720213099,
+          "amplitude": 988.2798524552838,
+          "tau_us": 14.481825762198861,
+          "fringe_mhz": 0.20258959938033716,
+          "phase_rad": -0.029153109967478875
+        },
+        "stderr": {
+          "offset": 0.2719157877046458,
+          "amplitude": 2.3994115382527395,
+          "tau_us": 0.045394455224034985,
+          "fringe_mhz": 3.3472011919484545e-05,
+          "phase_rad": 0.002303723145119521
+        },
+        "r2": 0.999050778614523,
+        "residual_rms": 5.367315528755745,
+        "max_abs_parameter_correlation": 0.7653904538530297,
+        "time_range_us": [
+          1.232328869047619,
+          98.58630952380952
+        ],
+        "n": 396
+      },
+      {
+        "parameters": {
+          "offset": -0.961104119753745,
+          "amplitude": 983.0896885096015,
+          "tau_us": 14.546665242156589,
+          "fringe_mhz": 0.20260628028220254,
+          "phase_rad": -0.030796665416989888
+        },
+        "stderr": {
+          "offset": 0.27447312964744813,
+          "amplitude": 3.1959440702150985,
+          "tau_us": 0.05293205705719144,
+          "fringe_mhz": 3.774593179066854e-05,
+          "phase_rad": 0.002928830275730225
+        },
+        "r2": 0.9987369504984275,
+        "residual_rms": 5.3620596695486835,
+        "max_abs_parameter_correlation": 0.8291653229162271,
+        "time_range_us": [
+          3.204055059523809,
+          98.58630952380952
+        ],
+        "n": 388
+      }
+    ],
+    "orthogonal_rms": 0.4132651988469347
+  },
+  "b": {
+    "parameters": {
+      "offset": -0.6792973345583658,
+      "amplitude": 985.4607851354621,
+      "tau_us": 14.498028949286674,
+      "fringe_mhz": 0.3243863998616684,
+      "phase_rad": -0.0330869498990833
+    },
+    "stderr": {
+      "offset": 0.276218641493247,
+      "amplitude": 1.9672743267754695,
+      "tau_us": 0.04165453543621663,
+      "fringe_mhz": 3.2240512320289575e-05,
+      "phase_rad": 0.002082187075678027
+    },
+    "r2": 0.9991839392930494,
+    "residual_rms": 5.492866738365506,
+    "max_abs_parameter_correlation": 0.7098512127945713,
+    "time_range_us": [
+      0.0,
+      98.58630952380952
+    ],
+    "n": 401,
+    "sources": [
+      "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/coh30_p03-echo0-b_3.hdf5",
+      "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/coh30_p03-echo-fringe90-b_1.hdf5"
+    ],
+    "applied_detune_mhz": 0.32,
+    "projection_angle_rad": 1.4330840152050308,
+    "method": "Complex phase90-minus-phase0, common linear projection, constant-offset exponential fringe",
+    "window_checks": [
+      {
+        "parameters": {
+          "offset": -1.2048167158452443,
+          "amplitude": 985.1756268503542,
+          "tau_us": 14.508753238119175,
+          "fringe_mhz": 0.3243926066559447,
+          "phase_rad": -0.03341765447961322
+        },
+        "stderr": {
+          "offset": 0.4012612940930625,
+          "amplitude": 2.0488694453595744,
+          "tau_us": 0.04410823793298156,
+          "fringe_mhz": 3.4165348650772534e-05,
+          "phase_rad": 0.0021732487572319044
+        },
+        "r2": 0.9995641771289795,
+        "residual_rms": 5.638176133625957,
+        "max_abs_parameter_correlation": 0.7165656790931079,
+        "time_range_us": [
+          0.0,
+          49.7860863095238
+        ],
+        "n": 203
+      },
+      {
+        "parameters": {
+          "offset": -0.9427952655448166,
+          "amplitude": 985.3825054357222,
+          "tau_us": 14.501093523112177,
+          "fringe_mhz": 0.3243860474297243,
+          "phase_rad": -0.033114026946210004
+        },
+        "stderr": {
+          "offset": 0.32262434999997164,
+          "amplitude": 2.0046768563506188,
+          "tau_us": 0.04250014533261475,
+          "fringe_mhz": 3.2882131952396554e-05,
+          "phase_rad": 0.002122309689350346
+        },
+        "r2": 0.9993586175977568,
+        "residual_rms": 5.5831459409859026,
+        "max_abs_parameter_correlation": 0.7103425697467546,
+        "time_range_us": [
+          0.0,
+          74.92559523809524
+        ],
+        "n": 305
+      },
+      {
+        "parameters": {
+          "offset": -0.6481291999919693,
+          "amplitude": 987.6862588896424,
+          "tau_us": 14.466259955556414,
+          "fringe_mhz": 0.32439335031215694,
+          "phase_rad": -0.0337126859191379
+        },
+        "stderr": {
+          "offset": 0.27762927140543925,
+          "amplitude": 2.3020133905432925,
+          "tau_us": 0.04489579266162036,
+          "fringe_mhz": 3.529278867975664e-05,
+          "phase_rad": 0.002491054146848457
+        },
+        "r2": 0.999061684486618,
+        "residual_rms": 5.485969264545743,
+        "max_abs_parameter_correlation": 0.7653334557131614,
+        "time_range_us": [
+          1.232328869047619,
+          98.58630952380952
+        ],
+        "n": 396
+      },
+      {
+        "parameters": {
+          "offset": -0.5604236700837757,
+          "amplitude": 985.4085103749358,
+          "tau_us": 14.497019077941971,
+          "fringe_mhz": 0.3243659912568351,
+          "phase_rad": -0.03081976162422826
+        },
+        "stderr": {
+          "offset": 0.2806335945541999,
+          "amplitude": 3.0950531386314846,
+          "tau_us": 0.05234722579271318,
+          "fringe_mhz": 3.988441457476388e-05,
+          "phase_rad": 0.0031726774002093605
+        },
+        "r2": 0.9987540141860279,
+        "residual_rms": 5.48815413706589,
+        "max_abs_parameter_correlation": 0.8204040756792074,
+        "time_range_us": [
+          3.204055059523809,
+          98.58630952380952
+        ],
+        "n": 388
+      }
+    ],
+    "orthogonal_rms": 0.42708767001789955
+  }
+}

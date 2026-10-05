@@ -27,6 +27,18 @@ Run 完成不保證全部分析和檔案保存成功。交付前確認 raw 與�
 
 Writeback 前讀目的地和完整候選集合，不推測未勾選候選一定不會寫入。離線修正估計與 GUI 預設 fit 要分開標記；目前 tab 顯示的數字不一定是應採用的值。若 context 只能存一個 scalar，另存分析來源與限制，不能只留下無來源的平均數。
 
+## 同名欄位也要核對單位
+
+2026-10-05的flux與30點模擬任務中，twotone/freq保存的Frequency欄以MHz表示，twotone/flux_dep的同名欄則以Hz表示，兩者單位欄都空白。先比對Run cfg、realized axis及數值範圍，再轉換單位。不能把某一adapter的schema假定套到所有檔案；也不能因為這次觀察就認定未來版本永遠如此。
+
+分析輸出要保留raw路徑、方法與轉換。批次處理遇到schema或解析失敗，停止依賴該結果的步驟。缺少搜尋中心時不能默默退回GUI預設值，否則可能在錯的頻段取得看似完成的資料。
+
+## 定期清理已保存的工作頁
+
+相同adapter連續量測時重用tab。只在需要並排對照或保留獨立狀態時增加工作頁。使用者於30點任務要求定時清理，agent在批次間核對未使用tab的完整artifact狀態，補存後以不丟棄資料的方式關閉13個舊頁。
+
+曾有last_saved_path不代表目前內容已保存。看到unsaved_changes時，先依當前保存契約處理並核對終態。關閉前確認raw、必要圖片與來源紀錄齊全；canonical圖可能已被重新分析覆寫。具體guard、save和close步驟仍以當前工具契約為準，不照抄案例的tab ID。
+
 ## 這次案例的反例
 
 [2026-10-05 simulate 案例](../coherence-bringup/cases/sim-integer-20261005/README.md) 中，echo 的 π phase local override 保留了舊 frequency。Run 前讀取完整 cfg 才發現，隨後把 frequency 和 length 一起更新，最終 raw 確認使用新值。

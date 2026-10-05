@@ -31,5 +31,13 @@ Length Rabi 已顯示振盪，但自動 fit 幾乎平坦、擬合頻率與目視
 
 該案例先前的 Amp Rabi 候選 π gain 約 0.3256，與使用的 0.3 不一致且有 residual，沒有接受它。Length／amplitude 交叉檢查應在相同 pulse shape、頻率、讀出與起始狀態下比較旋轉角，不強迫兩個有偏模型給出相同答案。找出不一致值得補驗證，但不等於已完成第二種校準。
 
+## 交叉檢查pulse，而不只檢查Rabi fit
+
+使用者於2026-10-05建議用zigzag檢查Rabi產生的pulse。這是專家建議，不是本知識庫已完成的zigzag驗證。先讀當前公開experiment guide，確認sequence要驗證π、π/2或哪一種誤差，再選代表工作點對照。沒有可用入口時保留缺口，不把普通Rabi或coherence repeat重新命名為zigzag。
+
+[30點案例](../coherence-bringup/cases/sim-30flux-20261005/README.md) 的live adapter清單沒有zigzag，因而沒有執行。每點Rabi都有可辨認的約四個週期，且pulse候選與曲線相符；這仍不構成gate fidelity量測。
+
+振盪取樣也要核對。使用者建議每週期至少10點，算法及aliasing限制見[背景辨別的取樣說明](../coherence-background-validation/README.md#振盪取樣)。不要只增加averages來補救時間網格過疏。
+
 ## 證據
 Qubit-measure-gui repo的`.agent_state/measurement-tasks/half-flux-t1-20261003/`保存run16.json、run16-final-analysis.json、對應PNG與verified-results.json。raw位於`Database/mcp_half_flux_20261003/sim/2026/10/Data_1003/sim_len_rabi_1003@half_flux_t1_clean_1.hdf5`。這些是repo-local路徑，跨主機重用前核對可讀性。
