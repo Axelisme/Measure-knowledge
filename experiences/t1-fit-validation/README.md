@@ -51,6 +51,14 @@ T1 的衰減時間與掃描窗口接近、尾端尚未穩定、參數誤差大�
 
 證據：repo-local `.agent_state/measurement-tasks/20261005-q1-40flux-coherence/p18_t1*.json`、`p19_t1_windows.json/png`、`compare_t1_windows.py`及`p18_reviewed.json`／`p19_reviewed.json`。數值與recovery長度只屬於此案例，不能當通用reset門檻。
 
+## 只改讀出 gain 的形狀對照
+
+相鄰點反覆出現相似多尺度衰減時，可在固定flux、drive、pulse、delay軸、relax與平均下，只改讀出pulse gain。比較完整曲線形狀與同Run窗口敏感性；不同gain會改變IQ方向、讀出對比與狀態敏感度，不能把兩條各自PCA或取magnitude的曲線直接相減當成背景扣除。若需視覺比較，明確標示投影及正規化方式。
+
+2026-10-06 Q12_2D[10]/Q1 p24（4.2198mA、3252.228675MHz）固定.2us pulse、600us relax、0–500us/251點與1000×2平均，只把RO gain由.234603降為.1。兩次都有早期快速變化與慢尾。各Run固定IQ投影的150/300/500us窗口，原gain得27.01/54.53/87.83us，低gain得26.72/58.39/90.41us；降低gain未消除形狀與窗口敏感性。這不證明讀出完全無影響，也未識別鬆弛機制；每條件只有一Run，漂移未由交錯repeat隔離。本點單一T1留空，原始資料與條件fit保留。
+
+證據：repo-local `.agent_state/measurement-tasks/20261005-q1-40flux-coherence/p24_t1{,_low_ro}.json`、對應provenance及windows圖/JSON。控制量測結束後恢復原readout module引用並檢查local override，避免把診斷條件無意帶入下一點。
+
 ## 擬合品質指標
 
 從目前 MCP estimate 的 `quality.fit` 或 GUI analysis summary 的 `fit_quality.fit` 讀 `r2`、`normalized_residual_rms`、`relative_parameter_errors` 及 `invalid`。這些數值只描述真正送入 fit 的樣本，需連同 skip/mask 與分析條件解讀。
