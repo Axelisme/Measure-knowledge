@@ -112,6 +112,14 @@ Two-tone 以較大 gain 找到候選後，可降低 gain 並加密頻率以減�
 
 ## 大範圍掃描前先確認局部對比
 
+### 已有讀出在相鄰flux失去對比的真實案例
+
+2026-10-06 Q12_2D[10]/Q1 p29（5.2093mA）沿用先前DPM讀出5353.066465MHz/gain.234603時，relax1000us、probe.6/20us的2174–2254MHz/401點/200×2沒有可信峰；擴至2050–2370MHz仍無可辨識譜線。回到相同2174–2254掃描、probe、等待與平均，只將讀出條件組合改為當地one-tone dip5351.599846MHz/gain.1，出現約2213.21MHz的峰。再以較弱probe.12/10us精掃得到2212.882739±.016171MHz，支持該分支訊號已恢復。
+
+此例支持在局部失線時提早比較讀出条件，不能把one-tone dip清楚或先前DPM最佳化當成當地qubit對比保證。對照同時改讀出frequency與gain，每條件只有一Run，未隔離兩項貢獻或時間漂移；不據此宣稱已找到全域最佳讀出，也不推定NQZ或接線失效。後續pulse/coherence需核對確實使用新讀出，不能只改spectroscopy的local override。
+
+證據：repo-local `.agent_state/measurement-tasks/20261005-q1-40flux-coherence/p29_spec_strong.json`、`p29_spec_wide.json`、`p29_spec_alt_ro.json`、`p29_spec_fine.json`及各自provenance/analysis圖。對照未改flux或NQZ，沒有執行NQZ比較。
+
 使用者建議先在已定位的integer工作點最佳化讀出與two-tone probe gain／length，再花成本做fluxdep。可先比較實際g/e對比或定義清楚的局部spectroscopy contrast，不能只靠bare resonator峰判斷qubit讀出是否有效。
 
 [30點案例的前置量測](../coherence-bringup/cases/sim-30flux-20261005/README.md#局部最佳化與轉移限制) 在固定probe條件下，換讀出後的中心contrast／off-resonant MAD比值約從51.8變成102.2。這是該定義下的比較，不是通用SNR門檻。Probe長度也會改變譜形；做survey和精修中心的需求不同。
