@@ -28,6 +28,10 @@ T1 慢尾端與 zero-drive reference 的設計，讀 [T1 決策流程](experienc
 
 ## 設定與資料來源
 
+多段twotone fluxdep要合成一張圖、選重疊來源、保留缺口或判斷色階是否可比較時，讀 [多段光譜合圖](experiences/spectrum-mosaic/README.md)。
+
+小步連扫仍有峰位跳變、half最低位置在不同pass不一致，或要規劃從integer到half的整體路線時，讀 [flux驗證與主流程決策樹](experiences/flux-spectroscopy-validation/README.md)。
+
 更改 library 後擔心 local override、請求軸與實際軸不符、操作 timeout，或準備保存與 writeback 時，讀 [校準來源核對](experiences/calibration-provenance/README.md)。具體工具操作仍以 live guide 為準。
 
 ## 維護導航

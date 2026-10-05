@@ -25,6 +25,12 @@ Flux 改變後若 qubit line 消失，清楚的 one-tone dip 只驗證讀出共�
 
 來源：`.agent_state/measurement-tasks/20261005-q1-twotone-fluxdep/journal.md`；rawfreq27/28、rawflux13為恢復案例，rawfreq42–44為5.6mA反例。更多流程見[局部失線的決策](../flux-spectroscopy-validation/README.md#譜線在局部-flux-區域消失的決策流程)。
 
+## 共振頻率對窗口敏感時
+
+One-tone fit返回小誤差不代表readout frequency已唯一確定。共振較寬或背景有結構時，先核對窗口是否包含兩側背景，並比較合理窗口下的估計。若改窗口後中心移動，將其記為窗口／模型敏感性；只有取得條件可比的時間或往返對照後，才進一步判斷漂移。不同窗口也是不同Run時，兩者效應不能由該比較完全分離。
+
+Q1真實案例7.05mA的30MHz與60MHz掃描窗分別得到約5349.466與5347.805MHz，相差1.66MHz，linewidth約15MHz。當次採較寬窗值作下一段工作RO，並用實際two-tone對比驗證可用；未把它宣稱成精確共振校準或確診漂移。來源為twotone任務journal 19:56與R1 raw21/22；rawflux16提供後續可見度證據。這是工作參數的條件式選擇，不是「寬窗一定較準」的規則。
+
 ## 依據與限制
 
 2026-10-05 使用者於 Q12_2D[10]/Q1 任務修正：「ro_gain的掃描範圍似乎不夠大，還沒收斂。而ro_length通常snr會趨緩，建議取兼顧長度足夠短同時snr足夠的點」。這是專家建議；SNR 必然單調或必然形成平台不在此主張內。

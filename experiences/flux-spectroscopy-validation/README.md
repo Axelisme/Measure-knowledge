@@ -41,6 +41,14 @@ Resonator map 可提供對稱點和分支候選。哪一個候選是目標 integ
 
 當次 Q1 案例先用相鄰單點補出弱區，再因上述效率修正切回 6.35→6.75mA 的原生2D掃描。這是實驗流程修正，並非已證實所有flux可共用固定RO；資料來源與段末核對保留在 `.agent_state/measurement-tasks/20261005-q1-twotone-fluxdep/`。
 
+## 小步連掃仍需保留批次差異
+
+2026-10-05 Q1 的相鄰連掃提供一個反例：rawflux15 在6.750/6.775mA相對較早rawflux13的峰位差約−0.41/−0.59MHz，到6.800/6.825/6.850mA則約+7.60/+7.08/+7.41MHz。新段內drive與RO固定，異常轉折發生在25µA相鄰步進間。這支持「小步連掃不能保證頻率歷史不變」，但仍不足以唯一診斷flux jump；兩批次的RO、mixer、時間與移動歷史不同。
+
+同模型重分析較早rawflux7與新rawflux16，局部half最低電流分別約7.17706與7.18847mA，差約11.4µA；最低頻率仍約309MHz。這排除了只因換擬合程式造成差異的解釋，沒有排除功率、讀出、線形與歷史效應。比較時先對齊模型與窗口，再保留pass差異；不平移舊資料來製造一致性，也不由局部vertex重定整個flux period。
+
+來源：量測repo任務 `.agent_state/measurement-tasks/20261005-q1-twotone-fluxdep/` 的 `map13_vs15_overlap.json`、`early_half_minimum_consistent.json`、`ascending_half_minimum.json`。這些數值只作方法反例，不是通用漂移尺度。
+
 ## 對稱點與局部極值不一致時
 
 保留兩個估計為不同觀測量。Resonator 鏡像中心可能受分支混合、背景、窗口、取樣與量測先後影響；qubit 局部極值也依賴譜線追蹤和擬合區間。差異不能唯一診斷磁滯、串擾或器件偏移。
@@ -63,6 +71,22 @@ Two-tone 以較大 gain 找到候選後，可降低 gain 並加密頻率以減�
 當次Q12_2D[10]/Q1測量的ch2適用>1GHz、ch14適用<1GHz及±10mA是使用者對該硬體的授權條件，不是本知識的通用硬體設定。使用者其後另指出NQZ1適合<2GHz、NQZ2適合>2GHz；所以同一ch2在1–2GHz與>2GHz仍需分段切NQZ，不能把「同一channel」等同「同一NQZ」。Agent最初將integer的ch2/NQZ2一路沿用到1–2GHz，留下不適用的弱訊號／雜訊條件。修正後也必須重新觀測，不可宣稱一定修復所有弱訊號。此反例提醒先核對channel、NQZ、mixer三個不同條件，再歸因於matrix element。
 
 整合多段map時記錄各段channel/NQZ/mixer/probe/readout/averages，不讓分段色階造成對比可直接互比的錯覺。
+
+## 主量測路線的簡版決策樹
+
+```text
+確認接線、current界限、channel/NQZ/mixer、時間預算
+  → onetone fluxdep涵蓋integer與half候選的兩側對稱結構
+  → integer當地校頻、readout gain/length收斂、probe可見度驗證
+  → 按分支與硬體頻段規劃相鄰批次2D掃描，保留端點重疊
+       ├─ 譜線清楚 → 縮窄下一段頻帶，以實測耗時更新預算
+       ├─ 接段峰位不同 → 對齊條件/模型，核對當地頻率與歷史
+       └─ 局部失線 → 依下列流程做有限單點對照，再回批次map
+  → half兩側細掃；局部最低點與完整period校準分開
+  → 保存raw、實際cfg、掃描方向、有效範圍與未解區域後合圖
+```
+
+每次加大頻帶前估算新增frequency點數；以矩形2D掃描追蹤斜率大的分支時，分成數個有重疊的窄頻段通常可減少空白頻率的成本，但需加上重設、端點校準與保存開銷。不可為追求窄窗而裁掉峰兩側背景，或跨越尚未驗證的分支缺口。
 
 ## 譜線在局部 flux 區域消失的決策流程
 
