@@ -17,6 +17,12 @@
 
 請求軸也不等於實際軸。硬體時序量化可能改變 step、終點與可解析的週期數。擬合使用保存的實際軸，並核對它代表的是 delay、pulse length 或總 evolution time。若端點差異會使窗口不足，回到量測設計，而不是改圖的座標標籤。
 
+## 逐 flux 點使用獨立 context
+
+2026-10-05 使用者的專家建議：逐點校準與 coherence 量測，每個 flux 點建立一個獨立 context，可 clone 前點繼承所需內容。這能避免後點 writeback 覆蓋前點的校準狀態；它是流程建議，不表示 clone 的頻率與 pulse 在新點已驗證。
+
+相鄰移動電流並核對 actual current 後，建立帶點號／工作點識別的 context，記錄 clone 來源，再重校 RO／qubit frequency 與 amplitude pulse。開始 Run 前仍核對展開的 cfg、local overrides 與輸出目的地。各點 raw、分析模型及單位連回 CSV；context 名稱不能取代 raw 中實際電流。若流程中途才開始分點 context，保留已保存檔案原路徑，明列哪些校準來自建立前的來源，不改名冒充新量測。
+
 ## 等待、保存與接受是不同事件
 
 等待逾時只表示 client 沒有拿到完成回覆。先核對 operation／execution 及 GUI 狀態，不能以 timeout 作為再次 Run 的理由。不知道是否已執行時，記錄未知並停止相依操作。
