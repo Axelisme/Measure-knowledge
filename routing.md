@@ -6,6 +6,8 @@
 
 Flux map 有 extrema 但分支不確定，或 two-tone 自動 fit 選到雜訊、旁峰時，讀 [flux 與 spectroscopy 驗證](experiences/flux-spectroscopy-validation/README.md)。
 
+大幅flux移動後頻率偏移、連續掃描的分段銜接，或逐點診斷拖慢主光譜進度時，讀同條目的[批次fluxdep與單點診斷](experiences/flux-spectroscopy-validation/README.md#批次-fluxdep-與單點診斷的分工)。
+
 有限預算下安排 map、pulse 與 coherence，或需要一份帶實測反例的完整路線時，讀 [Q1 真實 bring-up 案例](experiences/coherence-bringup/cases/real-integer-20261005/README.md)。案例含來源清單和精選圖；具體設定不作通用模板。
 
 ## Pulse calibration
