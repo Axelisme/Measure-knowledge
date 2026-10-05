@@ -23,7 +23,17 @@ Resonator map 可提供對稱點和分支候選。哪一個候選是目標 integ
 
 若兩側變化小於頻率估計的不確定性，只能說目前解析度內看不出斜率。若 peak 跳支、多峰未分離或前後漂移，就先保留工作點區間，不能報出插值器的很多位數作精度。
 
-## 模擬案例能支持什麼
+## 對稱點與局部極值不一致時
+
+保留兩個估計為不同觀測量。Resonator 鏡像中心可能受分支混合、背景、窗口、取樣與量測先後影響；qubit 局部極值也依賴譜線追蹤和擬合區間。差異不能唯一診斷磁滯、串擾或器件偏移。
+
+在分支已有依據時，選能解析曲率的幾個電流點，固定 drive／readout 追蹤同一條線。用局部二次曲線提出下一個工作點，再移到候選驗證頻率。三點可決定二次曲線，但沒有多餘自由度檢查模型失配；即使 propagated vertex stderr 很小，也不是位置總精度。預算允許時補候選兩側點、反向掃描或回到同一點檢查漂移。
+
+Two-tone 以較大 gain 找到候選後，可降低 gain 並加密頻率以減少功率展寬，同時檢查峰中心穩定性與旁峰。線寬變小支持搜尋條件的影響，不足以換算 intrinsic T2。
+
+[真實案例](../coherence-bringup/cases/real-integer-20261005/README.md) 的 resonator 鏡像候選約 −0.244 mA，局部 qubit 極值候選約 −0.530 mA；採後者量 coherence，但未驗證磁滯或絕對 flux 編號。此案例支持 map 辨認分支、局部 spectroscopy 精修的分工，數值差異不是固定修正量。
+
+## 模擬證據
 
 [2026-10-05 案例](../coherence-bringup/cases/sim-integer-20261005/README.md) 先從 resonator map 找到 native 約 0.002515 的候選，再用局部 qubit spectroscopy 收斂到約 0.002500。中心的 qubit frequency 高於兩側，支持該已選分支上的局部極大值。這不證明絕對 integer 編號。
 

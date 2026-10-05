@@ -4,7 +4,7 @@
 
 從空白 context 開始，或接手一組缺少來源的設定，要決定下一個量測及何時回頭校準時使用。本流程以有 flux 調控、色散讀出與微波控制的 qubit 為背景。其他架構需重新核對觀測量與 pulse sequence。
 
-[2026-10-05 simulate 案例](cases/sim-integer-20261005/README.md) 示範一次完整走法。案例只驗證模擬環境中的決策與分析，沒有驗證真實接線、功率、安全範圍或 gate fidelity。下列硬體前置檢查是移轉時的要求，不是這次完成過的硬體測試。
+[模擬案例](cases/sim-integer-20261005/README.md) 示範完整的決策與分析，但不驗證真實硬體。[Q12_2D[10]/Q1 真實案例](cases/real-integer-20261005/README.md) 補充有限預算下的分支搜尋、短 pulse 校準與非單指數 T1。兩者的數值不作通用設定；下列前置檢查是移轉時需核對的條件，不表示案例已完成每一項硬體測試。
 
 ## 真實硬體開始前
 
@@ -28,12 +28,18 @@
          是 → one-tone 粗搜尋，再窄掃解析共振
                 ↓
        flux 分支與目標工作點有依據？
-         否 → 受限 flux map → 分支辨別 → 局部 qubit spectroscopy
+         否 → flux map 覆蓋 integer／half 各自兩側 → 分支辨別
+                → 局部 qubit spectroscopy → 候選點確認
          是 → 在目前 flux 核對 readout 與 qubit frequency
                 ↓
        Rabi 可辨認週期、第一個峰與 pulse 候選？
          否 → 先查實際軸與模型，再決定補窗口、取樣或訊號
-         是 → 暫定 pulse → T1 初估 → 檢查 recovery wait
+         是 → π／π2 設定符合執行時限制，量化後時長符合目標？
+                否 → 調 gain 後重做 Rabi，不只改寫 pulse length
+                是 → 有可用的獨立 pulse 檢查？
+                       有 → 依 sequence／phase 定義執行，如 zigzag
+                       無 → 記錄未驗證 gate fidelity，使用暫定 pulse
+                → T1 初估 → 檢查 recovery wait
                 ↓                       ↓
        若等待時間影響 Rabi，回到 pulse 校準後再測 coherence
                 ↓
@@ -69,6 +75,23 @@
 
 預算不足時，交付已驗證的部分及缺口。不能用單次小 stderr 取代 repeat，也不能為了讓 echo 大於 Ramsey 而挑結果。兩者的大小關係不是通用驗收門檻。
 
-## 最小交付
+## 有限時間的分配與回頭條件
+
+開始時把必要前提一次核對：目標分支、drive 路徑與功率限制、flux 範圍及硬體 pulse 下限。已確認的條件沿用，不每輪重問。缺 drive 資訊時可先做不依賴它的 readout／flux 工作，但等待不自動延長截止時間。
+
+用第一輪實際耗時更新成本估計，考慮點數、reps×rounds、每點 sequence 時長、ramp／settling 和保存開銷。由長等待或大量尾端點主導時，比較減少無資訊點數、保留尾端的非均勻取樣、同 raw 重分析與補 reference；使用 live adapter 支持的選項，不自行假定非均勻軸的 detune 定義。
+
+取得可辨認的第一輪 T1／T2r／T2e 後，保留預算給最有辨別力的驗證。每輪擴大 map 或增加 averages，可能到截止仍沒有最終 pulse 下的 coherence。換 pulse 後優先重新取得目標結果；舊 pulse 結果是對照，不能代替新設定的量測。
+
+| 新證據 | 優先的下一步 | 不能據此宣稱 |
+| --- | --- | --- |
+| Map 缺 half 一側 | 補缺口，核對可拼接條件 | 已精準校準 qubit sweet spot |
+| Pulse 太短／太長 | 選新 gain，重做 Rabi 並核對 actual axis | 按比例縮放就是正式校準 |
+| T1 隨 fit window 漂移 | 同 raw 固定 projection 截窗與殘差分析 | 小 stderr 足以接受唯一 T1 |
+| 慢尾端在另一等待條件仍存在 | 必要時做匹配背景對照 | 已排除所有 reset／熱激發問題 |
+| 兩種 T2 fit 不一致 | 對齊觀測量、軸、窗口、模型和 optimizer 設定 | 差異一定來自某種噪音機制 |
+| 所需實驗無公開入口 | 保存缺口與可執行替代檢查 | 已執行該實驗或可旁路硬體 |
+
+## 交付內容
 
 保留工作點及其單位、校準來源、實際 pulse／readout／delay、raw 路徑、模型與資料轉換。報告 fit stderr、repeat 差異和窗口／模型敏感性，不把三者混成同一種誤差。若只支援有效衰減時間，就用這個名稱，不宣稱已識別噪音機制或 gate fidelity。

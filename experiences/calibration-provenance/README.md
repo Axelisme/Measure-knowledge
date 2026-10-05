@@ -27,7 +27,26 @@ Run 完成不保證全部分析和檔案保存成功。交付前確認 raw 與�
 
 Writeback 前讀目的地和完整候選集合，不推測未勾選候選一定不會寫入。離線修正估計與 GUI 預設 fit 要分開標記；目前 tab 顯示的數字不一定是應採用的值。若 context 只能存一個 scalar，另存分析來源與限制，不能只留下無來源的平均數。
 
-## 這次案例的反例
+## 真實量測的操作反例
+
+[Q1 真實案例](../coherence-bringup/cases/real-integer-20261005/README.md) 留下幾個公開工具層面的教訓。以下是當次契約的觀察，重用前仍讀 live schema：
+
+- Recipe 可能重新建立 cfg。需要保留自訂 recovery wait 等欄位時，確認 recipe 是否支持；若不支持，用完整 cfg observation → 編輯 → Run → 保存 → 分析的公開 RPC 流程，不能先改 cfg 再假定 recipe 保留它。
+- Context、tab、SoC、device 的完整觀察與 cfg revision 是不同資源的 guard。Run 完成後結果也可能改版，保存前要重新核對結果；busy／stale 回覆後先讀現況，不盲目重送。
+- MCP operation handle 與 GUI result 的 source operation token 不應憑數字相近或同名就互換。帶 result token 保存時，必須用對應公開契約取得的 token；不能把等待用的 handle 猜成結果 ID。
+- 保存回覆可能只是預留路徑與 handle。等保存成功，再開始依賴保存完成的分析或下一輪；用 artifact 的 saved 狀態確認。Raw RPC 與 recipe 的自動保存／分析範圍不同。
+- 裝置 cached snapshot 可能沒有反映 scan 結束後的實際值。Flux scan 的終點處置需事先確認；後續透過公開裝置流程設定工作點、等待及核對，不能因快取仍顯示舊值便假定已回程。
+- 原生分析圖檔名可能被下一輪覆蓋。每次模型／條件比較先保存來源對應的圖與結果，最後 tab 的 Run 也可能是 background control，而非報告採用的 signal Run。
+
+以上不是允許跳過 guard、繞過 MCP 或忽略錯誤的理由。當次保存資料中應同時記錄 requested 與 actual 軸；執行時設定下限與量化座標的區別，見 [Rabi](../rabi-fit-validation/README.md)。實驗提供的軸已量化時不再二次量化，也不僅憑座標與名義下限的小差異判定 Run 無效。
+
+## Repeat 與條件比較的標記
+
+嚴格 repeat 要保持工作點、pulse、readout、等待、actual sweep、人工 fringe 及分析方法可比較。為了改善結果而一起改 pulse length、gain、drive frequency、窗口或平均數，應標成「條件比較」；它可以支持新條件下仍有某特徵，不能把差異唯一歸因於其中一項。
+
+每個 scalar 校準連到產生它的 raw、模型與生效的 module。若只更新 MetaDict 而 library 存的是固定 frequency，下一次 Run 可能仍使用舊 frequency；更新後重新展開相關 π／π2 等模組核對，不只看 parameter 表。
+
+## 模擬反例
 
 [2026-10-05 simulate 案例](../coherence-bringup/cases/sim-integer-20261005/README.md) 中，echo 的 π phase local override 保留了舊 frequency。Run 前讀取完整 cfg 才發現，隨後把 frequency 和 length 一起更新，最終 raw 確認使用新值。
 

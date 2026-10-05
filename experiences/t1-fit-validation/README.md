@@ -11,7 +11,29 @@ T1 的衰減時間與掃描窗口接近、尾端尚未穩定、參數誤差大�
 3. 同時看 T1 的 stderr、窗口與模型敏感性。小 stderr 是給定模型與資料下的估計，不包含模型偏差。改窗口或合理模型後 T1 明顯變動時，先辨別來源，再做 writeback。
 4. 在相同工作點與可比較條件下 repeat，記錄每次的窗口、分析選項與不確定性。Repeat 一致能支持重現性，不能排除共同偏差；不一致時先核對漂移、pulse、讀出及基線，不能只挑最接近預期的一次。
 
-## 共用品質指標
+## 慢尾端的決策流程
+
+```text
+單 exp 的 residual 或 fit-window 敏感性有結構？
+  否 → 相同設定 repeat；保存有效 T1 與模型條件
+  是 → 同 raw、同一線性 IQ projection 比較窗口與候選模型
+         ├─ 雙 exp 參數不可辨認 → 不把兩個時間常數當成物理通道
+         └─ 結構穩定 → 選一個控制：等待時間／pulse 校準／零 drive 背景
+                          ↓
+         背景也有相同 delay 趨勢？
+           是 → 核對共模假設、匹配軸及漂移，再分析複數 IQ 差分
+           否 → 在本對照精度內，零 drive 背景不足以解釋尾端
+                          ↓
+         仍有多時間尺度 → 報 effective T1 與模型敏感性，保留機制未知
+```
+
+零 drive 對照保留原 pulse 時長與 sequence 時序，只把 drive gain 設為零；其餘 delay 軸、flux、readout、frequency 和 recovery 條件需匹配。這不保證樣品處於純 ground state，不能稱作已驗證的基態 reference。平均數不同會改變差分噪音；先比較複數 IQ，再用由 signal 確定的一個固定線性 projection 處理 signal 和 reference，不要各自 PCA／取 magnitude 後相減。
+
+參考曲線平坦只能限制該對照可見的背景，不能排除激發才出現的效應、非線性讀出、熱人口、多能級動力學或漂移。雙 exp 擬合改善也不能識別機制。記錄相對幅度、時間常數、誤差與參數相關性；窗口不足時尤其避免採用未收斂的慢分量。
+
+[真實案例](../coherence-bringup/cases/real-integer-20261005/README.md) 在改長 recovery／窗口、改短 pulse 及 zero-drive 差分後仍有慢尾端。部分設定同時改變，證據支持「在測過的條件下仍存在」，不構成排除各機制的單因素實驗。最後保留單 exp 有效值，沒有把 GUI 雙 exp 第一個分量自動寫回唯一 `t1`。
+
+## 擬合品質指標
 
 從目前 MCP estimate 的 `quality.fit` 或 GUI analysis summary 的 `fit_quality.fit` 讀 `r2`、`normalized_residual_rms`、`relative_parameter_errors` 及 `invalid`。這些數值只描述真正送入 fit 的樣本，需連同 skip/mask 與分析條件解讀。
 
@@ -36,6 +58,6 @@ T1 初估也能幫助選擇 Rabi 的 recovery-time 對照，見 [Rabi 等待時�
 
 ## 來源與限制
 
-本條整理判讀方法與模擬案例，沒有驗證真實硬體或通用閾值。[Rabi mock 案例](../rabi-fit-validation/README.md) 保存三次約 20 us 的 T1 數值與來源；它們只屬於該 mock 工作點，不是本條的窗口、品質或真實裝置門檻。該案例也不能證明 repeat 排除了模型偏差。
+本條包含模擬與真實硬體案例，均不建立通用閾值。[Rabi mock 案例](../rabi-fit-validation/README.md) 保存三次約 20 us 的 T1 數值與來源；它們只屬於該 mock 工作點，不是真實裝置門檻。真實案例另有模型敏感性與未識別的慢尾端；repeat 也不能排除共同模型偏差。
 
 當次目標、硬體限制與預算優先於歷史經驗。若補窗口或 repeat 超出授權，保留缺口並求助，不為完成 fit 擴張量測範圍。

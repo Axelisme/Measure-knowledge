@@ -1,0 +1,1724 @@
+{
+  "native_results": {
+    "broadSpec": {
+      "source": "all-drive-coherence-results.json",
+      "recipe": null,
+      "actual": {
+        "cfg_ref": null,
+        "parameters": {},
+        "modules": {}
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "model_type": "lor",
+            "plot_fit": true
+          },
+          "estimates": {},
+          "details": {
+            "freq": 4630.350626298409,
+            "freq_err": 0.16510807833446123,
+            "fwhm": 9.383791493548667,
+            "fwhm_err": 0.4962620217101903
+          },
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "narrowSpec": {
+      "source": "all-drive-coherence-results.json",
+      "recipe": null,
+      "actual": {
+        "cfg_ref": null,
+        "parameters": {},
+        "modules": {}
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "model_type": "lor",
+            "plot_fit": true
+          },
+          "estimates": {},
+          "details": {
+            "freq": 4630.495757227408,
+            "freq_err": 0.02487518654006261,
+            "fwhm": 1.4275419236245812,
+            "fwhm_err": 0.07759364094347924
+          },
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "leftSpec": {
+      "source": "all-drive-coherence-results.json",
+      "recipe": null,
+      "actual": {
+        "cfg_ref": null,
+        "parameters": {},
+        "modules": {}
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "model_type": "lor",
+            "plot_fit": true
+          },
+          "estimates": {},
+          "details": {
+            "freq": 4631.309456309218,
+            "freq_err": 0.02846119602706441,
+            "fwhm": 1.5400318778560327,
+            "fwhm_err": 0.08947892152626756
+          },
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "rightSpec": {
+      "source": "all-drive-coherence-results.json",
+      "recipe": null,
+      "actual": {
+        "cfg_ref": null,
+        "parameters": {},
+        "modules": {}
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "model_type": "lor",
+            "plot_fit": true
+          },
+          "estimates": {},
+          "details": {
+            "freq": 4625.9760411474745,
+            "freq_err": 0.022469306077769712,
+            "fwhm": 1.4025030746358764,
+            "fwhm_err": 0.06974630660475077
+          },
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "vertexSpec": {
+      "source": "all-drive-coherence-results.json",
+      "recipe": null,
+      "actual": {
+        "cfg_ref": null,
+        "parameters": {},
+        "modules": {}
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "model_type": "lor",
+            "plot_fit": true
+          },
+          "estimates": {},
+          "details": {
+            "freq": 4631.400449748366,
+            "freq_err": 0.021398339890469936,
+            "fwhm": 1.1870542988424302,
+            "fwhm_err": 0.07423653229314527
+          },
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "rabi1": {
+      "source": "all-drive-coherence-results.json",
+      "recipe": null,
+      "actual": {
+        "cfg_ref": null,
+        "parameters": {},
+        "modules": {}
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "decay": true,
+            "fit_phase": false
+          },
+          "estimates": {
+            "pi_len": {
+              "value": 0.04334819071329295,
+              "stderr": 3.2638164646298685e-06,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9441765939226969,
+                  "normalized_residual_rms": 0.04695498843931453,
+                  "relative_parameter_errors": {
+                    "y0": 0.002407396341786019,
+                    "yscale": 0.015505822030660008,
+                    "freq": 7.529302632760179e-05,
+                    "phase": null,
+                    "decay_time": 0.027360106222299372
+                  },
+                  "invalid": [
+                    {
+                      "path": "analysis.primary.estimates.pi_len.quality.fit.relative_parameter_errors.phase",
+                      "reason": "zero_parameter"
+                    }
+                  ]
+                }
+              }
+            },
+            "pi2_len": {
+              "value": 0.021674095356646474,
+              "stderr": 1.6319082323149343e-06,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9441765939226969,
+                  "normalized_residual_rms": 0.04695498843931453,
+                  "relative_parameter_errors": {
+                    "y0": 0.002407396341786019,
+                    "yscale": 0.015505822030660008,
+                    "freq": 7.529302632760179e-05,
+                    "phase": null,
+                    "decay_time": 0.027360106222299372
+                  },
+                  "invalid": [
+                    {
+                      "path": "analysis.primary.estimates.pi2_len.quality.fit.relative_parameter_errors.phase",
+                      "reason": "zero_parameter"
+                    }
+                  ]
+                }
+              }
+            },
+            "rabi_f": {
+              "value": 11.53450678730802,
+              "stderr": 0.0008684679232126842,
+              "unit": "MHz",
+              "quality": {
+                "fit": {
+                  "r2": 0.9441765939226969,
+                  "normalized_residual_rms": 0.04695498843931453,
+                  "relative_parameter_errors": {
+                    "y0": 0.002407396341786019,
+                    "yscale": 0.015505822030660008,
+                    "freq": 7.529302632760179e-05,
+                    "phase": null,
+                    "decay_time": 0.027360106222299372
+                  },
+                  "invalid": [
+                    {
+                      "path": "analysis.primary.estimates.rabi_f.quality.fit.relative_parameter_errors.phase",
+                      "reason": "zero_parameter"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "details": {},
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "rabiFinal": {
+      "source": "all-drive-coherence-results.json",
+      "recipe": null,
+      "actual": {
+        "cfg_ref": null,
+        "parameters": {},
+        "modules": {}
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "decay": true,
+            "fit_phase": true
+          },
+          "estimates": {
+            "pi_len": {
+              "value": 0.4427694709467374,
+              "stderr": 0.0009896285039109325,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9923606976311442,
+                  "normalized_residual_rms": 0.02572619266011262,
+                  "relative_parameter_errors": {
+                    "y0": 0.0022557427179768753,
+                    "yscale": 0.009740916753780752,
+                    "freq": 0.0009740759449813653,
+                    "phase": 0.0015028457767215246,
+                    "decay_time": 0.05307462837364962
+                  },
+                  "invalid": []
+                }
+              }
+            },
+            "pi2_len": {
+              "value": 0.22138473547336876,
+              "stderr": 0.0011527061551812445,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9923606976311442,
+                  "normalized_residual_rms": 0.02572619266011262,
+                  "relative_parameter_errors": {
+                    "y0": 0.0022557427179768753,
+                    "yscale": 0.009740916753780752,
+                    "freq": 0.0009740759449813653,
+                    "phase": 0.0015028457767215246,
+                    "decay_time": 0.05307462837364962
+                  },
+                  "invalid": []
+                }
+              }
+            },
+            "rabi_f": {
+              "value": 1.129255815517026,
+              "stderr": 0.0010999809256254495,
+              "unit": "MHz",
+              "quality": {
+                "fit": {
+                  "r2": 0.9923606976311442,
+                  "normalized_residual_rms": 0.02572619266011262,
+                  "relative_parameter_errors": {
+                    "y0": 0.0022557427179768753,
+                    "yscale": 0.009740916753780752,
+                    "freq": 0.0009740759449813653,
+                    "phase": 0.0015028457767215246,
+                    "decay_time": 0.05307462837364962
+                  },
+                  "invalid": []
+                }
+              }
+            }
+          },
+          "details": {},
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "rabiShort": {
+      "source": "final-native-results.json",
+      "recipe": null,
+      "actual": {
+        "cfg_ref": null,
+        "parameters": {},
+        "modules": {}
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "decay": true,
+            "fit_phase": true
+          },
+          "estimates": {
+            "pi_len": {
+              "value": 0.14792984199008283,
+              "stderr": 0.0005024006561599567,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9863306772335861,
+                  "normalized_residual_rms": 0.03541864810639401,
+                  "relative_parameter_errors": {
+                    "y0": 0.0036482867549708984,
+                    "yscale": 0.01611939955720381,
+                    "freq": 0.0014460413844953194,
+                    "phase": 0.0022813792237995414,
+                    "decay_time": 0.15060382595417268
+                  },
+                  "invalid": []
+                }
+              }
+            },
+            "pi2_len": {
+              "value": 0.07396492099504143,
+              "stderr": 0.0005852815938668578,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9863306772335861,
+                  "normalized_residual_rms": 0.03541864810639401,
+                  "relative_parameter_errors": {
+                    "y0": 0.0036482867549708984,
+                    "yscale": 0.01611939955720381,
+                    "freq": 0.0014460413844953194,
+                    "phase": 0.0022813792237995414,
+                    "decay_time": 0.15060382595417268
+                  },
+                  "invalid": []
+                }
+              }
+            },
+            "rabi_f": {
+              "value": 3.3799806264480425,
+              "stderr": 0.004887591864636285,
+              "unit": "MHz",
+              "quality": {
+                "fit": {
+                  "r2": 0.9863306772335861,
+                  "normalized_residual_rms": 0.03541864810639401,
+                  "relative_parameter_errors": {
+                    "y0": 0.0036482867549708984,
+                    "yscale": 0.01611939955720381,
+                    "freq": 0.0014460413844953194,
+                    "phase": 0.0022813792237995414,
+                    "decay_time": 0.15060382595417268
+                  },
+                  "invalid": []
+                }
+              }
+            }
+          },
+          "details": {},
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "t1first": {
+      "source": "all-drive-coherence-results.json",
+      "recipe": "t1",
+      "actual": {
+        "cfg_ref": {
+          "cfg_id": "d8e7276023644fa6ab768b8a5dae3d1a",
+          "revision": "3"
+        },
+        "parameters": {
+          "readout_frequency_mhz": {
+            "value": 5353.061798911407,
+            "source": "library:readout_rf",
+            "unit": "MHz"
+          },
+          "ro_frequency_mhz": {
+            "value": 5353.061798911407,
+            "source": "library:readout_rf",
+            "unit": "MHz"
+          },
+          "reps": {
+            "value": 200,
+            "source": "reps"
+          },
+          "rounds": {
+            "value": 10,
+            "source": "rounds"
+          },
+          "delay": {
+            "value": {
+              "start": 0.0,
+              "stop": 100.0,
+              "expts": 201
+            },
+            "source": {
+              "start": "gui_default",
+              "stop": "max_delay_us",
+              "expts": "points"
+            },
+            "unit": "us"
+          }
+        },
+        "modules": {
+          "readout": {
+            "value": "readout_rf",
+            "source": "explicit"
+          },
+          "reset": {
+            "value": null,
+            "source": "disabled"
+          },
+          "pi_pulse": {
+            "value": "pi_len",
+            "source": "explicit"
+          }
+        }
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "dual_exp": false,
+            "skip": 0
+          },
+          "estimates": {
+            "t1": {
+              "value": 10.916682673886308,
+              "stderr": 0.25337997733871326,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9759626768563118,
+                  "normalized_residual_rms": 0.02938150136825669,
+                  "relative_parameter_errors": {
+                    "y0": 0.011337321474963467,
+                    "yscale": 0.013648655867331804,
+                    "decay_time": 0.023210345569979886
+                  },
+                  "invalid": []
+                }
+              }
+            },
+            "t1b": {
+              "value": null,
+              "stderr": null,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9759626768563118,
+                  "normalized_residual_rms": 0.02938150136825669,
+                  "relative_parameter_errors": {
+                    "y0": 0.011337321474963467,
+                    "yscale": 0.013648655867331804,
+                    "decay_time": 0.023210345569979886
+                  },
+                  "invalid": []
+                }
+              }
+            }
+          },
+          "details": {},
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "t1dual": {
+      "source": "all-drive-coherence-results.json",
+      "recipe": null,
+      "actual": {
+        "cfg_ref": null,
+        "parameters": {},
+        "modules": {}
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "dual_exp": true,
+            "skip": 0
+          },
+          "estimates": {
+            "t1": {
+              "value": 56.47588833968904,
+              "stderr": 33.18539036817518,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9850753690801987,
+                  "normalized_residual_rms": 0.023151691838899893,
+                  "relative_parameter_errors": {
+                    "y0": 0.1914419527606755,
+                    "yscale1": 0.10582991658846022,
+                    "decay_time1": 0.5876028043786216,
+                    "yscale2": 0.05400679427360657,
+                    "decay_time2": 0.06807622169803952
+                  },
+                  "invalid": []
+                }
+              }
+            },
+            "t1b": {
+              "value": 8.0064075018033,
+              "stderr": 0.5450459720976082,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9850753690801987,
+                  "normalized_residual_rms": 0.023151691838899893,
+                  "relative_parameter_errors": {
+                    "y0": 0.1914419527606755,
+                    "yscale1": 0.10582991658846022,
+                    "decay_time1": 0.5876028043786216,
+                    "yscale2": 0.05400679427360657,
+                    "decay_time2": 0.06807622169803952
+                  },
+                  "invalid": []
+                }
+              }
+            }
+          },
+          "details": {},
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "t1Repeat": {
+      "source": "final-native-results.json",
+      "recipe": null,
+      "actual": {
+        "cfg_ref": null,
+        "parameters": {},
+        "modules": {}
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "dual_exp": false,
+            "skip": 0
+          },
+          "estimates": {
+            "t1": {
+              "value": 11.432065436174385,
+              "stderr": 0.2805203989778905,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9584141717968001,
+                  "normalized_residual_rms": 0.03009841110736357,
+                  "relative_parameter_errors": {
+                    "y0": 0.01020785749281504,
+                    "yscale": 0.01538385494290751,
+                    "decay_time": 0.0245380330041011
+                  },
+                  "invalid": []
+                }
+              }
+            },
+            "t1b": {
+              "value": null,
+              "stderr": null,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9584141717968001,
+                  "normalized_residual_rms": 0.03009841110736357,
+                  "relative_parameter_errors": {
+                    "y0": 0.01020785749281504,
+                    "yscale": 0.01538385494290751,
+                    "decay_time": 0.0245380330041011
+                  },
+                  "invalid": []
+                }
+              }
+            }
+          },
+          "details": {},
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "t1RepeatDual": {
+      "source": "final-native-results.json",
+      "recipe": null,
+      "actual": {
+        "cfg_ref": null,
+        "parameters": {},
+        "modules": {}
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "dual_exp": true,
+            "skip": 0
+          },
+          "estimates": {
+            "t1": {
+              "value": 33.10642266672494,
+              "stderr": 3.36692087388271,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9803622892852706,
+                  "normalized_residual_rms": 0.02068313284256554,
+                  "relative_parameter_errors": {
+                    "y0": 0.018890214392329758,
+                    "yscale1": 0.0889553569387591,
+                    "decay_time1": 0.10169993018505082,
+                    "yscale2": 0.03828955798030992,
+                    "decay_time2": 0.06084633191709718
+                  },
+                  "invalid": []
+                }
+              }
+            },
+            "t1b": {
+              "value": 5.726600572498443,
+              "stderr": 0.348442639190879,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9803622892852706,
+                  "normalized_residual_rms": 0.02068313284256554,
+                  "relative_parameter_errors": {
+                    "y0": 0.018890214392329758,
+                    "yscale1": 0.0889553569387591,
+                    "decay_time1": 0.10169993018505082,
+                    "yscale2": 0.03828955798030992,
+                    "decay_time2": 0.06084633191709718
+                  },
+                  "invalid": []
+                }
+              }
+            }
+          },
+          "details": {},
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "t1Short": {
+      "source": "final-native-results.json",
+      "recipe": "t1",
+      "actual": {
+        "cfg_ref": {
+          "cfg_id": "d8e7276023644fa6ab768b8a5dae3d1a",
+          "revision": "10"
+        },
+        "parameters": {
+          "readout_frequency_mhz": {
+            "value": 5353.061798911407,
+            "source": "library:readout_rf",
+            "unit": "MHz"
+          },
+          "ro_frequency_mhz": {
+            "value": 5353.061798911407,
+            "source": "library:readout_rf",
+            "unit": "MHz"
+          },
+          "reps": {
+            "value": 200,
+            "source": "reps"
+          },
+          "rounds": {
+            "value": 10,
+            "source": "rounds"
+          },
+          "delay": {
+            "value": {
+              "start": 0.0,
+              "stop": 100.0,
+              "expts": 201
+            },
+            "source": {
+              "start": "gui_default",
+              "stop": "max_delay_us",
+              "expts": "points"
+            },
+            "unit": "us"
+          }
+        },
+        "modules": {
+          "readout": {
+            "value": "readout_rf",
+            "source": "explicit"
+          },
+          "reset": {
+            "value": null,
+            "source": "disabled"
+          },
+          "pi_pulse": {
+            "value": "pi_len",
+            "source": "explicit"
+          }
+        }
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "dual_exp": false,
+            "skip": 0
+          },
+          "estimates": {
+            "t1": {
+              "value": 10.316839902932847,
+              "stderr": 0.25846412971057997,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9718236009172421,
+                  "normalized_residual_rms": 0.030459541008874953,
+                  "relative_parameter_errors": {
+                    "y0": 0.012010548806753318,
+                    "yscale": 0.014901885282123016,
+                    "decay_time": 0.025052645203605846
+                  },
+                  "invalid": []
+                }
+              }
+            },
+            "t1b": {
+              "value": null,
+              "stderr": null,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9718236009172421,
+                  "normalized_residual_rms": 0.030459541008874953,
+                  "relative_parameter_errors": {
+                    "y0": 0.012010548806753318,
+                    "yscale": 0.014901885282123016,
+                    "decay_time": 0.025052645203605846
+                  },
+                  "invalid": []
+                }
+              }
+            }
+          },
+          "details": {},
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "t2rFirst": {
+      "source": "all-drive-coherence-results.json",
+      "recipe": "t2ramsey",
+      "actual": {
+        "cfg_ref": {
+          "cfg_id": "bcd1c6c786204c3fa36c8237f80e1645",
+          "revision": "2"
+        },
+        "parameters": {
+          "readout_frequency_mhz": {
+            "value": 5353.061798911407,
+            "source": "library:readout_rf",
+            "unit": "MHz"
+          },
+          "ro_frequency_mhz": {
+            "value": 5353.061798911407,
+            "source": "library:readout_rf",
+            "unit": "MHz"
+          },
+          "reps": {
+            "value": 200,
+            "source": "reps"
+          },
+          "rounds": {
+            "value": 10,
+            "source": "rounds"
+          },
+          "delay": {
+            "value": {
+              "start": 0.0,
+              "stop": 40.0,
+              "expts": 241
+            },
+            "source": {
+              "start": "gui_default",
+              "stop": "max_delay_us",
+              "expts": "points"
+            },
+            "unit": "us"
+          },
+          "detune_ratio": {
+            "value": 0.05,
+            "source": "detune_ratio"
+          }
+        },
+        "modules": {
+          "readout": {
+            "value": "readout_rf",
+            "source": "explicit"
+          },
+          "reset": {
+            "value": null,
+            "source": "disabled"
+          },
+          "pi2_pulse": {
+            "value": "pi2_len",
+            "source": "explicit"
+          }
+        }
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "fit_fringe": true,
+            "fit_phase": false
+          },
+          "estimates": {
+            "t2r": {
+              "value": 3.5892434960597477,
+              "stderr": 0.1781032431647861,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.8900620840354502,
+                  "normalized_residual_rms": 0.03381085263292035,
+                  "relative_parameter_errors": {
+                    "y0": 0.0026188483512442637,
+                    "yscale": 0.03310818990908694,
+                    "freq": 0.006334671425779826,
+                    "phase": 0.0,
+                    "decay_time": 0.049621387727053594
+                  },
+                  "invalid": []
+                }
+              }
+            },
+            "detune": {
+              "value": 0.26295548327420715,
+              "stderr": null,
+              "unit": "MHz",
+              "quality": {
+                "fit": {
+                  "r2": 0.8900620840354502,
+                  "normalized_residual_rms": 0.03381085263292035,
+                  "relative_parameter_errors": {
+                    "y0": 0.0026188483512442637,
+                    "yscale": 0.03310818990908694,
+                    "freq": 0.006334671425779826,
+                    "phase": 0.0,
+                    "decay_time": 0.049621387727053594
+                  },
+                  "invalid": []
+                }
+              }
+            }
+          },
+          "details": {
+            "fit_fringe": true
+          },
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "t2rFree": {
+      "source": "all-drive-coherence-results.json",
+      "recipe": null,
+      "actual": {
+        "cfg_ref": null,
+        "parameters": {},
+        "modules": {}
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "fit_fringe": true,
+            "fit_phase": true
+          },
+          "estimates": {
+            "t2r": {
+              "value": 3.5906991503147014,
+              "stderr": 0.17753149220810757,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.8922081434424344,
+                  "normalized_residual_rms": 0.033479221358644326,
+                  "relative_parameter_errors": {
+                    "y0": 0.002621207928678828,
+                    "yscale": 0.03324330170249678,
+                    "freq": 0.009391562756964485,
+                    "phase": 0.013732949278855289,
+                    "decay_time": 0.04944204033149034
+                  },
+                  "invalid": []
+                }
+              }
+            },
+            "detune": {
+              "value": 0.267405575526928,
+              "stderr": null,
+              "unit": "MHz",
+              "quality": {
+                "fit": {
+                  "r2": 0.8922081434424344,
+                  "normalized_residual_rms": 0.033479221358644326,
+                  "relative_parameter_errors": {
+                    "y0": 0.002621207928678828,
+                    "yscale": 0.03324330170249678,
+                    "freq": 0.009391562756964485,
+                    "phase": 0.013732949278855289,
+                    "decay_time": 0.04944204033149034
+                  },
+                  "invalid": []
+                }
+              }
+            }
+          },
+          "details": {
+            "fit_fringe": true
+          },
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "t2rRepeat": {
+      "source": "final-native-results.json",
+      "recipe": "t2ramsey",
+      "actual": {
+        "cfg_ref": {
+          "cfg_id": "bcd1c6c786204c3fa36c8237f80e1645",
+          "revision": "5"
+        },
+        "parameters": {
+          "readout_frequency_mhz": {
+            "value": 5353.061798911407,
+            "source": "library:readout_rf",
+            "unit": "MHz"
+          },
+          "ro_frequency_mhz": {
+            "value": 5353.061798911407,
+            "source": "library:readout_rf",
+            "unit": "MHz"
+          },
+          "reps": {
+            "value": 200,
+            "source": "reps"
+          },
+          "rounds": {
+            "value": 20,
+            "source": "rounds"
+          },
+          "delay": {
+            "value": {
+              "start": 0.0,
+              "stop": 20.0,
+              "expts": 201
+            },
+            "source": {
+              "start": "gui_default",
+              "stop": "max_delay_us",
+              "expts": "points"
+            },
+            "unit": "us"
+          },
+          "detune_ratio": {
+            "value": 0.05,
+            "source": "detune_ratio"
+          }
+        },
+        "modules": {
+          "readout": {
+            "value": "readout_rf",
+            "source": "explicit"
+          },
+          "reset": {
+            "value": null,
+            "source": "disabled"
+          },
+          "pi2_pulse": {
+            "value": "pi2_len",
+            "source": "explicit"
+          }
+        }
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "fit_fringe": true,
+            "fit_phase": false
+          },
+          "estimates": {
+            "t2r": {
+              "value": 3.6453751080099766,
+              "stderr": 0.10838820695963615,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9633384712991877,
+                  "normalized_residual_rms": 0.025335917901784955,
+                  "relative_parameter_errors": {
+                    "y0": 0.0022322936977254423,
+                    "yscale": 0.020367660963616845,
+                    "freq": 0.0020833917382022406,
+                    "phase": 0.0,
+                    "decay_time": 0.029733073757341164
+                  },
+                  "invalid": []
+                }
+              }
+            },
+            "detune": {
+              "value": 0.45699474276669877,
+              "stderr": null,
+              "unit": "MHz",
+              "quality": {
+                "fit": {
+                  "r2": 0.9633384712991877,
+                  "normalized_residual_rms": 0.025335917901784955,
+                  "relative_parameter_errors": {
+                    "y0": 0.0022322936977254423,
+                    "yscale": 0.020367660963616845,
+                    "freq": 0.0020833917382022406,
+                    "phase": 0.0,
+                    "decay_time": 0.029733073757341164
+                  },
+                  "invalid": []
+                }
+              }
+            }
+          },
+          "details": {
+            "fit_fringe": true
+          },
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "t2eFirst": {
+      "source": "all-drive-coherence-results.json",
+      "recipe": "t2echo",
+      "actual": {
+        "cfg_ref": {
+          "cfg_id": "131f7ea78eed45338a39ef10bc8900f9",
+          "revision": "2"
+        },
+        "parameters": {
+          "readout_frequency_mhz": {
+            "value": 5353.061798911407,
+            "source": "library:readout_rf",
+            "unit": "MHz"
+          },
+          "ro_frequency_mhz": {
+            "value": 5353.061798911407,
+            "source": "library:readout_rf",
+            "unit": "MHz"
+          },
+          "reps": {
+            "value": 200,
+            "source": "reps"
+          },
+          "rounds": {
+            "value": 10,
+            "source": "rounds"
+          },
+          "delay": {
+            "value": {
+              "start": 0.0,
+              "stop": 60.0,
+              "expts": 301
+            },
+            "source": {
+              "start": "gui_default",
+              "stop": "max_delay_us",
+              "expts": "points"
+            },
+            "unit": "us"
+          },
+          "detune_ratio": {
+            "value": 0.05,
+            "source": "detune_ratio"
+          }
+        },
+        "modules": {
+          "readout": {
+            "value": "readout_rf",
+            "source": "explicit"
+          },
+          "reset": {
+            "value": null,
+            "source": "disabled"
+          },
+          "pi_pulse": {
+            "value": "pi_len",
+            "source": "explicit"
+          },
+          "pi2_pulse": {
+            "value": "pi2_len",
+            "source": "explicit"
+          }
+        }
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "fit_method": "fringe",
+            "fit_phase": false
+          },
+          "estimates": {
+            "t2e": {
+              "value": 6.694004495046485,
+              "stderr": 0.29290635614440313,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.8899658882101487,
+                  "normalized_residual_rms": 0.033989737636705,
+                  "relative_parameter_errors": {
+                    "y0": 0.00211488163927537,
+                    "yscale": 0.03174303012550067,
+                    "freq": 0.0028887100486998467,
+                    "phase": null,
+                    "decay_time": 0.04375652217759216
+                  },
+                  "invalid": [
+                    {
+                      "path": "analysis.primary.estimates.t2e.quality.fit.relative_parameter_errors.phase",
+                      "reason": "zero_parameter"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "details": {},
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "t2eFree": {
+      "source": "all-drive-coherence-results.json",
+      "recipe": null,
+      "actual": {
+        "cfg_ref": null,
+        "parameters": {},
+        "modules": {}
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "fit_method": "fringe",
+            "fit_phase": true
+          },
+          "estimates": {
+            "t2e": {
+              "value": 6.693966092400669,
+              "stderr": 0.29611619087409113,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.8899658882275845,
+                  "normalized_residual_rms": 0.03398973763401202,
+                  "relative_parameter_errors": {
+                    "y0": 0.0021269742220052707,
+                    "yscale": 0.032383211689256425,
+                    "freq": 0.004194438011032739,
+                    "phase": 0.005047489278267007,
+                    "decay_time": 0.04423628485514101
+                  },
+                  "invalid": []
+                }
+              }
+            }
+          },
+          "details": {},
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "t2rShort": {
+      "source": "final-native-results.json",
+      "recipe": "t2ramsey",
+      "actual": {
+        "cfg_ref": {
+          "cfg_id": "bcd1c6c786204c3fa36c8237f80e1645",
+          "revision": "11"
+        },
+        "parameters": {
+          "readout_frequency_mhz": {
+            "value": 5353.061798911407,
+            "source": "library:readout_rf",
+            "unit": "MHz"
+          },
+          "ro_frequency_mhz": {
+            "value": 5353.061798911407,
+            "source": "library:readout_rf",
+            "unit": "MHz"
+          },
+          "reps": {
+            "value": 200,
+            "source": "reps"
+          },
+          "rounds": {
+            "value": 10,
+            "source": "rounds"
+          },
+          "delay": {
+            "value": {
+              "start": 0.0,
+              "stop": 20.0,
+              "expts": 201
+            },
+            "source": {
+              "start": "gui_default",
+              "stop": "max_delay_us",
+              "expts": "points"
+            },
+            "unit": "us"
+          },
+          "detune_ratio": {
+            "value": 0.05,
+            "source": "detune_ratio"
+          }
+        },
+        "modules": {
+          "readout": {
+            "value": "readout_rf",
+            "source": "explicit"
+          },
+          "reset": {
+            "value": null,
+            "source": "disabled"
+          },
+          "pi2_pulse": {
+            "value": "pi2_len",
+            "source": "explicit"
+          }
+        }
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "fit_fringe": true,
+            "fit_phase": false
+          },
+          "estimates": {
+            "t2r": {
+              "value": 3.309545403609979,
+              "stderr": 0.11278665276914299,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9472396296777778,
+                  "normalized_residual_rms": 0.027751243808997027,
+                  "relative_parameter_errors": {
+                    "y0": 0.0027248301061878802,
+                    "yscale": 0.023288551649772084,
+                    "freq": 0.0024108009541117985,
+                    "phase": 0.0,
+                    "decay_time": 0.034079197900145984
+                  },
+                  "invalid": []
+                }
+              }
+            },
+            "detune": {
+              "value": 0.49985878890037555,
+              "stderr": null,
+              "unit": "MHz",
+              "quality": {
+                "fit": {
+                  "r2": 0.9472396296777778,
+                  "normalized_residual_rms": 0.027751243808997027,
+                  "relative_parameter_errors": {
+                    "y0": 0.0027248301061878802,
+                    "yscale": 0.023288551649772084,
+                    "freq": 0.0024108009541117985,
+                    "phase": 0.0,
+                    "decay_time": 0.034079197900145984
+                  },
+                  "invalid": []
+                }
+              }
+            }
+          },
+          "details": {
+            "fit_fringe": true
+          },
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    },
+    "t2eShort": {
+      "source": "final-native-results.json",
+      "recipe": "t2echo",
+      "actual": {
+        "cfg_ref": {
+          "cfg_id": "131f7ea78eed45338a39ef10bc8900f9",
+          "revision": "8"
+        },
+        "parameters": {
+          "readout_frequency_mhz": {
+            "value": 5353.061798911407,
+            "source": "library:readout_rf",
+            "unit": "MHz"
+          },
+          "ro_frequency_mhz": {
+            "value": 5353.061798911407,
+            "source": "library:readout_rf",
+            "unit": "MHz"
+          },
+          "reps": {
+            "value": 200,
+            "source": "reps"
+          },
+          "rounds": {
+            "value": 10,
+            "source": "rounds"
+          },
+          "delay": {
+            "value": {
+              "start": 0.0,
+              "stop": 40.0,
+              "expts": 201
+            },
+            "source": {
+              "start": "gui_default",
+              "stop": "max_delay_us",
+              "expts": "points"
+            },
+            "unit": "us"
+          },
+          "detune_ratio": {
+            "value": 0.05,
+            "source": "detune_ratio"
+          }
+        },
+        "modules": {
+          "readout": {
+            "value": "readout_rf",
+            "source": "explicit"
+          },
+          "reset": {
+            "value": null,
+            "source": "disabled"
+          },
+          "pi_pulse": {
+            "value": "pi_len",
+            "source": "explicit"
+          },
+          "pi2_pulse": {
+            "value": "pi2_len",
+            "source": "explicit"
+          }
+        }
+      },
+      "analysis": {
+        "stage": "primary",
+        "primary": {
+          "params": {
+            "fit_method": "fringe",
+            "fit_phase": false
+          },
+          "estimates": {
+            "t2e": {
+              "value": 6.360267195085605,
+              "stderr": 0.26283324389645296,
+              "unit": "us",
+              "quality": {
+                "fit": {
+                  "r2": 0.9304128205467281,
+                  "normalized_residual_rms": 0.031171851458676705,
+                  "relative_parameter_errors": {
+                    "y0": 0.00265325310436864,
+                    "yscale": 0.030004703431971508,
+                    "freq": 0.0028804660104913937,
+                    "phase": null,
+                    "decay_time": 0.04132424563853805
+                  },
+                  "invalid": [
+                    {
+                      "path": "analysis.primary.estimates.t2e.quality.fit.relative_parameter_errors.phase",
+                      "reason": "zero_parameter"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "details": {},
+          "warnings": []
+        },
+        "post": null
+      },
+      "status": "finished"
+    }
+  },
+  "offline_results": {
+    "sweetspot.json": {
+      "current_mA": [
+        -0.6,
+        -0.313,
+        0.0
+      ],
+      "frequency_MHz": [
+        4631.309456309218,
+        4630.495757227408,
+        4625.9760411474745
+      ],
+      "fit_stderr_MHz": [
+        0.028461196,
+        0.024875187,
+        0.022469306
+      ],
+      "quadratic_coefficients": [
+        -19.341331729100833,
+        -20.493824307033524,
+        4625.976041147474
+      ],
+      "vertex_mA": -0.5297935166532163,
+      "vertex_statistical_stderr_mA": 0.004599108744564853,
+      "limitations": "Three-point local fit; statistical error excludes hysteresis, drift and model uncertainty. Working point is -0.530 mA."
+    },
+    "flux-coverage.json": {
+      "sources": [
+        "Database\\Q12_2D[10]\\Q1\\2026\\10\\Data_1005\\R1_flux@100513_integer_search_2.hdf5",
+        "Database\\Q12_2D[10]\\Q1\\2026\\10\\Data_1005\\R1_flux@100513_integer_search_3.hdf5"
+      ],
+      "integer_candidate_mA": -0.24448925285161544,
+      "half_candidate_mA": 7.2612501499248685,
+      "period_candidate_mA": 15.011478805552969,
+      "half_mirror_loss": 0.0003725411364890203,
+      "half_grid_mA": 0.049999999999998934,
+      "limitations": "Symmetry estimates with finite grid and background systematics; integer precision still needs qubit spectroscopy. Maps acquired sequentially in ascending current, so hysteresis is not tested."
+    },
+    "t1-background-check.json": {
+      "signal": "Database\\Q12_2D[10]\\Q1\\2026\\10\\Data_1005\\Q1_t1_1005@100513_integer_search_3.hdf5",
+      "reference": "Database\\Q12_2D[10]\\Q1\\2026\\10\\Data_1005\\Q1_t1_background@100513_integer_search_1.hdf5",
+      "projection": [
+        0.8220745436918107,
+        -0.5693798772470814
+      ],
+      "reference_mean": -0.08558101240469515,
+      "reference_std": 0.014901757754286746,
+      "reference_first10_mean": -0.08230856653590639,
+      "reference_last40_mean": -0.0835673501558973,
+      "single": {
+        "parameters": [
+          -0.017451546676231326,
+          -0.384321546534319,
+          10.441704716292012
+        ],
+        "stderr": [
+          0.0018074930881647893,
+          0.008183019799401395,
+          0.3746391179091492
+        ],
+        "rms": 0.019450317707688566
+      },
+      "dual": {
+        "parameters": [
+          -0.005411655316950332,
+          -0.29412700551616344,
+          6.175567551571842,
+          -0.13135606856470536,
+          26.446961723385616
+        ],
+        "stderr": [
+          0.005831545756188586,
+          0.04673172654816889,
+          1.0518999670807072,
+          0.045294731441967294,
+          9.408594590747745
+        ],
+        "rms": 0.017836551182592694
+      }
+    },
+    "envelope-comparison.json": [
+      {
+        "file": "Q1_t2echo_1005@100513_integer_search_1.hdf5",
+        "envelope_power": 1,
+        "T_us": 5.73938628261507,
+        "stderr_us": 0.22159807626875982,
+        "R2": 0.9010937212792552,
+        "AIC": -2705.9623227892353,
+        "fit_parameters": [
+          0.3134347649009179,
+          -0.21858676725657353,
+          5.73938628261507,
+          0.24863850276047364,
+          0.05010476887520018
+        ]
+      },
+      {
+        "file": "Q1_t2echo_1005@100513_integer_search_1.hdf5",
+        "envelope_power": 2,
+        "T_us": 7.759659067299427,
+        "stderr_us": 0.21968631657005255,
+        "R2": 0.8928954806363413,
+        "AIC": -2682.072587186863,
+        "fit_parameters": [
+          0.31335295440478655,
+          0.16504047849997006,
+          7.759659067299427,
+          0.24906585692976868,
+          3.1564921648207216
+        ]
+      },
+      {
+        "file": "Q1_t2ramsey_1005@100513_integer_search_1.hdf5",
+        "envelope_power": 1,
+        "T_us": 3.125145344469528,
+        "stderr_us": 0.13301359698341514,
+        "R2": 0.9039291274726319,
+        "AIC": -2133.424586993379,
+        "fit_parameters": [
+          -0.31107753761724455,
+          -0.23886344763454878,
+          3.125145344469528,
+          0.26447764773724075,
+          -0.02963170089384787
+        ]
+      },
+      {
+        "file": "Q1_t2ramsey_1005@100513_integer_search_1.hdf5",
+        "envelope_power": 2,
+        "T_us": 3.9517774934032017,
+        "stderr_us": 0.12051309731848905,
+        "R2": 0.9063364434094687,
+        "AIC": -2139.5404435427427,
+        "fit_parameters": [
+          -0.31174485988376444,
+          0.19611080282661286,
+          3.9517774934032017,
+          0.26574444878307507,
+          -3.205980577944189
+        ]
+      }
+    ],
+    "coherence-check.json": [
+      {
+        "file": "Database\\Q12_2D[10]\\Q1\\2026\\10\\Data_1005\\Q1_t1_1005@100513_integer_search_1.hdf5",
+        "complete": true,
+        "max_actual_delay_us": 99.98139880952381,
+        "relax_delay_us": 100.0,
+        "projection": [
+          0.8134608827747699,
+          -0.5816196284474004
+        ],
+        "current_A": -0.00053,
+        "window_fits": [
+          {
+            "window_us": 40,
+            "T_us": 8.667380187172263,
+            "stderr_us": 0.2660068481272325
+          },
+          {
+            "window_us": 60,
+            "T_us": 9.684190521828432,
+            "stderr_us": 0.2512059279152561
+          },
+          {
+            "window_us": 100,
+            "T_us": 10.916753674153302,
+            "stderr_us": 0.2533817867964258
+          }
+        ],
+        "T_us": 10.916753674153302,
+        "stderr_us": 0.2533817867964258,
+        "parameters": [
+          -0.10351814596356242,
+          -0.37538302600488294,
+          10.916753674153302
+        ],
+        "residual_rms": 0.012426828452215825
+      },
+      {
+        "file": "Database\\Q12_2D[10]\\Q1\\2026\\10\\Data_1005\\Q1_t1_1005@100513_integer_search_2.hdf5",
+        "complete": true,
+        "max_actual_delay_us": 149.97209821428572,
+        "relax_delay_us": 200.0,
+        "projection": [
+          0.8193473488039165,
+          -0.5732974114785391
+        ],
+        "current_A": -0.00053,
+        "window_fits": [
+          {
+            "window_us": 40,
+            "T_us": 7.722676374295722,
+            "stderr_us": 0.24425445678906413
+          },
+          {
+            "window_us": 60,
+            "T_us": 8.899895399787109,
+            "stderr_us": 0.268607980108362
+          },
+          {
+            "window_us": 100,
+            "T_us": 10.313556498903935,
+            "stderr_us": 0.2730351537007773
+          },
+          {
+            "window_us": 150,
+            "T_us": 11.431983662436803,
+            "stderr_us": 0.28051831549856554
+          }
+        ],
+        "T_us": 11.431983662436803,
+        "stderr_us": 0.28051831549856554,
+        "parameters": [
+          -0.09700320339415977,
+          -0.3732578905414261,
+          11.431983662436803
+        ],
+        "residual_rms": 0.014261148660539782
+      },
+      {
+        "file": "Database\\Q12_2D[10]\\Q1\\2026\\10\\Data_1005\\Q1_t2echo_1005@100513_integer_search_1.hdf5",
+        "complete": true,
+        "max_actual_delay_us": 59.98883928571428,
+        "relax_delay_us": 100.0,
+        "projection": [
+          -0.8455305261126719,
+          0.5339270824856408
+        ],
+        "current_A": -0.00053,
+        "T_us": 5.739386251297815,
+        "stderr_us": 0.2215980761023765,
+        "parameters": [
+          0.3134347652637195,
+          0.2185867640092718,
+          5.739386251297815,
+          0.24863851157158193,
+          -3.091488048071303
+        ],
+        "residual_rms": 0.010914514547621003
+      },
+      {
+        "file": "Database\\Q12_2D[10]\\Q1\\2026\\10\\Data_1005\\Q1_t2ramsey_1005@100513_integer_search_1.hdf5",
+        "complete": true,
+        "max_actual_delay_us": 39.620535714285715,
+        "relax_delay_us": 100.0,
+        "projection": [
+          0.7981648481466124,
+          -0.602439104958414
+        ],
+        "current_A": -0.00053,
+        "T_us": 3.1251251068025785,
+        "stderr_us": 0.13301274335483587,
+        "parameters": [
+          -0.3110775295923293,
+          0.2388640892209357,
+          3.1251251068025785,
+          0.2644777127581339,
+          3.1119606800019035
+        ],
+        "residual_rms": 0.011714370099131843
+      }
+    ]
+  },
+  "limitations": "Case-specific results; native and offline T2 discrepancies remain unresolved. First-point exclusion is sensitivity analysis, not rejection of a runtime-valid quantized coordinate."
+}

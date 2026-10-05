@@ -6,15 +6,21 @@
 
 Flux map 有 extrema 但分支不確定，或 two-tone 自動 fit 選到雜訊、旁峰時，讀 [flux 與 spectroscopy 驗證](experiences/flux-spectroscopy-validation/README.md)。
 
+有限預算下安排 map、pulse 與 coherence，或需要一份帶實測反例的完整路線時，讀 [Q1 真實 bring-up 案例](experiences/coherence-bringup/cases/real-integer-20261005/README.md)。案例含來源清單和精選圖；具體設定不作通用模板。
+
 ## Pulse calibration
 
 判讀 Rabi 的週期、第一個峰、參數誤差或 repeat，以及振盪存在但 fit 不符時，讀 [Rabi fit 驗證](experiences/rabi-fit-validation/README.md)。條目說明同一 Run 的模型比較，並保留 Length Rabi mock 案例與限制。
+
+選 gain 以符合 π／π2 時長、區分執行時設定下限與已量化座標，或規劃 zigzag 獨立檢查，也從同一 [Rabi 條目](experiences/rabi-fit-validation/README.md) 進入。
 
 ## Coherence
 
 判讀 T1 的時間窗口、尾端基線、模型適用性、參數誤差或 repeat 時，讀 [T1 fit 驗證](experiences/t1-fit-validation/README.md)。條目區分重新分析與補量測，說明共用品質指標的限制。
 
 Ramsey／echo 的 baseline 隨 delay 變化、phase 改變後 T2 不一致，或要判斷 IQ 差分是否適用時，讀 [coherence 背景辨別](experiences/coherence-background-validation/README.md)。
+
+T1 慢尾端與 zero-drive reference 的設計，讀 [T1 決策流程](experiences/t1-fit-validation/README.md)。Echo 人工 detune、fringe 取樣及 GUI／離線模型差異，讀 [coherence 擬合辨別](experiences/coherence-background-validation/README.md)。
 
 ## 設定與資料來源
 

@@ -1,0 +1,210 @@
+{
+  "workspace_name": "Qubit-measure",
+  "source_task": ".agent_state/measurement-tasks/20261005-q1-integer-coherence",
+  "files": [
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/flux-coverage.png",
+      "size_bytes": 211714,
+      "sha256": "b95ba95afe7c761f71308acdd8cb2884efbd1dbdfd5d710df8c511a533a00a2a",
+      "knowledge_case_relative": "figures/flux-coverage.png"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/sweetspot.png",
+      "size_bytes": 67025,
+      "sha256": "4c683ae94fbab164b3d7ced912b7f1eb0e6a8941678f05bd7797b1eff584a9dd",
+      "knowledge_case_relative": "figures/sweetspot.png"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/t1-background-check.png",
+      "size_bytes": 92330,
+      "sha256": "8611cac22b6c73ec0a6ebf06d1ba9aff3eb045d7ae76d104e675b819d3b17e8e",
+      "knowledge_case_relative": "figures/t1-background-check.png"
+    },
+    {
+      "source_workspace_relative": "result/Q12_2D[10]/Q1/exps/100513_integer_search/image/Q1_len_rabi_1005__analysis__fit.png",
+      "size_bytes": 180686,
+      "sha256": "29b00d4f1185db548f8450d9350410668e49dd6952c1ae55fcd7d5a64092e8b0",
+      "knowledge_case_relative": "figures/rabi-short.png"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/R1_flux@100513_integer_search_1.hdf5",
+      "size_bytes": 240008,
+      "sha256": "83bc405fbc9d736568410100f7cde230c50bb837568000261436d6f7fc2fab4b"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/R1_flux@100513_integer_search_2.hdf5",
+      "size_bytes": 551256,
+      "sha256": "f95fce376eec364e3902f70604e022c90e4f1441cd3a537ba318a7ca1a01abd8"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/R1_flux@100513_integer_search_3.hdf5",
+      "size_bytes": 448056,
+      "sha256": "1f762803d06e4962485407475371474beb4cfa27d6734e4da9e31fab31729537"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_qubit_freq_1005@100513_integer_search_1.hdf5",
+      "size_bytes": 37544,
+      "sha256": "830f57e17df988ca472a50c5c06aed29d6d028cb3c0963ee9f6edde0477ff31e"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_qubit_freq_1005@100513_integer_search_2.hdf5",
+      "size_bytes": 31304,
+      "sha256": "eadcc0748c770db395cb0c28e36402a3ab0f97f5a8abb9b309465350531df814"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_qubit_freq_1005@100513_integer_search_3.hdf5",
+      "size_bytes": 31304,
+      "sha256": "4241d9a041991673af424c763af7c7921b63e622d88c47a870b6861b5649b816"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_qubit_freq_1005@100513_integer_search_4.hdf5",
+      "size_bytes": 31304,
+      "sha256": "f7b3c2df57362f7822f6b2a2952a9d6c91ce842a900e2468c4853d6160a1d9ba"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_qubit_freq_1005@100513_integer_search_5.hdf5",
+      "size_bytes": 30344,
+      "sha256": "e3f26258c1fe7922eaa6dd70c92df5ececa7b362abe9688f2c9a29ff8a19c975"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_len_rabi_1005@100513_integer_search_1.hdf5",
+      "size_bytes": 39936,
+      "sha256": "1d4ca7ec76c7d56ee0d0af01c5a511be18e9e0ae6fc2fcd69359901da2ec3199"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_len_rabi_1005@100513_integer_search_2.hdf5",
+      "size_bytes": 32736,
+      "sha256": "2f75edadacd6e9b66c20f9ae44871c823f4ea7163db95d0ccb74b663b7e9fb09"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_len_rabi_1005@100513_integer_search_3.hdf5",
+      "size_bytes": 31296,
+      "sha256": "e9ee84d8095c4efd5fd36adc2d84fe7df801b752319198ee42507f680b4d3d64"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_t1_1005@100513_integer_search_1.hdf5",
+      "size_bytes": 30336,
+      "sha256": "802d3b22d3121b70254919a86e9bff8023386fe6b7f39863b4c0af6a4f77c86d"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_t1_1005@100513_integer_search_2.hdf5",
+      "size_bytes": 32736,
+      "sha256": "526a942233562864b0cfa4898af2fa607f50a05eeb87046d23ee57d8ec7f6141"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_t1_1005@100513_integer_search_3.hdf5",
+      "size_bytes": 30336,
+      "sha256": "70730969a06df45c6700768a75a5ffdc7722feb1bcddf926743df3d805411e27"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_t2ramsey_1005@100513_integer_search_1.hdf5",
+      "size_bytes": 31296,
+      "sha256": "e7ded9ee9db8e5bd6635a4b57969bd461b469f68ce7efec1e84b4539cd802101"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_t2ramsey_1005@100513_integer_search_2.hdf5",
+      "size_bytes": 30336,
+      "sha256": "88442d86f3512f129cc6f3bd157e5e7305688f7216d69cdb181c5421e71f0547"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_t2ramsey_1005@100513_integer_search_3.hdf5",
+      "size_bytes": 30336,
+      "sha256": "b7916b0128f2c46e0920d45e168faee163cda5ea8612d3f369824bca94b9909d"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_t2echo_1005@100513_integer_search_1.hdf5",
+      "size_bytes": 32736,
+      "sha256": "43d3946a144afc8302b68d7d803bc6a883c70ad6f5052b77e556233df8589f92"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_t2echo_1005@100513_integer_search_2.hdf5",
+      "size_bytes": 30336,
+      "sha256": "80fd88aad9b92da0c4fa64974267968e7750db2c21ef398ec98e7ae5954c3b62"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/Q1_t1_background@100513_integer_search_1.hdf5",
+      "size_bytes": 30336,
+      "sha256": "77c645d184791dd3993a754f7f0de1208706ad58fde14d7aae3e054cbea4d80b"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/R1_freq_1005@100513_integer_search_1.hdf5",
+      "size_bytes": 35144,
+      "sha256": "d85144682ccc32bc7c599b794efeed16194a82c06c6d995ef1268a1037edfcf2"
+    },
+    {
+      "source_workspace_relative": "Database/Q12_2D[10]/Q1/2026/10/Data_1005/lookback_1354@100513_integer_search_1.hdf5",
+      "size_bytes": 40248,
+      "sha256": "4c9c33f50087e6131a1e3215289e6be2aa5ded395a6a1c43e11b626b832411d4"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/all-drive-coherence-results.json",
+      "size_bytes": 55296,
+      "sha256": "04d7bc54f4b59cbe306084422ec4bc7b807035503596ef5e400ad41b99c3868d"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/final-native-results.json",
+      "size_bytes": 24598,
+      "sha256": "cdee9f5b380ae8f3d33edf6714409b2e3239cc49454d72e62e5624ec11758bb9"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/sweetspot.json",
+      "size_bytes": 589,
+      "sha256": "d39624e343d43c3b1507190332afa5ef17c53436895bfa7b8d7e13e04decc0f8"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/flux-coverage.json",
+      "size_bytes": 647,
+      "sha256": "29a5adc7357afe79b37a58b1f26e2e567f4f3778db4343abda01cccfa5a8baca"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/t1-background-check.json",
+      "size_bytes": 1138,
+      "sha256": "5fe5feac66482d76f9328a35a1d3df2da20efd6ff747ad72f4e933557e97aee7"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/envelope-comparison.json",
+      "size_bytes": 1611,
+      "sha256": "be7f4ceab60e1e9d4455937ac16fba4d79959ec78e5bdf9a430ef13ef1f93117"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/coherence-check.json",
+      "size_bytes": 3238,
+      "sha256": "29d43807281705d74a75193bc146245a0f3171bf2df2a004ee1da8b8cc8abd73"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/plot_sweetspot.py",
+      "size_bytes": 1458,
+      "sha256": "7f2068f9e07fe82641a541376bbf40b4a292c16f8e51aaf7b52a41f98a3d9358"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/plot_flux_coverage.py",
+      "size_bytes": 2572,
+      "sha256": "8177ccbe66358aa6dfe36217318b8b35ed89af1ac9246077ff5626c0c27d2e7b"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/check_background.py",
+      "size_bytes": 2007,
+      "sha256": "f2a1e91d3c1655175fb827876044e529a04e7aafbe5f9dba79420a3378b81aa4"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/compare_envelopes.py",
+      "size_bytes": 2093,
+      "sha256": "efd1002562aae5dc988c8db0a40c8f54eb3b142db1caf5948577c1623ed9635d"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/check_coherence.py",
+      "size_bytes": 3050,
+      "sha256": "81dab557aa68eeff251be285ca74a608aedaf045e98b18a304cc65cb418c8858"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/INDEX.md",
+      "size_bytes": 4145,
+      "sha256": "ede83af1c456e9f26cac3cb233918ff6b099bb45f6405e85ae2028957e73cbb9"
+    },
+    {
+      "source_workspace_relative": ".agent_state/measurement-tasks/20261005-q1-integer-coherence/journal.md",
+      "size_bytes": 5900,
+      "sha256": "a51df98e39aee9e295016499345be078075b7adaec05672e7e05157b176bb0b8"
+    }
+  ]
+}

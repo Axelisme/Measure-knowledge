@@ -34,13 +34,21 @@ C 是常數背景，B 是隨 delay 衰減的背景幅度，A 是 fringe 幅度�
 
 獨立 T1 也有誤差。固定它後得到的 T2r stderr 是條件式誤差，需另報 baseline 假設與敏感性。模型比較的數值見案例，不把此式設成所有 Ramsey 的預設模型。
 
-## Echo 的互補相位差分
+## 人工 detune 與擬合
 
-### 人工 detune 與擬合
+2026-10-05 使用者建議 echo 加入人工 detune，讓訊號在背景上下振盪，更容易辨識 envelope。這是專家方法建議；人工相位造成的振盪不等同物理 drive detuning。使用前依 live adapter guide 確認 detune_ratio 與實際 delay step 的關係，搭配 fringe fit，記錄總 free-evolution delay、人工 fringe frequency 及 phase 設定。上下對稱有助於辨認背景，但不能單獨證明背景恆定或消除模型偏差。
 
-2026-10-05 使用者建議 echo 加入人工 detune，讓訊號在背景上下振盪，更容易辨識 envelope。這是專家方法建議；人工相位造成的振盪不等同物理 drive detuning。使用前依 live adapter guide 確認 detune_ratio 與實際 delay step 的關係，搭配 fringe fit，記錄總 free-evolution delay、人工 fringe frequency 及 phase 設定。上下對稱有助於辨認背景，但不能單獨证明背景恆定或消除模型偏差。
+當次 adapter 定義 `f_artificial = detune_ratio / actual_delay_step`，時間以 µs 計時頻率為 MHz。固定 ratio 但改窗口或點數會改變 fringe frequency；比較 repeat 時需要把這項差異記下。選擇能在可見 envelope 中解析足夠振盪、每週期又有足夠樣點的設定；只有滿足 Nyquist 並不保證 envelope 可辨識。Ratio 為零時用 decay fit；非零時核對 fringe fit 與 phase 選項，不能只改 cfg 而沿用不相符的分析。
 
-### 互補相位對照
+Ramsey 的人工相位與真實 frequency offset 同時影響 fringe。依 live guide 的符號慣例計算 frequency 修正，必要時用另一人工 detune 交叉檢查。寫回 `q_f` 不代表 library 的 π／π2 pulse frequency 自動更新；見 [校準來源](../calibration-provenance/README.md)。Echo 的人工 fringe 不用來照搬 Ramsey 的 qubit-frequency 修正式。
+
+## GUI 與離線 fit 不一致時
+
+先對齊 raw、實際時間軸、drop／skip 點、線性投影、normalization、模型方程、固定／自由 phase、權重及參數 bounds／initial guesses。相同選項名稱不保證完全相同的模型或 optimizer 行為。用同一資料和觀測量比較候選模型時，才可解讀 residual、AIC 等相對證據；不能把不同轉換後的指標直接排序。
+
+分清 envelope 形式，例如 `exp(-t/T)` 與 `exp(-(t/T)^2)`；兩者的參數定義需附方程。較低 residual 不能單獨識別噪音機制。[真實案例](../coherence-bringup/cases/real-integer-20261005/README.md) 保留 GUI／離線差異，尚未確定成因，也沒有因較小 stderr 就覆蓋原生值。預算不足時交付模型條件與差異，後續先解析差異，避免只補 averages。
+
+## Echo 的互補相位對照
 
 若兩個 sequence 的 coherence contrast 反號，而背景不變，可寫成：
 
