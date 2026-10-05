@@ -40,6 +40,12 @@ Writeback 前讀目的地和完整候選集合，不推測未勾選候選一定�
 
 以上不是允許跳過 guard、繞過 MCP 或忽略錯誤的理由。當次保存資料中應同時記錄 requested 與 actual 軸；執行時設定下限與量化座標的區別，見 [Rabi](../rabi-fit-validation/README.md)。實驗提供的軸已量化時不再二次量化，也不僅憑座標與名義下限的小差異判定 Run 無效。
 
+## Pulse 長度上限的層次
+
+長 spectroscopy probe 也可能有單指令 pulse duration 上限，不能只看波形記憶體或 coherent pulse 的下限。2026-10-05 Q12_2D[10]/Q1、QICK0.2.394、ch2 const pulse 的 runtime 明確拒絕1000us（599040cycles，錯誤指出超過2**16），而100us可完成；當時SoC公開資訊的fabric clock為599.04MHz，故單pulse約109us是該配置的上限尺度。這是當次硬體／韌體觀察，不是所有channel或waveform通用常數。
+
+設定遭runtime拒絕後，核對operation失敗與result來源，不能把tab殘留上一輪result另存成新量測。回到已驗證範圍並比較gain、averages或其他公開支持的序列；不假定GUI可輸入的數字代表硬體一定可執行，也不把max envelope size誤當const pulse duration限制。失敗來源記於當次twotone任務journal的16:03條目（op146），沒有新raw。
+
 ## Repeat 與條件比較的標記
 
 ### Reps 與 rounds 的成本／觀察取捨
