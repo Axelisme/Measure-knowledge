@@ -10,6 +10,8 @@ Flux map 有 extrema 但分支不確定，或 two-tone 自動 fit 選到雜訊�
 
 ## Pulse calibration
 
+Readout gain 最佳點碰到掃描邊界、length 要在短窗口與 SNR 間取捨，或準備 two-tone／flux map 的讀出條件時，讀 [readout 優化](experiences/readout-optimization/README.md)。
+
 判讀 Rabi 的週期、第一個峰、參數誤差或 repeat，以及振盪存在但 fit 不符時，讀 [Rabi fit 驗證](experiences/rabi-fit-validation/README.md)。條目說明同一 Run 的模型比較，並保留 Length Rabi mock 案例與限制。
 
 選 gain 以符合 π／π2 時長、區分執行時設定下限與已量化座標，或規劃 zigzag 獨立檢查，也從同一 [Rabi 條目](experiences/rabi-fit-validation/README.md) 進入。
