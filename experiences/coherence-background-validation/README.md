@@ -36,6 +36,12 @@ C 是常數背景，B 是隨 delay 衰減的背景幅度，A 是 fringe 幅度�
 
 ## Echo 的互補相位差分
 
+### 人工 detune 與擬合
+
+2026-10-05 使用者建議 echo 加入人工 detune，讓訊號在背景上下振盪，更容易辨識 envelope。這是專家方法建議；人工相位造成的振盪不等同物理 drive detuning。使用前依 live adapter guide 確認 detune_ratio 與實際 delay step 的關係，搭配 fringe fit，記錄總 free-evolution delay、人工 fringe frequency 及 phase 設定。上下對稱有助於辨認背景，但不能單獨证明背景恆定或消除模型偏差。
+
+### 互補相位對照
+
 若兩個 sequence 的 coherence contrast 反號，而背景不變，可寫成：
 
 ```text

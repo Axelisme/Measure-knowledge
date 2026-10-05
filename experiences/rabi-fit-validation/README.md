@@ -21,7 +21,15 @@ Length Rabi 已顯示振盪，但自動 fit 幾乎平坦、擬合頻率與目視
 
 這個案例支持局部 fit 失敗的判斷，不能證明所有 qubit 都應開啟 phase。自由 phase 也不等於已校正 pulse fidelity；T1 一致不能替代獨立 π pulse fidelity 量測。沒有檢查 fit 實作或模擬器真值。案例中約 20 us 的 T1 只屬於該 mock 工作點，不是通用門檻；判讀 T1 的窗口與尾端時讀 [T1 fit 驗證](../t1-fit-validation/README.md)。
 
-## 恢復等待時間也是校準條件
+## 依 pulse 時間尺度選 gain
+
+2026-10-05 使用者對 Q12_2D[10]/Q1 真實硬體建議：Rabi 校準後的 pulse length 儘量控制在 0.05–0.2 µs，該次硬體不能短於 0.03 µs；過長 pulse 會受 T2 影響。這是使用者提供的當次硬體限制與專家建議，不是所有設備的通用下限。調 gain 後重新校準，並同時檢查 π 與 π/2 都在有效長度範圍；不要只讓 π 合格而使 π/2 短於限制。Rabi sweep 的窗口仍需涵蓋足夠振盪以辨識週期。
+
+## Pulse 的獨立檢查
+
+2026-10-05 使用者建議以 zigzag 實驗檢查 Rabi pulse 是否正常。這是待依實驗定義執行的專家建議，不能把一次 Rabi 擬合良好當成已通過 zigzag。先查 live adapter 的可用入口、sequence 與 phase convention；該次 measure-gui adapter.list 沒有提供 zigzag，尚未執行。若後續版本提供入口，再依當次預算與硬體授權安排。
+
+## 恢復等待條件的對照
 
 已有足夠振盪而 residual 仍有結構時，不要只增加 fit 自由度。用暫定 pulse 取得 T1 初估後，檢查 repetition／recovery wait 是否影響起始狀態。確認等待時間在 sequence 中的位置，以及實際 repetition interval 是否包含 pulse、讀出與額外 delay。T1 只提供一個時間尺度，不能單靠固定倍數保證 reset；熱激發、leakage 或其他慢過程仍需另外辨別。
 
