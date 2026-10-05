@@ -1,0 +1,415 @@
+{
+  "fq_mhz": 581.8489964353178,
+  "thermal_pe": 0.38570420529187416,
+  "gamma_per_us": 0.058333333333333334,
+  "saved_runs": {
+    "allxy-baseline": {
+      "coherent": {
+        "residual_rms": 3.1211345659277527,
+        "normalized_residual_rms": 0.03223117436666764,
+        "readout_offset": 711.2421662488057,
+        "readout_scale": 200.71985306861586
+      },
+      "T1_only": {
+        "residual_rms": 2.257381147211221,
+        "normalized_residual_rms": 0.02331140930675185,
+        "readout_offset": 710.9223277178403,
+        "readout_scale": 216.748944936478
+      },
+      "T1_T2": {
+        "residual_rms": 2.0367783579508547,
+        "normalized_residual_rms": 0.02103329959496806,
+        "readout_offset": 711.109759142389,
+        "readout_scale": 224.38515246286667
+      },
+      "full_41": {
+        "residual_rms": 2.043035724086792,
+        "normalized_residual_rms": 0.02109791784667856,
+        "readout_offset": 710.0378360312084,
+        "readout_scale": 232.92665477371432
+      },
+      "full_padded": {
+        "residual_rms": 0.6981140882698814,
+        "normalized_residual_rms": 0.007209249211004574,
+        "readout_offset": 708.4199983761631,
+        "readout_scale": 244.00280318781915
+      },
+      "current_fit": {
+        "False": {
+          "power_param": -0.13930562377209224,
+          "detune_param": 0.009193368642219223,
+          "power_err": 0.1508241504567495,
+          "detune_err": 0.0035539688909899925,
+          "normalized_residual_rms": 0.036767560942795964
+        },
+        "True": {
+          "power_param": -0.11742166707514544,
+          "detune_param": 0.009249259004279971,
+          "power_err": 0.12297032551945869,
+          "detune_err": 0.0035758913881687162,
+          "normalized_residual_rms": 0.025597194427296157
+        }
+      }
+    },
+    "allxy-baseline-repeat": {
+      "coherent": {
+        "residual_rms": 2.816545516943194,
+        "normalized_residual_rms": 0.02889527682051212,
+        "readout_offset": 711.7925936132758,
+        "readout_scale": 199.7411473569248
+      },
+      "T1_only": {
+        "residual_rms": 2.0138232731617953,
+        "normalized_residual_rms": 0.02066005345752539,
+        "readout_offset": 711.4741568496946,
+        "readout_scale": 215.6033932276432
+      },
+      "T1_T2": {
+        "residual_rms": 1.8004905068983619,
+        "normalized_residual_rms": 0.01847144713144774,
+        "readout_offset": 711.6605576272901,
+        "readout_scale": 223.1835610731663
+      },
+      "full_41": {
+        "residual_rms": 1.7397663457254904,
+        "normalized_residual_rms": 0.017848470710073294,
+        "readout_offset": 710.5943069343933,
+        "readout_scale": 231.71096239908556
+      },
+      "full_padded": {
+        "residual_rms": 0.5654006581259031,
+        "normalized_residual_rms": 0.005800512873933154,
+        "readout_offset": 708.9860350923769,
+        "readout_scale": 242.599970069491
+      },
+      "current_fit": {
+        "False": {
+          "power_param": -0.13936195805326831,
+          "detune_param": 0.003283257063368055,
+          "power_err": 0.15089785366389624,
+          "detune_err": 0.0012573628396896767,
+          "normalized_residual_rms": 0.04009324096709398
+        },
+        "True": {
+          "power_param": -0.1125343471751829,
+          "detune_param": 0.0032964575993469684,
+          "power_err": 0.11696159738829563,
+          "detune_err": 0.001262444779277137,
+          "normalized_residual_rms": 0.024030543417591674
+        }
+      }
+    },
+    "allxy-candidate": {
+      "coherent": {
+        "residual_rms": 2.9375808767634397,
+        "normalized_residual_rms": 0.02960487612536993,
+        "readout_offset": 710.9292375404477,
+        "readout_scale": 200.13181840259745
+      },
+      "T1_only": {
+        "residual_rms": 2.2130665030788994,
+        "normalized_residual_rms": 0.022303236039935757,
+        "readout_offset": 710.6499619960927,
+        "readout_scale": 216.58024014230745
+      },
+      "T1_T2": {
+        "residual_rms": 2.0345738907095217,
+        "normalized_residual_rms": 0.02050439137823195,
+        "readout_offset": 710.8727761217915,
+        "readout_scale": 224.00595710797887
+      },
+      "full_41": {
+        "residual_rms": 2.0042022174165326,
+        "normalized_residual_rms": 0.020198306315971533,
+        "readout_offset": 709.8885646059463,
+        "readout_scale": 232.46741374293111
+      },
+      "full_padded": {
+        "residual_rms": 0.7897146786547333,
+        "normalized_residual_rms": 0.007958727339523875,
+        "readout_offset": 708.2498567593914,
+        "readout_scale": 244.50143789995187
+      },
+      "current_fit": {
+        "False": {
+          "power_param": -0.037465940074298223,
+          "detune_param": 0.0021055353688325435,
+          "power_err": 0.03438631466521423,
+          "detune_err": 0.0008048222977172796,
+          "normalized_residual_rms": 0.04816094035757017
+        },
+        "True": {
+          "power_param": -0.008016500897408978,
+          "detune_param": 0.002084758455608294,
+          "power_err": 0.006975333423764705,
+          "detune_err": 0.0007968539933586307,
+          "normalized_residual_rms": 0.025825637208932543
+        }
+      }
+    },
+    "allxy-plus10pct": {
+      "coherent": {
+        "residual_rms": 2.931325793928958,
+        "normalized_residual_rms": 0.02935487942254514,
+        "readout_offset": 710.9666853416979,
+        "readout_scale": 200.56738196057165
+      },
+      "T1_only": {
+        "residual_rms": 2.0768080964274245,
+        "normalized_residual_rms": 0.020797569270756416,
+        "readout_offset": 710.6863337143976,
+        "readout_scale": 217.20191547749116
+      },
+      "T1_T2": {
+        "residual_rms": 1.8512330696872898,
+        "normalized_residual_rms": 0.018538616095231455,
+        "readout_offset": 710.916566450539,
+        "readout_scale": 224.5020749186982
+      },
+      "full_41": {
+        "residual_rms": 1.8516251254687026,
+        "normalized_residual_rms": 0.01854254221979056,
+        "readout_offset": 709.968376003883,
+        "readout_scale": 232.90989430806366
+      },
+      "full_padded": {
+        "residual_rms": 0.7310142581738408,
+        "normalized_residual_rms": 0.007320522150522327,
+        "readout_offset": 708.3194856310456,
+        "readout_scale": 245.5396350276307
+      },
+      "current_fit": {
+        "False": {
+          "power_param": 0.019439701403049448,
+          "detune_param": -0.001440463767978952,
+          "power_err": 0.017274442520792403,
+          "detune_err": 0.000550018158762459,
+          "normalized_residual_rms": 0.048938880762010285
+        },
+        "True": {
+          "power_param": 0.04058727872832605,
+          "detune_param": -0.0014473071299843918,
+          "power_err": 0.0374561972250132,
+          "detune_err": 0.0005526372500611136,
+          "normalized_residual_rms": 0.02625090979595294
+        }
+      }
+    }
+  },
+  "synthetic_ablation": {
+    "coherent": {
+      "False": {
+        "power_param": -0.08876522408142734,
+        "detune_param": 0.0017640483413769988,
+        "power_err": 0.08884138303225601,
+        "detune_err": 0.0006739231720228369,
+        "normalized_residual_rms": 0.003967967613302439
+      },
+      "True": {
+        "power_param": -0.08609121599696604,
+        "detune_param": 0.0017694282727958128,
+        "power_err": 0.08579236199942011,
+        "detune_err": 0.0006759843055389726,
+        "normalized_residual_rms": 0.002188598296432597
+      }
+    },
+    "T1_only": {
+      "False": {
+        "power_param": -0.10806308180113156,
+        "detune_param": 0.0018487743181840992,
+        "power_err": 0.11153213716497817,
+        "detune_err": 0.0007063870967158753,
+        "normalized_residual_rms": 0.01861138043023891
+      },
+      "True": {
+        "power_param": -0.10104369618678569,
+        "detune_param": 0.0018236530472552207,
+        "power_err": 0.10313908103291028,
+        "detune_err": 0.0006967606193208726,
+        "normalized_residual_rms": 0.01243873789156351
+      }
+    },
+    "T1_T2": {
+      "False": {
+        "power_param": -0.1190954290653166,
+        "detune_param": 0.001849585950542112,
+        "power_err": 0.12504591641906013,
+        "detune_err": 0.0007066981273247932,
+        "normalized_residual_rms": 0.0271355913695276
+      },
+      "True": {
+        "power_param": -0.10552865326044923,
+        "detune_param": 0.0018172362714126372,
+        "power_err": 0.10848332595680316,
+        "detune_err": 0.0006943018330608461,
+        "normalized_residual_rms": 0.016529559440869937
+      }
+    },
+    "full_41": {
+      "False": {
+        "power_param": -0.11646332117644971,
+        "detune_param": 0.0018333270773959402,
+        "power_err": 0.12178598844177888,
+        "detune_err": 0.0007004676186560998,
+        "normalized_residual_rms": 0.03385531150370851
+      },
+      "True": {
+        "power_param": -0.09710140766682382,
+        "detune_param": 0.0017983298241230094,
+        "power_err": 0.09849526536250977,
+        "detune_err": 0.0006870575356909311,
+        "normalized_residual_rms": 0.01938003557040249
+      }
+    },
+    "full_padded": {
+      "False": {
+        "power_param": -0.13854385287126425,
+        "detune_param": 0.002479167387301737,
+        "power_err": 0.14982852016232617,
+        "detune_err": 0.0009482068178772779,
+        "normalized_residual_rms": 0.03879873540646881
+      },
+      "True": {
+        "power_param": -0.1123092080068302,
+        "detune_param": 0.0024971532219231598,
+        "power_err": 0.1166866630013844,
+        "detune_err": 0.0009551133488851749,
+        "normalized_residual_rms": 0.023265665250431476
+      }
+    }
+  },
+  "angle_convention": [
+    {
+      "relative_gain_error": -0.1,
+      "pi2_angle_error_rad": -0.15707963267948966,
+      "fit": {
+        "power_param": -0.15097359005129182,
+        "detune_param": 2.594056442358657e-10,
+        "power_err": 0.16630892701354383,
+        "detune_err": 9.882119782289751e-11,
+        "normalized_residual_rms": 0.0069287227498640944
+      }
+    },
+    {
+      "relative_gain_error": -0.05,
+      "pi2_angle_error_rad": -0.07853981633974483,
+      "fit": {
+        "power_param": -0.07761244096137662,
+        "detune_param": -6.450254274717595e-11,
+        "power_err": 0.07627759195391462,
+        "detune_err": 2.4572397238179222e-11,
+        "normalized_residual_rms": 0.0019307786333359808
+      }
+    },
+    {
+      "relative_gain_error": 0.01,
+      "pi2_angle_error_rad": 0.015707963267948967,
+      "fit": {
+        "power_param": 0.015694200232186362,
+        "detune_param": 2.064184974879899e-12,
+        "power_err": 0.013850955880519286,
+        "detune_err": 7.86356180907816e-13,
+        "normalized_residual_rms": 8.063987326718343e-05
+      }
+    },
+    {
+      "relative_gain_error": 0.05,
+      "pi2_angle_error_rad": 0.07853981633974483,
+      "fit": {
+        "power_param": 0.07749095687081121,
+        "detune_param": 4.079173642986108e-11,
+        "power_err": 0.07614295567448737,
+        "detune_err": 1.55397091166014e-11,
+        "normalized_residual_rms": 0.001909438059667209
+      }
+    },
+    {
+      "relative_gain_error": 0.1,
+      "pi2_angle_error_rad": 0.15707963267948966,
+      "fit": {
+        "power_param": 0.15105933954332,
+        "detune_param": -1.0705607922041632e-10,
+        "power_err": 0.16642435856813037,
+        "detune_err": 4.078326827763919e-11,
+        "normalized_residual_rms": 0.0068811937470546055
+      }
+    }
+  ],
+  "multistart": [
+    {
+      "params": [
+        -0.13930571531185765,
+        0.009192873166906063
+      ],
+      "rms": 3.5604196129831385
+    },
+    {
+      "params": [
+        -0.1393058895103617,
+        0.009193108239592868
+      ],
+      "rms": 3.5604196129724013
+    },
+    {
+      "params": [
+        -0.13930572756102297,
+        0.009193675423038996
+      ],
+      "rms": 3.560419612953933
+    },
+    {
+      "params": [
+        -0.13930559423115169,
+        0.009193339988649067
+      ],
+      "rms": 3.5604196129536647
+    },
+    {
+      "params": [
+        -0.13930562377209224,
+        0.009193368642219223
+      ],
+      "rms": 3.5604196129475456
+    },
+    {
+      "params": [
+        -0.1393055995909189,
+        0.009193382078795186
+      ],
+      "rms": 3.5604196129522623
+    },
+    {
+      "params": [
+        -0.13930549556877192,
+        0.009193356200422227
+      ],
+      "rms": 3.5604196129836483
+    },
+    {
+      "params": [
+        -0.13930552408080207,
+        0.009193360120144305
+      ],
+      "rms": 3.5604196129732366
+    },
+    {
+      "params": [
+        -0.1393054996218067,
+        0.00919335848348137
+      ],
+      "rms": 3.560419612982064
+    }
+  ],
+  "nominal_rotation": {
+    "pi": {
+      "gain": 0.3,
+      "length_us": 1.2567839862228478,
+      "relative_area_error": -0.05741201033286414
+    },
+    "pi2": {
+      "gain": 0.3,
+      "length_us": 0.6312878998723751,
+      "relative_area_error": -0.05306815019143751
+    }
+  }
+}
