@@ -15,6 +15,16 @@
 
 原始 argmax、人工選擇的工作值與選擇理由分開保存。若 GUI scalar 名稱仍叫 best_ro_length，另記它是短窗口取捨值；同步核對 ModuleLibrary 的 pulse length、RO length、frequency、gain 和 trigger，而不是只改 MetaDict。
 
+## 沒有當地 g/e pulse 校準時的 spectroscopy 診斷
+
+Flux 改變後若 qubit line 消失，清楚的 one-tone dip 只驗證讀出共振可找到，不能證明 g/e 對比仍足夠；integer 的最佳RO也不保證適用整段flux。尚無可信當地f01／π pulse時，不把預設g/e優化程式的SNR當作已校準的判據。可先用可重現的spectral feature及相鄰flux連續性比較讀出條件，稱為spectroscopy可見度診斷。
+
+功率、積分窗口和頻率都值得納入有限的辨別實驗，而非只增加probe或averages。2026-10-05真實Q1在6.8mA的較早ROgain.08／integration1.1us條件下缺乏可信峰，ROgain.02／integration3us的組合恢復明顯IQ峰；drive.15／10us時原生中心約530.555MHz，後續五個相鄰flux點也有連續線。這支持新組合可用，未單獨證實是gain或length造成改善，亦未驗證其他flux可直接沿用。
+
+反例是同任務5.6mA：較低RO及較強drive後仍只有寬弱Q結構，把integration3us縮到.4us（pulse3.2→.6us）增加雜訊而未改善可辨識度。不能一律認為長window較好，也不能由短window控制就確診快速T1或讀出混合；幾組有辨別力的控制後應回到相鄰區域及批次map，避免無限單點調參。
+
+來源：`.agent_state/measurement-tasks/20261005-q1-twotone-fluxdep/journal.md`；rawfreq27/28、rawflux13為恢復案例，rawfreq42–44為5.6mA反例。更多流程見[局部失線的決策](../flux-spectroscopy-validation/README.md#譜線在局部-flux-區域消失的決策流程)。
+
 ## 依據與限制
 
 2026-10-05 使用者於 Q12_2D[10]/Q1 任務修正：「ro_gain的掃描範圍似乎不夠大，還沒收斂。而ro_length通常snr會趨緩，建議取兼顧長度足夠短同時snr足夠的點」。這是專家建議；SNR 必然單調或必然形成平台不在此主張內。
