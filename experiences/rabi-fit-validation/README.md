@@ -27,6 +27,10 @@ Length Rabi 已顯示振盪，但自動 fit 幾乎平坦、擬合頻率與目視
 
 ## 選 gain 與核對量化
 
+同日使用者進一步提供常用起始gain範圍：**-0.3至1.0**。在相同平台可優先以此作初始掃描，再依該工作點實測週期、可辨識度與硬體限制調整。約1.5週期是設計取捨，不是必須裁切到的硬性值；固定gain範圍在不同flux／pulse length不會對應固定週期數。
+
+2026-10-05使用者補充amplitude Rabi的掃描設計：gain range可從負值開始，幫助擬合涵蓋完整週期；整體窗口約1.5個Rabi週期，以兼顧校準品質與gate length。固定pulse length、近共振且gain響應近線性時，gain週期約為2×π gain，故1.5週期的span約3×π gain。例如π gain約.30時，可試-.15至+.75（span .90）。這是專家提供的起始設計，不是每點必須固定同一範圍；核對signed gain支援與硬體幅度限制，依實測週期調整。負gain仍是signed drive，不能把軸取絕對值折疊，也不因前段為負值就使用skip移除。核對零點兩側、候選極值及actual gain軸，未驗證的範圍設計不等於擬合或gate已合格。
+
 2026-10-05使用者補充：在本平台，length Rabi的時長掃描有約10ns量級的量化，而gain解析度更細，故X180／X90等gate優先使用amplitude Rabi；length Rabi先用於選擇合適固定時長與gain搜尋範圍。這是使用者的硬體經驗與操作偏好；實際量化仍以各channel保存的軸及公開硬體資訊核對，不把10ns當成所有channel的精確常數。固定時長後分別驗證π／π2 gain，必要時以Zigzag檢查累積誤差；gain數位解析度較細本身不等於已證明gate fidelity較高。
 
 若同一工作點已有可信 Rabi 週期，在局部近似線性 drive 響應下，可用 `g_new ≈ g_old × t_pi_old / t_pi_target` 提出下一個 gain。這只用於設計下一輪；非線性、失諧、pulse shaping 與 leakage 都會破壞比例，必須重新量測。目標需同時容納 π、π/2 的建議時長，並符合執行時的設定限制。
