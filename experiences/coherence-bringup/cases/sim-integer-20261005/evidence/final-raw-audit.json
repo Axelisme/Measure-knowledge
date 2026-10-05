@@ -1,0 +1,222 @@
+[
+  {
+    "path": "Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_t1_1005@integer_flux_from_zero_2.hdf5",
+    "bytes": 32736,
+    "flux": 0.002499873573093248,
+    "relax_delay_us": 99.93307432487185,
+    "time_range_us": [
+      0.0,
+      99.74888392857143
+    ],
+    "points": 301,
+    "pulses": {
+      "pi_pulse": {
+        "freq": 5423.391831416881,
+        "gain": 0.3,
+        "phase": 0.0,
+        "waveform": {
+          "style": "const",
+          "length": 1.223552342038992
+        }
+      }
+    },
+    "detune_ratio": null
+  },
+  {
+    "path": "Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_t1_1005@integer_flux_from_zero_3.hdf5",
+    "bytes": 35136,
+    "flux": 0.002499873573093248,
+    "relax_delay_us": 99.93307432487185,
+    "time_range_us": [
+      0.0,
+      149.73958333333334
+    ],
+    "points": 401,
+    "pulses": {
+      "pi_pulse": {
+        "freq": 5423.391831416881,
+        "gain": 0.3,
+        "phase": 0.0,
+        "waveform": {
+          "style": "const",
+          "length": 1.223552342038992
+        }
+      }
+    },
+    "detune_ratio": null
+  },
+  {
+    "path": "Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_t2ramsey_1005@integer_flux_from_zero_2.hdf5",
+    "bytes": 35136,
+    "flux": 0.002499873573093248,
+    "relax_delay_us": 99.93307432487185,
+    "time_range_us": [
+      0.0,
+      79.98511904761905
+    ],
+    "points": 401,
+    "pulses": {
+      "pi2_pulse": {
+        "freq": 5423.391831416881,
+        "gain": 0.3,
+        "phase": 0.0,
+        "waveform": {
+          "style": "const",
+          "length": 0.6150879115603475
+        }
+      }
+    },
+    "detune_ratio": null
+  },
+  {
+    "path": "Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_t2ramsey_1005@integer_flux_from_zero_3.hdf5",
+    "bytes": 35136,
+    "flux": 0.002499873573093248,
+    "relax_delay_us": 99.93307432487185,
+    "time_range_us": [
+      0.0,
+      79.98511904761905
+    ],
+    "points": 401,
+    "pulses": {
+      "pi2_pulse": {
+        "freq": 5423.391831416881,
+        "gain": 0.3,
+        "phase": 0.0,
+        "waveform": {
+          "style": "const",
+          "length": 0.6150879115603475
+        }
+      }
+    },
+    "detune_ratio": null
+  },
+  {
+    "path": "Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_t2echo_1005@integer_flux_from_zero_6.hdf5",
+    "bytes": 32736,
+    "flux": 0.002499873573093248,
+    "relax_delay_us": 150.0,
+    "time_range_us": [
+      0.0,
+      99.05133928571428
+    ],
+    "points": 301,
+    "pulses": {
+      "pi2_pulse": {
+        "freq": 5423.391831416881,
+        "gain": 0.3,
+        "phase": 0.0,
+        "waveform": {
+          "style": "const",
+          "length": 0.6150879115603475
+        }
+      },
+      "pi_pulse": {
+        "freq": 5423.391831416881,
+        "gain": 0.3,
+        "phase": 0.0,
+        "waveform": {
+          "style": "const",
+          "length": 1.223552342038992
+        }
+      }
+    },
+    "detune_ratio": null
+  },
+  {
+    "path": "Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_t2echo_1005@integer_flux_from_zero_7.hdf5",
+    "bytes": 32736,
+    "flux": 0.002499873573093248,
+    "relax_delay_us": 150.0,
+    "time_range_us": [
+      0.0,
+      99.05133928571428
+    ],
+    "points": 301,
+    "pulses": {
+      "pi2_pulse": {
+        "freq": 5423.391831416881,
+        "gain": 0.3,
+        "phase": 0.0,
+        "waveform": {
+          "style": "const",
+          "length": 0.6150879115603475
+        }
+      },
+      "pi_pulse": {
+        "freq": 5423.391831416881,
+        "gain": 0.3,
+        "phase": 90.0,
+        "waveform": {
+          "style": "const",
+          "length": 1.223552342038992
+        }
+      }
+    },
+    "detune_ratio": null
+  },
+  {
+    "path": "Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_t2echo_1005@integer_flux_from_zero_8.hdf5",
+    "bytes": 32736,
+    "flux": 0.002499873573093248,
+    "relax_delay_us": 150.0,
+    "time_range_us": [
+      0.0,
+      99.05133928571428
+    ],
+    "points": 301,
+    "pulses": {
+      "pi2_pulse": {
+        "freq": 5423.391831416881,
+        "gain": 0.3,
+        "phase": 0.0,
+        "waveform": {
+          "style": "const",
+          "length": 0.6150879115603475
+        }
+      },
+      "pi_pulse": {
+        "freq": 5423.391831416881,
+        "gain": 0.3,
+        "phase": 90.0,
+        "waveform": {
+          "style": "const",
+          "length": 1.223552342038992
+        }
+      }
+    },
+    "detune_ratio": null
+  },
+  {
+    "path": "Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_t2echo_1005@integer_flux_from_zero_9.hdf5",
+    "bytes": 32736,
+    "flux": 0.002499873573093248,
+    "relax_delay_us": 150.0,
+    "time_range_us": [
+      0.0,
+      99.05133928571428
+    ],
+    "points": 301,
+    "pulses": {
+      "pi2_pulse": {
+        "freq": 5423.391831416881,
+        "gain": 0.3,
+        "phase": 0.0,
+        "waveform": {
+          "style": "const",
+          "length": 0.6150879115603475
+        }
+      },
+      "pi_pulse": {
+        "freq": 5423.391831416881,
+        "gain": 0.3,
+        "phase": 0.0,
+        "waveform": {
+          "style": "const",
+          "length": 1.223552342038992
+        }
+      }
+    },
+    "detune_ratio": null
+  }
+]

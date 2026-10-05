@@ -1,0 +1,574 @@
+{
+  "echo_a": {
+    "parameters": {
+      "offset": 0.23119856638233285,
+      "amplitude": 266.574228813157,
+      "t2echo_us": 14.34529093423201
+    },
+    "stderr": {
+      "offset": 0.19581373263227134,
+      "amplitude": 0.6619527022844551,
+      "t2echo_us": 0.065444788520367
+    },
+    "r2": 0.9986820700064319,
+    "residual_rms": 2.220310755720208,
+    "n_points": 301,
+    "time_range_us": [
+      0.0,
+      99.05133928571428
+    ],
+    "sources": [
+      "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_t2echo_1005@integer_flux_from_zero_6.hdf5",
+      "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_t2echo_1005@integer_flux_from_zero_7.hdf5"
+    ],
+    "method": "linear IQ projection of phase90 minus phase0",
+    "projection_angle_rad": 0.7509796830915448,
+    "window_checks": [
+      {
+        "parameters": {
+          "offset": 0.31471767509451365,
+          "amplitude": 266.5663758536905,
+          "t2echo_us": 14.328004633652657
+        },
+        "stderr": {
+          "offset": 0.39151779827430133,
+          "amplitude": 0.6721743049788537,
+          "t2echo_us": 0.08906350606691574
+        },
+        "r2": 0.998948983717039,
+        "residual_rms": 2.2133294207751466,
+        "n_points": 182,
+        "time_range_us": [
+          0.0,
+          59.76097470238095
+        ]
+      },
+      {
+        "parameters": {
+          "offset": 0.45391964739232005,
+          "amplitude": 266.5281087241567,
+          "t2echo_us": 14.302323170833992
+        },
+        "stderr": {
+          "offset": 0.25487362922551765,
+          "amplitude": 0.6685061071477939,
+          "t2echo_us": 0.07287090900465557
+        },
+        "r2": 0.9988092961002462,
+        "residual_rms": 2.2338106722995685,
+        "n_points": 243,
+        "time_range_us": [
+          0.0,
+          79.90141369047619
+        ]
+      },
+      {
+        "parameters": {
+          "offset": 0.12118044409589926,
+          "amplitude": 265.14624806480344,
+          "t2echo_us": 14.443695203497981
+        },
+        "stderr": {
+          "offset": 0.1968700571191824,
+          "amplitude": 0.7834796978804108,
+          "t2echo_us": 0.07196186009261919
+        },
+        "r2": 0.9984623287061515,
+        "residual_rms": 2.1901999614866274,
+        "n_points": 297,
+        "time_range_us": [
+          1.320684523809524,
+          99.05133928571428
+        ]
+      },
+      {
+        "parameters": {
+          "offset": 0.0996395839771052,
+          "amplitude": 264.7950364005705,
+          "t2echo_us": 14.46495222039176
+        },
+        "stderr": {
+          "offset": 0.20275208162269737,
+          "amplitude": 1.0476028503324255,
+          "t2echo_us": 0.08391064429831337
+        },
+        "r2": 0.9979779697758157,
+        "residual_rms": 2.202032703205467,
+        "n_points": 291,
+        "time_range_us": [
+          3.3017113095238098,
+          99.05133928571428
+        ]
+      }
+    ]
+  },
+  "echo_b": {
+    "parameters": {
+      "offset": -0.10701566060904846,
+      "amplitude": 267.8495862078051,
+      "t2echo_us": 14.353297385340095
+    },
+    "stderr": {
+      "offset": 0.1899573819173252,
+      "amplitude": 0.6417706301427653,
+      "t2echo_us": 0.06319621127525207
+    },
+    "r2": 0.9987726105239528,
+    "residual_rms": 2.1531878760988308,
+    "n_points": 301,
+    "time_range_us": [
+      0.0,
+      99.05133928571428
+    ],
+    "sources": [
+      "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_t2echo_1005@integer_flux_from_zero_9.hdf5",
+      "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_t2echo_1005@integer_flux_from_zero_8.hdf5"
+    ],
+    "method": "linear IQ projection of phase90 minus phase0",
+    "projection_angle_rad": 0.7534888246459335,
+    "window_checks": [
+      {
+        "parameters": {
+          "offset": 0.5455080572537494,
+          "amplitude": 267.61483044324,
+          "t2echo_us": 14.240813123393737
+        },
+        "stderr": {
+          "offset": 0.3793644690324737,
+          "amplitude": 0.6575004237092131,
+          "t2echo_us": 0.08586177871731379
+        },
+        "r2": 0.999005314579107,
+        "residual_rms": 2.1601186176824965,
+        "n_points": 182,
+        "time_range_us": [
+          0.0,
+          59.76097470238095
+        ]
+      },
+      {
+        "parameters": {
+          "offset": -0.052710815841890815,
+          "amplitude": 267.8399393951781,
+          "t2echo_us": 14.342665264754752
+        },
+        "stderr": {
+          "offset": 0.24406936849106214,
+          "amplitude": 0.6378405730856389,
+          "t2echo_us": 0.06949019437585999
+        },
+        "r2": 0.998925041115656,
+        "residual_rms": 2.1341416636940935,
+        "n_points": 243,
+        "time_range_us": [
+          0.0,
+          79.90141369047619
+        ]
+      },
+      {
+        "parameters": {
+          "offset": -0.10719861205926164,
+          "amplitude": 267.86174135203225,
+          "t2echo_us": 14.353070256439784
+        },
+        "stderr": {
+          "offset": 0.19339270572319522,
+          "amplitude": 0.7758525029040394,
+          "t2echo_us": 0.06987877689924536
+        },
+        "r2": 0.9985277671443995,
+        "residual_rms": 2.1598461653739833,
+        "n_points": 297,
+        "time_range_us": [
+          1.320684523809524,
+          99.05133928571428
+        ]
+      },
+      {
+        "parameters": {
+          "offset": -0.18942007697378396,
+          "amplitude": 266.57702287883643,
+          "t2echo_us": 14.43189016492623
+        },
+        "stderr": {
+          "offset": 0.1986454829560944,
+          "amplitude": 1.0300537561377034,
+          "t2echo_us": 0.08164775588958562
+        },
+        "r2": 0.998074669169252,
+        "residual_rms": 2.160583285253246,
+        "n_points": 291,
+        "time_range_us": [
+          3.3017113095238098,
+          99.05133928571428
+        ]
+      }
+    ]
+  },
+  "ramsey_a": {
+    "source": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_t2ramsey_1005@integer_flux_from_zero_2.hdf5",
+    "fixed_baseline_t1_us": 20.022488752855025,
+    "constant_baseline": {
+      "parameters": {
+        "offset": 164.41128870285888,
+        "amplitude": 153.0127613034729,
+        "t2ramsey_us": 7.821102617510527,
+        "fringe_mhz": 0.25074204443548903,
+        "phase_rad": -0.0570364544788521
+      },
+      "stderr": {
+        "offset": 0.23170975519576725,
+        "amplitude": 1.9733147250631442,
+        "t2ramsey_us": 0.1465742114930822,
+        "fringe_mhz": 0.00040161821592641934,
+        "phase_rad": 0.014146551775762194
+      },
+      "r2": 0.9664294513259399,
+      "residual_rms": 4.599074686657943,
+      "n_points": 401,
+      "time_range_us": [
+        0.0,
+        79.98511904761905
+      ]
+    },
+    "t1_baseline": {
+      "parameters": {
+        "offset": 160.21463168330445,
+        "amplitude": 151.05065235522906,
+        "t2ramsey_us": 7.964313718821072,
+        "fringe_mhz": 0.2497131485208879,
+        "phase_rad": -0.0048231386609753546,
+        "baseline_amplitude": 17.303447832752795
+      },
+      "stderr": {
+        "offset": 0.10970308529185517,
+        "amplitude": 0.6718613260461078,
+        "t2ramsey_us": 0.05123486858068512,
+        "fringe_mhz": 0.000135531427339251,
+        "phase_rad": 0.004891701862533263,
+        "baseline_amplitude": 0.31454257752078796
+      },
+      "r2": 0.9961239126026107,
+      "residual_rms": 1.5627446583708968,
+      "n_points": 401,
+      "time_range_us": [
+        0.0,
+        79.98511904761905
+      ]
+    },
+    "window_checks": [
+      {
+        "parameters": {
+          "offset": 160.08989734912956,
+          "amplitude": 151.03151959714273,
+          "t2ramsey_us": 7.965913296387929,
+          "fringe_mhz": 0.24971754084767525,
+          "phase_rad": -0.004819621827783828,
+          "baseline_amplitude": 17.479065764509027
+        },
+        "stderr": {
+          "offset": 0.23921941717716172,
+          "amplitude": 0.700931354462876,
+          "t2ramsey_us": 0.053533425918192025,
+          "fringe_mhz": 0.00014195493555684872,
+          "phase_rad": 0.005136197109325793,
+          "baseline_amplitude": 0.48885041553456615
+        },
+        "r2": 0.9978765128643488,
+        "residual_rms": 1.6160486595288623,
+        "n_points": 201,
+        "time_range_us": [
+          0.0,
+          39.992559523809526
+        ]
+      },
+      {
+        "parameters": {
+          "offset": 160.24119360295484,
+          "amplitude": 151.05169609037347,
+          "t2ramsey_us": 7.964309823655152,
+          "fringe_mhz": 0.2497169514728046,
+          "phase_rad": -0.004971886661452825,
+          "baseline_amplitude": 17.250027876167042
+        },
+        "stderr": {
+          "offset": 0.14736306048116216,
+          "amplitude": 0.6830138212259048,
+          "t2ramsey_us": 0.05208555106146154,
+          "fringe_mhz": 0.0001379121878772539,
+          "phase_rad": 0.004982957983342881,
+          "baseline_amplitude": 0.3661536941175174
+        },
+        "r2": 0.996980340157159,
+        "residual_rms": 1.584464916795524,
+        "n_points": 301,
+        "time_range_us": [
+          0.0,
+          59.98883928571428
+        ]
+      },
+      {
+        "parameters": {
+          "offset": 160.21463180901017,
+          "amplitude": 151.0506462208304,
+          "t2ramsey_us": 7.964314322960764,
+          "fringe_mhz": 0.24971315136792863,
+          "phase_rad": -0.004823215316467031,
+          "baseline_amplitude": 17.3034470408982
+        },
+        "stderr": {
+          "offset": 0.10970308520601055,
+          "amplitude": 0.6718612943675865,
+          "t2ramsey_us": 0.05123487257775422,
+          "fringe_mhz": 0.00013553141719769554,
+          "phase_rad": 0.004891701845756222,
+          "baseline_amplitude": 0.31454257664624474
+        },
+        "r2": 0.9961239126026163,
+        "residual_rms": 1.5627446583697666,
+        "n_points": 401,
+        "time_range_us": [
+          0.0,
+          79.98511904761905
+        ]
+      }
+    ],
+    "baseline_t1_sensitivity": [
+      {
+        "fixed_t1_us": 19.9,
+        "parameters": {
+          "offset": 160.2357880165185,
+          "amplitude": 151.04511662316693,
+          "t2ramsey_us": 7.964692505063282,
+          "fringe_mhz": 0.24971063812539296,
+          "phase_rad": -0.004693505024807691,
+          "baseline_amplitude": 17.315876026404865
+        },
+        "stderr": {
+          "offset": 0.10943347586900556,
+          "amplitude": 0.6718492600497151,
+          "t2ramsey_us": 0.05123764187149627,
+          "fringe_mhz": 0.0001355290565410374,
+          "phase_rad": 0.004892039700869633,
+          "baseline_amplitude": 0.31476075669863424
+        },
+        "r2": 0.9961240797961637,
+        "residual_rms": 1.5627109538097517,
+        "n_points": 401,
+        "time_range_us": [
+          0.0,
+          79.98511904761905
+        ]
+      },
+      {
+        "fixed_t1_us": 20.2,
+        "parameters": {
+          "offset": 160.1839867575521,
+          "amplitude": 151.0585557772978,
+          "t2ramsey_us": 7.963773007191242,
+          "fringe_mhz": 0.24971675414830857,
+          "phase_rad": -0.005009129984286827,
+          "baseline_amplitude": 17.285972084719297
+        },
+        "stderr": {
+          "offset": 0.11010292048606236,
+          "amplitude": 0.6719249364734833,
+          "t2ramsey_us": 0.05123445032182081,
+          "fringe_mhz": 0.00013554420088569464,
+          "phase_rad": 0.004891559099287742,
+          "baseline_amplitude": 0.3142605290249967
+        },
+        "r2": 0.9961231378844808,
+        "residual_rms": 1.5629008243710278,
+        "n_points": 401,
+        "time_range_us": [
+          0.0,
+          79.98511904761905
+        ]
+      }
+    ]
+  },
+  "ramsey_b": {
+    "source": "/home/axel/Documents/VSCode/Python/Qubit-measure-gui/Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_t2ramsey_1005@integer_flux_from_zero_3.hdf5",
+    "fixed_baseline_t1_us": 20.022488752855025,
+    "constant_baseline": {
+      "parameters": {
+        "offset": 164.555808643977,
+        "amplitude": 153.38749859384805,
+        "t2ramsey_us": 7.92063284474239,
+        "fringe_mhz": 0.40043533099246337,
+        "phase_rad": -0.036367100403779294
+      },
+      "stderr": {
+        "offset": 0.23904496583681709,
+        "amplitude": 2.038495961115453,
+        "t2ramsey_us": 0.1527478995910134,
+        "fringe_mhz": 0.0004011527753611237,
+        "phase_rad": 0.014188082147037803
+      },
+      "r2": 0.9645189676965861,
+      "residual_rms": 4.752107653761228,
+      "n_points": 401,
+      "time_range_us": [
+        0.0,
+        79.98511904761905
+      ]
+    },
+    "t1_baseline": {
+      "parameters": {
+        "offset": 160.21457971538248,
+        "amplitude": 151.8294755295736,
+        "t2ramsey_us": 8.01891948964332,
+        "fringe_mhz": 0.39976995564492446,
+        "phase_rad": -0.0030415694194420115,
+        "baseline_amplitude": 17.73098021897062
+      },
+      "stderr": {
+        "offset": 0.1084218492469572,
+        "amplitude": 0.6639497062201662,
+        "t2ramsey_us": 0.050778958956371745,
+        "fringe_mhz": 0.0001301432481668089,
+        "phase_rad": 0.004671565617237841,
+        "baseline_amplitude": 0.3075274369898699
+      },
+      "r2": 0.9962311173077184,
+      "residual_rms": 1.5487968516095652,
+      "n_points": 401,
+      "time_range_us": [
+        0.0,
+        79.98511904761905
+      ]
+    },
+    "window_checks": [
+      {
+        "parameters": {
+          "offset": 160.19332206134885,
+          "amplitude": 151.75441521822293,
+          "t2ramsey_us": 8.027993471551339,
+          "fringe_mhz": 0.39976989435244015,
+          "phase_rad": -0.003027994016772565,
+          "baseline_amplitude": 17.778196793304865
+        },
+        "stderr": {
+          "offset": 0.23838885619180744,
+          "amplitude": 0.7011264993831526,
+          "t2ramsey_us": 0.053775626251651595,
+          "fringe_mhz": 0.00013766656693434923,
+          "phase_rad": 0.004947177076284743,
+          "baseline_amplitude": 0.48258228464303304
+        },
+        "r2": 0.9978819253824329,
+        "residual_rms": 1.6220841568967774,
+        "n_points": 201,
+        "time_range_us": [
+          0.0,
+          39.992559523809526
+        ]
+      },
+      {
+        "parameters": {
+          "offset": 160.2268737956185,
+          "amplitude": 151.83008973691514,
+          "t2ramsey_us": 8.018930945994498,
+          "fringe_mhz": 0.3997685088594217,
+          "phase_rad": -0.0030167681511415493,
+          "baseline_amplitude": 17.71143918836267
+        },
+        "stderr": {
+          "offset": 0.14630599721154575,
+          "amplitude": 0.6790236382712143,
+          "t2ramsey_us": 0.051931088982679674,
+          "fringe_mhz": 0.00013314233967832783,
+          "phase_rad": 0.004781148522648995,
+          "baseline_amplitude": 0.3597993389327707
+        },
+        "r2": 0.9970286235737247,
+        "residual_rms": 1.5797976767380162,
+        "n_points": 301,
+        "time_range_us": [
+          0.0,
+          59.98883928571428
+        ]
+      },
+      {
+        "parameters": {
+          "offset": 160.2145796697198,
+          "amplitude": 151.8294725968629,
+          "t2ramsey_us": 8.018919841702893,
+          "fringe_mhz": 0.39976995417506245,
+          "phase_rad": -0.0030415329383723464,
+          "baseline_amplitude": 17.730980536218524
+        },
+        "stderr": {
+          "offset": 0.10842184937490924,
+          "amplitude": 0.6639497016091886,
+          "t2ramsey_us": 0.05077896167388103,
+          "fringe_mhz": 0.00013014324090285058,
+          "phase_rad": 0.004671565559002511,
+          "baseline_amplitude": 0.3075274359437945
+        },
+        "r2": 0.9962311173077204,
+        "residual_rms": 1.5487968516091717,
+        "n_points": 401,
+        "time_range_us": [
+          0.0,
+          79.98511904761905
+        ]
+      }
+    ],
+    "baseline_t1_sensitivity": [
+      {
+        "fixed_t1_us": 19.9,
+        "parameters": {
+          "offset": 160.23643181635038,
+          "amplitude": 151.82536906339905,
+          "t2ramsey_us": 8.01917197193997,
+          "fringe_mhz": 0.39976832115569905,
+          "phase_rad": -0.002959023274781099,
+          "baseline_amplitude": 17.742589825447954
+        },
+        "stderr": {
+          "offset": 0.10815342286381499,
+          "amplitude": 0.6639154181582454,
+          "t2ramsey_us": 0.05077901259693327,
+          "fringe_mhz": 0.00013013632191130538,
+          "phase_rad": 0.004671536189368853,
+          "baseline_amplitude": 0.3077119781357015
+        },
+        "r2": 0.9962314818643645,
+        "residual_rms": 1.5487219437540989,
+        "n_points": 401,
+        "time_range_us": [
+          0.0,
+          79.98511904761905
+        ]
+      },
+      {
+        "fixed_t1_us": 20.2,
+        "parameters": {
+          "offset": 160.18292898833573,
+          "amplitude": 151.8353490570965,
+          "t2ramsey_us": 8.018558688981427,
+          "fringe_mhz": 0.3997722954010472,
+          "phase_rad": -0.0031598177329957497,
+          "baseline_amplitude": 17.714667330113933
+        },
+        "stderr": {
+          "offset": 0.10882107178752679,
+          "amplitude": 0.6640522079583061,
+          "t2ramsey_us": 0.050782972117154,
+          "fringe_mhz": 0.00013016363822549527,
+          "phase_rad": 0.004671984602590703,
+          "baseline_amplitude": 0.3072961798557293
+        },
+        "r2": 0.9962299888834638,
+        "residual_rms": 1.5490286934148703,
+        "n_points": 401,
+        "time_range_us": [
+          0.0,
+          79.98511904761905
+        ]
+      }
+    ]
+  }
+}

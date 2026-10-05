@@ -1,0 +1,42 @@
+{
+  "method": "Same free-phase damped-cosine model on both saved runs; fixed linear IQ projection at 0.75 rad; realized HDF5 time axes in us. Model: c+a*exp(-t/tau)*cos(2*pi*f*t+phase). Both acquired at the initial integer candidate, gain 0.3. No hardware operations.",
+  "comparisons": [
+    {
+      "source": "Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_len_rabi_1005@integer_flux_from_zero_3.hdf5",
+      "relax_delay_us": 30.5,
+      "n": 401,
+      "time_range_us": [
+        0.02864583333333333,
+        7.3203125
+      ],
+      "parameters": {
+        "offset": 173.46444453061855,
+        "amplitude": 136.70599614050647,
+        "frequency_mhz": 0.41009030541289226,
+        "phase_rad": 3.13600524116028,
+        "decay_us": 13.030088913041999
+      },
+      "r2": 0.98870325328798,
+      "residual_rms": 7.9899110843271846
+    },
+    {
+      "source": "Database/simulate_20261005/integer_flux_coherence/2026/10/Data_1005/integer_flux_coherence_len_rabi_1005@integer_flux_from_zero_4.hdf5",
+      "relax_delay_us": 150.0,
+      "n": 401,
+      "time_range_us": [
+        0.02864583333333333,
+        7.3203125
+      ],
+      "parameters": {
+        "offset": 181.88683023428683,
+        "amplitude": 166.285773195327,
+        "frequency_mhz": 0.4109997550813064,
+        "phase_rad": 3.1231232711968873,
+        "decay_us": 14.15478670507163
+      },
+      "r2": 0.9997549568455097,
+      "residual_rms": 1.4514579041707236
+    }
+  ],
+  "limits": "Single run per relaxation delay; supports a recovery-time effect but does not identify a microscopic mechanism or establish pulse fidelity."
+}
