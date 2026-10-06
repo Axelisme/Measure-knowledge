@@ -17,6 +17,8 @@
 
 請求軸也不等於實際軸。硬體時序量化可能改變 step、終點與可解析的週期數。擬合使用保存的實際軸，並核對它代表的是 delay、pulse length 或總 evolution time。若端點差異會使窗口不足，回到量測設計，而不是改圖的座標標籤。
 
+保存軸若與明確的編譯/實際時序證據矛盾，也可能是軟體缺陷；不能將成功保存當成它必然正確。2026-10-07的[Q1 Length Rabi反向sweep案例](../rabi-fit-validation/README.md#已量化軸也可能有保存實作缺陷)保留原raw、另存有來源的compiler重建軸，並區分顯示負值與實際pulse長度。這是經授權開發排查確認的例外，不是鼓勵常態二次量化或由目前library猜旧Run。
+
 ## 逐 flux 點使用獨立 context
 
 2026-10-05 使用者的專家建議：逐點校準與 coherence 量測，每個 flux 點建立一個獨立 context，可 clone 前點繼承所需內容。這能避免後點 writeback 覆蓋前點的校準狀態；它是流程建議，不表示 clone 的頻率與 pulse 在新點已驗證。

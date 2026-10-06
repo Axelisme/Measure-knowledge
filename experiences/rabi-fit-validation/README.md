@@ -43,6 +43,14 @@ Length Rabi 已顯示振盪，但自動 fit 幾乎平坦、擬合頻率與目視
 
 [真實案例](../coherence-bringup/cases/real-integer-20261005/README.md) 名義首點 0.030 µs、保存座標 0.02838 µs，Run 成功且未回報該下限錯誤。先前把它稱作不合法點、要求起點改 0.035 µs 的推論已撤回。曾做的排除首點 fit 只是一個分析敏感性對照，不是必要的有效性修復。遇到顯式 pulse 長度錯誤時，依公開契約修正設定；成功執行後以實驗提供的量化座標擬合。成功執行也不等於已驗證 pulse fidelity。
 
+## 已量化軸也可能有保存實作缺陷
+
+2026-10-07 Q12_2D[10]/Q1 half-flux排查提供具體反例：Length Rabi正向保存軸比QICK編譯pulse length低一個clock，反向sweep的負step量化則累積出更大差異，保存軸甚至為負；离線compiler確認實際pulse全為正。這是保存/preview實作缺陷，不能由負座標直接宣稱曾送負長度pulse。診斷經使用者明確授權DEVELOPMENT檢查，來源為repo-local `.agent_state/measurement-tasks/20261007-q1-mist-debug/compiled_rabi_sweeps.json` 與 `axis_reconstruction_provenance.json`。
+
+正常仍使用實驗提供的actual axis，不任意二次量化。只有出現具體矛盾且具備當次保存cfg、SoC clock及適用程式證據時，才核對compiled/實際時序，將確認的重建軸另存並保留原raw。這不追溯證明所有舊資料都有同一缺陷。常數軸offset會影響phase/π位置，step錯誤則也影響frequency，兩者要分開。
+
+同次排查也證實cosine fit即使選fit_phase=true，optimizer若把週期phase限制在±360°，仍可卡在等價phase表示的邊界並偏frequency。比較同raw、同projection與同actual axis的無phase邊界fit，核對residual及合成回歸後才能歸因；不要把GUI的「自由phase」字樣當成所有phase邊界都已排除。
+
 ## Zigzag 與獨立 pulse 檢查
 
 2026-10-05使用者進一步區分用途：一般zigzag主要用來確認；校準可用特化的zigzag scan。Amplitude Rabi取得候選後，先用一般zigzag確認；若存在系統性偏差，優先依live adapter選gain或frequency scan，以掃描資料決定候選，再回到一般zigzag驗證。不是每點都要掃描所有參數；先判斷偏差較可能來自gain或frequency，避免盲目調整。當次真實GUI已提供twotone/zigzag_scan/gain與freq，早期無此入口的記錄只是當時版本狀態。
