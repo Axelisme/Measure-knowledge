@@ -49,6 +49,14 @@ Length Rabi 已顯示振盪，但自動 fit 幾乎平坦、擬合頻率與目視
 
 2026-10-05 使用者建議以 zigzag 實驗檢查 Rabi pulse 是否正常。這是待依實驗定義執行的專家建議，不能把一次 Rabi 擬合良好當成已通過 zigzag。先查 live adapter 的可用入口、sequence 與 phase convention；該次 measure-gui adapter.list 沒有提供 zigzag，尚未執行。若後續版本提供入口，再依當次預算與硬體授權安排。
 
+## 內部最低點仍需獨立確認；必要時改固定長度
+
+2026-10-06 Q12_2D[10]/Q1 的 p37（6.7926 mA、553.21135 MHz、ch14/NQZ1、relax1000 us）提供真實反例：0.06 us amplitude Rabi 的 R²約0.985，π候選gain .8530，但普通zigzag有累積交替。先將X90由gain .4265以scan校正到 .40822並確認；X180的gain scan經延伸和加密找到內部最低點 .92479，普通確認仍有後段交替／散布。故「內部minimum」不保證完成校準，不能只因fit漂亮或已掃多次便接受。
+
+保持頻率、X90、readout及relax不變，改X180固定length為0.1 us，重新Rabi與gain scan得到 .50185；獨立普通zigzag不再呈現持續增大的交替，仍有噪音散布。這支持在有限次局部加密無效後，比較另一個合規長度；不是證明長pulse普遍較好、已測gate fidelity，或已唯一識別硬體非線性。兩種長度均在當次建議範圍內；高gain短pulse仍是優先搜尋方向，最終由獨立驗證決定。
+
+執行時先確認preparation X90，避免把它的誤差全歸到repeated X180；scan碰邊界需涵蓋最低點两側，再普通確認。X180長度改動後，至少重測受其影響的T1/echo；X90、頻率、等待或窗口也改動時，同步重驗相關Ramsey。重測保留原資料、條件與來源，不能當成新flux點。證據位於repo-local `.agent_state/measurement-tasks/20261005-q1-40flux-coherence/p37_*`（amp、pi scans、ordinary confirmations、longpi）及raw `Database/Q12_2D[10]/Q1/2026/10/Data_1005/*@1006_p37_p6p792649mA_*`；跨主機使用須核對檔案。
+
 ## 恢復等待條件的對照
 
 2026-10-05使用者補充真實硬體經驗：length Rabi若呈現多個U字形拼接，而非sin/cos形狀，常見原因是relax delay不夠長。將此形狀作為優先檢查恢復等待的線索；保持frequency、gain、pulse掃描、readout與分析相同，只延長relax delay比較形狀、週期及pulse候選。這是使用者專家建議，不是看到U形就已證明機制。
