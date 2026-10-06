@@ -97,5 +97,13 @@ T1／T2 在 pulse 和 idle 中都會作用。只看理想階梯，或只用振�
 
 [本次 mock 案例](cases/sim-zigzag-allxy-20261005/README.md) 保留後續 DEVELOPMENT 排查與量測的區別。實作／模擬真值可以用於已授權的工具診斷，不能反過來補成實驗已驗證的校準，也不擴張 MEASUREMENT 的權限。
 
+## 初始化依賴、邊界外推與 gate 驗收
+
+[Q1 half 真實案例](../cavity-reset-validation/cases/q1-half-20261006/README.md) 顯示 reset 下的 gain scan 候選不能直接搬回 passive 條件；初始化、readout、等待及 preparation pulse 都應與目標 gate 驗證一致。先區分前幾點 transient、固定 parity offset 與隨 repetition 增長的 parity，再判斷 gain loss 是否代表累積 rotation error。高平均或內部 minimum 本身不能解決模型／初始化混淆。
+
+最低點在邊界時，依有效 gain 範圍補掃兩側；不能以外推根取代實測包住的候選。上述案例所測245/122.5ns候選的 late-parity 零點超出實測範圍，π外推需要gain>1，因而未採用。這只否定該條件下的候選證據，不證明其他初始化或 pulse shape 都不能更短。
+
+Rabi／特化 scan 用於提出候選，ordinary zigzag／AllXY 用於獨立檢查，目標 gate 的 IRB 用於後續品質驗收。代理指標改善不保證 IRB 改善；同份 raw 改 AllXY 的 fit_ge 後指標改變，是分析敏感性，不是硬體已被校正。最終需在實際採用的初始化與讀出條件下驗證，並保留尚未解釋的 residual。
+
 ## 證據
 Qubit-measure-gui repo的`.agent_state/measurement-tasks/half-flux-t1-20261003/`保存run16.json、run16-final-analysis.json、對應PNG與verified-results.json。raw位於`Database/mcp_half_flux_20261003/sim/2026/10/Data_1003/sim_len_rabi_1003@half_flux_t1_clean_1.hdf5`。這些是repo-local路徑，跨主機重用前核對可讀性。

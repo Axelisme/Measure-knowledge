@@ -36,3 +36,11 @@ Depth計Cliffords，F=(1+p)/2、EPC=(1-p)/2均是每Clifford，不能直接當�
 同一序列的不同depth共享prefix，樣本有相關性。用整條序列做bootstrap保留此關係；單純fit covariance常低估跨序列不確定性。本案例native fit標準誤約0.010百分點，整序列bootstrap95%寬度約0.110百分點。這仍不涵蓋所有SPAM、漂移、leakage或RB模型系統誤差。
 
 此案例證實該硬體、設定和長度範圍的修正有效，不代表任何pulse長度／program size都已驗證，也不是interleaved RB或leakage RB驗證。
+
+## IRB 的篩選、獨立重驗與比較
+
+[Q1 half gate 案例](../cavity-reset-validation/cases/q1-half-20261006/README.md) 補充實際 IRB 證據。先用較小採樣篩選，再固定候選、換新 root seed 做最終重驗；交付重驗數字，不挑篩選中最高 estimate。該例 X180 早期99.269%、最終98.876%；時段、depth與採樣量也不同，不能把差異全歸因於單一原因。X180/X90/Y180/Y90 各自測量；共用 gain 加 phase rotation 不能替代個別 gate 的驗收。
+
+Depth 要涵蓋可辨認的衰減與尾端基線。該例 smoke test 的6seeds/depth20得到1.0095及寬 interval，沒有作品質主張；不把超過1的 estimate clipping 成完美 gate。保存 reference/interleaved 完整配對與 seed/round 數，paired bootstrap 保留相關性，並同時檢查 reference p/EPC；最高 ratio 可能伴隨 reference 改變，不能單獨選它。
+
+Matched 條件比較可保留同 root seed 減少序列差異，最終驗證再使用未參與候選選擇的新 seed。Gate-dependent/coherent noise、時段漂移及模型偏差不包含在統計 CI 中。Round 差異與 depth-window 敏感性是診斷，不能未估其不確定性就稱為 drift 或額外 CI。Reset 與短 relax 同時改變時，IRB 比較驗證的是整組初始化條件，不能從 ratio 唯一辨認物理機制。

@@ -44,6 +44,27 @@ GE no-init、100000shots、rel20 的10.01µs候選初始G約91.43%；20.01µs約
 
 π repetition frequency scan 在.350與3.504µs兩條件都呈多個近似low點，後者最佳點還在上界。公開 guide 明確提醒硬體採 absolute-time drive phase。兩個 native min 未作 q_f writeback；不能把 loss minimum 隨意轉成唯一 Stark shift。來源 stark_freq_delay1/10，Q1_zigzag_scan_freq_1006@1006_half_gate_detune_1/_2.hdf5。
 
+## 收尾：純度、速度與 gate 品質分開驗收
+
+本次 reset 的 correct-label GE model 初始 G 約93.54%，相同早期 IRB 採樣設定約40秒／target，passive 約3.5–4分鐘／target。這支持初態純度提升與採樣加速，尚未完成「降低平均數而維持相同 gate precision」的成本比較。
+
+收尾以相同 drive/readout/pulse、root2026100607、40seeds×2rounds、200reps、depth0:4:160，重驗 X180：
+
+| 初始化流程 | IRB estimate | 95% paired-seed bootstrap CI | Reference EPC |
+| --- | ---: | ---: | ---: |
+| passive、relax500µs | 98.876% | 98.678–99.056% | 1.436% |
+| ground reset、relax20µs | 98.457% | 98.153–98.712% | 1.390% |
+
+reset 均值與早期另一個 root 的98.451%接近，但 CI 有小範圍重疊。兩筆不同時段且 reset／relax 同時改變；CI 只涵蓋統計誤差，未涵蓋 gate-dependent/coherent noise 的 IRB bias。結果支持本次採用已完整驗證四 gate 的 passive profile，沒有唯一識別 photon、加熱或其他原因，也不能外推 reset 一般都較差。
+
+## Pulse 與最終驗證的反例
+
+250/125ns 的 X180 早期篩選 estimate 為99.269%（20seeds×2rounds、150reps、depth120、root2026100606），新 seed 最終重驗為98.876%。不同時段與採樣設定保留混淆；應交付獨立重驗數字，不挑早期最高值作最終品質。X/Y 四 gate 分別測量；共用 amplitude 及 native +90° phase 不替代 Y gate 驗證。
+
+所測245/122.5ns候選在高平均 ordinary zigzag 仍有 late growing parity；固定共同 PCA 的描述性零點超出實測 gain 範圍，π 的外推需要 gain>1，未採用。它只支持拒絕未被掃描包住、超過當次 gain 限制的校正，不證明其他初始化條件下245ns不可行或250ns為全域最短。
+
+AllXY 的 g/e fit 選項在同份 raw 上改變 amplitude error 及 residual；它們是模型診斷，不能直接作 gain/frequency correction 或 gate fidelity。收尾同設定 Ramsey 的前後 detune 差0.196kHz、formal 合併 stderr2.007kHz；沒有據此更改 q_f。小於當次估計不確定性的非零候選不應自動寫回；formal error 本身也不涵蓋所有系統偏差。
+
 ## 來源
 
 量測 repo 的 .agent_state/measurement-tasks/20261006-q1-half-gates/，journal.md 記錄修正與判斷，tag JSON 指向保存 raw 及完整 cfg。正式 raw 在 Database/Q12_2D[10]/Q1/2026/10/Data_1006/：
@@ -52,5 +73,8 @@ GE no-init、100000shots、rel20 的10.01µs候選初始G約91.43%；20.01µs約
 - Q1_sh_ge_1006@1006_half_reset_trial_7.hdf5、_8.hdf5：10/20µs delayed π no-init。
 - Q1_ss_reset_check_1006@1006_half_reset_trial_2.hdf5：correct-label reset check。
 - Q1_irb_1006@1006_half_reset250_1.hdf5、Q1_irb_1006@1006_half_reset250_old_1.hdf5：上述 IRB 比較。
+- Q1_irb_1007@1006_half_passive250_final_2.hdf5、Q1_irb_1007@1006_half_reset_lowro_1.hdf5：收尾 matched X180。
+- Q1_irb_1006@1006_half_short250_2.hdf5：早期250ns X180篩選；最終四 gate 的 raw、analysis 與 actual cfg 見 task REPORT.md、gate_comparison.csv、selected_profile.json。
+- task journal.md 的23:20–00:19條目與相應 tags：245/122.5ns候選；final_allxy.json、ramsey_stability.json：收尾模型／穩定性診斷。
 
 本文及圖片不引用 MCP session 暫存路徑。正式 task 結案後的最佳 gate 條件應另看最終報告，不由本初始化案例取代。

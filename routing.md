@@ -24,7 +24,7 @@ Readout gain 最佳點碰到掃描邊界、length 要在短窗口與 SNR 間取�
 
 ## Coherence
 
-RB 淺depth即崩落、最大depth改變共同prefix結果，或要確認fidelity的單位與序列統計時，讀 [RB執行與擬合驗證](experiences/rb-validation/README.md)。含真實壓縮查表錯誤的辨別案例與修正前後對照。
+RB 淺depth即崩落、最大depth改變共同prefix結果、IRB候選篩選／新seed重驗，或要確認fidelity的單位與序列統計時，讀 [RB執行與擬合驗證](experiences/rb-validation/README.md)。含真實壓縮查表對照、IRB reference比較與統計CI的適用限制。
 
 判讀 T1 的時間窗口、尾端基線、模型適用性、參數誤差或 repeat 時，讀 [T1 fit 驗證](experiences/t1-fit-validation/README.md)。條目區分重新分析與補量測，說明共用品質指標的限制。
 
