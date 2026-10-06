@@ -59,6 +59,22 @@ T1 的衰減時間與掃描窗口接近、尾端尚未穩定、參數誤差大�
 
 證據：repo-local `.agent_state/measurement-tasks/20261005-q1-40flux-coherence/p24_t1{,_low_ro}.json`、對應provenance及windows圖/JSON。控制量測結束後恢復原readout module引用並檢查local override，避免把診斷條件無意帶入下一點。
 
+## 跨 flux 的單／雙指數比較與品質分類
+
+比較不同flux點的T1時，先分開記錄三件事：原始量測是否完成、當次工作點／pulse品質是否通過，以及特定擬合模型的參數是否可辨識。正常點的定義由任務決定；模型重新分析不能直接增加正常點數。模型敏感或多尺度資料也不等於硬體沒有量到訊號。
+
+1. 對同一raw固定實際delay軸、IQ線性投影、使用點集合與噪音／權重假設，再比較單與雙指數。保留背景offset；不同projection、mask或窗口的residual／AIC不能直接當成模型優劣。
+2. 雙指數使用多組初值探索，將兩tau保持為正並依快／慢排序。原生參數tau1/tau2的順序未必代表快／慢；不要將第一個分量直接寫回唯一T1。
+3. 同時查兩分量振幅、tau不確定性、參數相關性／Jacobian病態、參數bounds、不同近最佳解的tau差異，以及窗口能否看見慢分量、實際早期樣點能否解析快分量。某分量振幅接近零時，其tau可失去意義；只看小residual不夠。
+4. 同資料及相同噪音假設下，AICc等模型比較可輔助判斷是否值得多分量描述。改善不證明兩個物理鬆弛通道；存在振盪等已知模型失配時，不以較高模型偏好分數強迫雙指數解釋。
+5. 只在參數有依據時報快／慢分量與條件式stderr。不可辨識時保留raw與理由；若沒有可信的單一T1，正式scalar留空。顯示或隱藏某組點是圖表選擇，不改寫原資料的status。
+
+2026-10-06 Q1離線整理以sample.csv所選的49份正式T1 raw統一比較；另存重測／控制資料不混入主序列。原正常點20個、原表非空單指數40個，探索性數值篩選得到32組雙指數；最後T1-only圖另外排除兩個pulse_uncertain點，顯示30組。這些分類可重疊，不能相加當成distinct正常點。該次Delta AICc、relative stderr、振幅占比、window與multistart門檻僅是探索性顯示規則，不是跨器件驗收標準。p47快分量雖有小條件stderr，仍因實際早期取樣不足而不顯示；p14已解析振盪，不給雙指數物理解釋。
+
+證據與可重現方法：量測repo的 `.agent_state/measurement-tasks/20261005-q1-40flux-coherence/plot_t1_models_flux.py`、`t1_models_flux/t1_model_comparison.json`、`verification.json`、`t1_only_plot_verification.json`。跨任務使用前核對來源與門檻，不直接照抄固定點ID或篩選數字。
+
+跨flux圖共用座標尺度、清楚標單位，單／雙指數組別允許重疊；不連線插補未量到或模型無效的缺口。Normalized flux使用有來源的integer、half／period校準；僅有歷史候選時標為名義換算，保留實際電流欄與pass差異，見[flux驗證](../flux-spectroscopy-validation/README.md)。圖上隱藏失敗點時，完整CSV仍保存其raw、status與原因。
+
 ## 擬合品質指標
 
 從目前 MCP estimate 的 `quality.fit` 或 GUI analysis summary 的 `fit_quality.fit` 讀 `r2`、`normalized_residual_rms`、`relative_parameter_errors` 及 `invalid`。這些數值只描述真正送入 fit 的樣本，需連同 skip/mask 與分析條件解讀。

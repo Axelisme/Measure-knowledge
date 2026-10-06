@@ -47,7 +47,7 @@ Length Rabi 已顯示振盪，但自動 fit 幾乎平坦、擬合頻率與目視
 
 2026-10-05使用者進一步區分用途：一般zigzag主要用來確認；校準可用特化的zigzag scan。Amplitude Rabi取得候選後，先用一般zigzag確認；若存在系統性偏差，優先依live adapter選gain或frequency scan，以掃描資料決定候選，再回到一般zigzag驗證。不是每點都要掃描所有參數；先判斷偏差較可能來自gain或frequency，避免盲目調整。當次真實GUI已提供twotone/zigzag_scan/gain與freq，早期無此入口的記錄只是當時版本狀態。
 
-2026-10-05 使用者建議以 zigzag 實驗檢查 Rabi pulse 是否正常。這是待依實驗定義執行的專家建議，不能把一次 Rabi 擬合良好當成已通過 zigzag。先查 live adapter 的可用入口、sequence 與 phase convention；該次 measure-gui adapter.list 沒有提供 zigzag，尚未執行。若後續版本提供入口，再依當次預算與硬體授權安排。
+2026-10-05 使用者建議以 zigzag 實驗檢查 Rabi pulse 是否正常。這是待依實驗定義執行的專家建議，不能把一次 Rabi 擬合良好當成已通過 zigzag。先查 live adapter 的可用入口、sequence 與 phase convention；早期查詢的 measure-gui adapter.list 當時沒有提供 zigzag，因此當時尚未執行；這是歷史入口狀態。後續真實 Q1 任務已有一般 Zigzag 與特化 scan，應依目前 live guide、預算及硬體授權選用。
 
 ## 內部最低點仍需獨立確認；必要時改固定長度
 

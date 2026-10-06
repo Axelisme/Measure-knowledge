@@ -26,6 +26,8 @@ Ramsey／echo 的 baseline 隨 delay 變化、phase 改變後 T2 不一致，或
 
 T1 慢尾端與 zero-drive reference 的設計，讀 [T1 決策流程](experiences/t1-fit-validation/README.md)。Echo 人工 detune、fringe 取樣及 GUI／離線模型差異，讀 [coherence 擬合辨別](experiences/coherence-background-validation/README.md)。
 
+比較多個flux點的單／雙指數T1、檢查雙分量可辨識性，或區分正常點數與模型分類時，讀 [跨flux T1模型與品質分類](experiences/t1-fit-validation/README.md#跨-flux-的單雙指數比較與品質分類)。
+
 ## 設定與資料來源
 
 多段twotone fluxdep要合成一張圖、選重疊來源、保留缺口或判斷色階是否可比較時，讀 [多段光譜合圖](experiences/spectrum-mosaic/README.md)。
