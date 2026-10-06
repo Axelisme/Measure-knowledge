@@ -20,6 +20,21 @@ Zigzag 的 step-difference loss 可能被前幾點 transient 或初態 coherence
 
 有／無 reset 的差異本身不能唯一判定 photon、qubit drive timing、初態 coherence、加熱、硬體或編譯原因。有限的間隔控制未改善時，保留未知；不要用未公開 implementation 推測替代實測。
 
+## Ringdown 足夠但 zigzag 仍異常時
+
+先分開 parity 的初始 offset 與隨 gate 數累積的變化，再選能否定候選原因的控制。2026-10-07 Q1 排查提供下列可重用順序，具體幅度不作通用門檻：
+
+- 固定 tone→π→gate，改 shot 尾端等待；再把等量等待移到 tone 之前。若結果相同，改善不需要增加本 shot 的 photon ringdown，應查 shot 歷史／duty 依賴。
+- 在完整 timing 保留的條件把 cavity gain、reset π gain 分別設零。主要異常若仍存在，MIST 專屬 excitation 不是必要條件；不能因此宣布所有 photon 或加熱機制都不存在。
+- 用同總時長連續 const drive 取代 seed+nπ。兩者相同時，pulse 接縫或 Repeat 重啟不能單獨解釋異常。Length 是內層掃描時，duration 和近期 duty/history 同時改變，分窗口 Rabi 不能冒稱直接 RF 包絡量測。
+- 四個相位的 π/2 probe 可作相位敏感初態 witness。比較相反 phase 的 **probe-on** arms，加入 passive、reset π phase180、reset π後等待的控制。若偏向隨 reset phase反轉並隨等待消失，支持初始化相干分量；phase-dependent gate response仍是限制，不能直接稱完整state tomography。GE adapter 的 probe-off可能省略pulse，故 off/on不是duration-matched對照。
+- 對 Rabi 速率變化，drive-on chevron 比長窗口 off-drive Ramsey 更能區分有效 Ω 與 detune。各duration window分別fit sqrt(Ω²+(drive−center)²)，核對自由二次曲率與殘差。有效vertex可被 RF transfer slope偏置，不自動writeback為qubit本徵頻率。
+- 相同RF、改digital mixer而效果保留，僅限制IF/mixer設定特有解釋。離共振pre-drive若改變後續Rabi，需保留頻率、功率、等待位置及prep差異；沒有直接RF waveform／線路證據，不指認特定放大器故障。
+
+相位偏向消失而主要parity仍在，表示初始化coherence不是唯一原因。這也解釋為何單一gain可改善某種zigzag loss，卻未必改善隨機gate序列。最終仍以相同seed／pulse／readout的目標benchmark驗證；共同seed bootstrap只涵蓋統計變異，不涵蓋時段drift與IRB模型偏差。
+
+詳見 [Q1 2026-10-07 診斷案例](cases/q1-half-20261007/README.md)。
+
 ## 分別驗收 reset 的收益
 
 初態分布、採樣時間與目標估計的 precision 要分開驗證。更純的 g/e 初態及更短 relax_delay 可以改善對比和吞吐；若要主張 averages 可減少，還需比較固定目標不確定性所需的 shots／時間，或固定 shots 下的不確定性。不能只由 ground model estimate 推出所需平均數。
