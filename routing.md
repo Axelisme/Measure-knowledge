@@ -2,6 +2,8 @@
 
 ## Bring-up 與工作點
 
+接手多flux校準、需要完整工作路線與各實驗核對入口時，從 [經確認的十項流程](experiences/coherence-bringup/README.md) 進入，再依症狀展開下列條目。
+
 從空白或未驗證設定開始，決定量測順序、何時回頭校準、何時停止時，讀 [coherence 決策流程](experiences/coherence-bringup/README.md)。包含真實硬體前置檢查及模擬案例的適用邊界。
 
 Flux map 有 extrema 但分支不確定，或 two-tone 自動 fit 選到雜訊、旁峰時，讀 [flux 與 spectroscopy 驗證](experiences/flux-spectroscopy-validation/README.md)。

@@ -8,6 +8,25 @@
 
 [30點integer-to-half模擬案例](cases/sim-30flux-20261005/README.md) 補充多工作點校準、人工detune echo、取樣稽核與低訊號補測。它保留失敗模型及未完成zigzag的限制，沒有把插值當量測。
 
+## 經使用者確認的十項流程入口
+
+以下整理經2026-10-06使用者確認，依據包含專家建議與限定條件的案例觀察。具體數值、辨別實驗及適用限制由各條目維護；移轉到其他hardware／cooldown時重新核對。
+
+工作路線：flux分支與drive路徑 → 當地readout／qubit frequency → amplitude Rabi候選 → Ramsey校頻並同步π／π2 → 受影響pulse重驗 → 普通Zigzag確認（先X90 preparation，再X180）→ coherence → 窗口、模型及repeat驗證 → 保存。T1初估或Rabi形狀提示恢復不足時，回到relax delay對照；任何條件變更都回到受影響的檢查。
+
+| 項目 | 可重用的判斷與下一步 | 細節入口 |
+| --- | --- | --- |
+| 1. 完整流程 | 以依賴順序校準；頻率、pulse、readout或等待改動後重驗受影響步驟，clone值僅作種子 | 本條決策樹及[校準來源](../calibration-provenance/README.md) |
+| 2. Flux定位與移動 | Map包含integer／half兩側對稱結構；相鄰掃描、移動後重校頻，normalized flux附校準來源及pass差異 | [Flux驗證](../flux-spectroscopy-validation/README.md) |
+| 3. Two-tone主掃描 | 批次fluxdep取得主圖；單點用於校準／模糊分支／缺口，失線先核對路徑、窗口、RO及drive，再選平均或功率對照 | [光譜分段與失線決策](../flux-spectroscopy-validation/README.md) |
+| 4. Readout取捨 | Gain最佳值在邊界時仍未收斂；length選足夠SNR的短窗口，以最終組合驗證目標對比 | [Readout優化](../readout-optimization/README.md) |
+| 5. Rabi設計與異常 | 優先amplitude校gate、以length控制signed gain窗口的週期；U形優先查relax，低gain contrast偏小優先查detune；用actual axis | [Rabi驗證](../rabi-fit-validation/README.md) |
+| 6. Zigzag分工 | 普通sequence確認、特化scan校準；先查preparation，scan最低點需兩側與獨立確認；有限加密無效時比較另一合規length | [Pulse交叉檢查](../rabi-fit-validation/README.md) |
+| 7. T1模型 | 同raw／固定IQ投影比較窗口和單／雙指數，多初值檢查分量可辨識性；振盪不強迫指數解釋，無可信scalar則留空 | [T1模型與品質](../t1-fit-validation/README.md) |
+| 8. Ramsey／echo | π／π2同頻、校頻後同步；人工fringe依實際step和取樣調整，窗口同時容納可見包絡與必要baseline | [Coherence背景與窗口](../coherence-background-validation/README.md) |
+| 9. 時間與平均 | 用實測Run更新成本，長T1／relax、換channel與弱訊號點分別估計；reps主平均、rounds供觀察 | [逐點成本](../t1-fit-validation/README.md)及[平均與來源](../calibration-provenance/README.md) |
+| 10. 資料與交付 | 一flux一context；核對單位與actual cfg，區分完成／正常／模型可辨識；重測不增distinct點，圖可隱藏失敗但CSV保留來源 | [校準來源](../calibration-provenance/README.md)、[T1品質分類](../t1-fit-validation/README.md)、[多段光譜合圖](../spectrum-mosaic/README.md) |
+
 ## 真實硬體開始前
 
 先取得目標、結果用途、可用時間與停止條件。模擬模式的授權不包含切換真實硬體。
