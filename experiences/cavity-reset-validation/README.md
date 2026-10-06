@@ -29,7 +29,8 @@ Zigzag 的 step-difference loss 可能被前幾點 transient 或初態 coherence
 - 用同總時長連續 const drive 取代 seed+nπ。兩者相同時，pulse 接縫或 Repeat 重啟不能單獨解釋異常。Length 是內層掃描時，duration 和近期 duty/history 同時改變，分窗口 Rabi 不能冒稱直接 RF 包絡量測。
 - 四個相位的 π/2 probe 可作相位敏感初態 witness。比較相反 phase 的 **probe-on** arms，加入 passive、reset π phase180、reset π後等待的控制。若偏向隨 reset phase反轉並隨等待消失，支持初始化相干分量；phase-dependent gate response仍是限制，不能直接稱完整state tomography。GE adapter 的 probe-off可能省略pulse，故 off/on不是duration-matched對照。
 - 對 Rabi 速率變化，drive-on chevron 比長窗口 off-drive Ramsey 更能區分有效 Ω 與 detune。各duration window分別fit sqrt(Ω²+(drive−center)²)，核對自由二次曲率與殘差。有效vertex可被 RF transfer slope偏置，不自動writeback為qubit本徵頻率。
-- 相同RF、改digital mixer而效果保留，僅限制IF/mixer設定特有解釋。離共振pre-drive若改變後續Rabi，需保留頻率、功率、等待位置及prep差異；沒有直接RF waveform／線路證據，不指認特定放大器故障。
+- 相同RF、改digital mixer而效果保留，僅限制IF/mixer設定特有解釋。檢查probe及conditioning pulse各自的IF；只翻轉probe IF不能代表conditioning IF亦已翻轉。離共振pre-drive若改變後續Rabi，需保留頻率、功率、等待位置及prep差異；沒有直接RF waveform／線路證據，不指認特定放大器故障。
+- Resetπ後增加等待，同時改變coherence、drive recovery和總shot週期。以相同總cycle、等待放在reset前的控制比較目標benchmark，才能檢查等待位置有沒有額外收益。Phase witness改善而IRB的post−pre差未解析出來時，保留兩種觀察，不把IRB收益全歸因於coherence消失。
 
 相位偏向消失而主要parity仍在，表示初始化coherence不是唯一原因。這也解釋為何單一gain可改善某種zigzag loss，卻未必改善隨機gate序列。最終仍以相同seed／pulse／readout的目標benchmark驗證；共同seed bootstrap只涵蓋統計變異，不涵蓋時段drift與IRB模型偏差。
 

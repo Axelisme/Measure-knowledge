@@ -51,6 +51,8 @@ Length Rabi 已顯示振盪，但自動 fit 幾乎平坦、擬合頻率與目視
 
 同次排查也證實cosine fit即使選fit_phase=true，optimizer若把週期phase限制在±360°，仍可卡在等價phase表示的邊界並偏frequency。比較同raw、同projection與同actual axis的無phase邊界fit，核對residual及合成回歸後才能歸因；不要把GUI的「自由phase」字樣當成所有phase邊界都已排除。
 
+反向掃描還要區分座標正確與fitter支援下降座標兩件事：舊auto-init以負span處理descending data，cos可選到DC而產生零寬frequency bounds，decaycos則產生負decay初猜。Q1案例修正後以真實forward/reverse Rabi驗證，保存軸與compiler差<1e−15µs且native fit成功；原始raw未改寫。這不是看到反向fit失敗就把所有資料重新量化的理由。
+
 ## Zigzag 與獨立 pulse 檢查
 
 2026-10-05使用者進一步區分用途：一般zigzag主要用來確認；校準可用特化的zigzag scan。Amplitude Rabi取得候選後，先用一般zigzag確認；若存在系統性偏差，優先依live adapter選gain或frequency scan，以掃描資料決定候選，再回到一般zigzag驗證。不是每點都要掃描所有參數；先判斷偏差較可能來自gain或frequency，避免盲目調整。當次真實GUI已提供twotone/zigzag_scan/gain與freq，早期無此入口的記錄只是當時版本狀態。

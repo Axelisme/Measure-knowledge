@@ -10,6 +10,10 @@
 
 將X90+nX180換成同總時長continuous const pulse，主要trace重合，限制Repeat接縫解釋。高gain .94686長Rabi在0–1.9／6–8µs局部頻率约1.9774／1.9149MHz；gain .5約1.0824／1.0767。無MIST但保留timing亦有下降。這是有效旋轉響應，不是RF振幅直接測量；內層length scan同時改變近期duty/history。
 
+最後降低重複率至relax20ms（400reps×1、201點），早/晚仍1.99556±.00529／1.94539±.00761MHz，差−50.17±9.26kHz；單靠延長shot等待未消除duration dependence。此為一筆低shots控制，誤差是局部fit formalσ，不含模型／drift，也不能據此指定RF時常數。長等待條件間的微小差異不必單調。
+
+![Shot等待至20ms](longwait-comparison.png)
+
 ## 初態相位 witness
 
 30k shots、no-init、π2 probe四phase；以固定GE向量投影IQ。MIST20的0−180／90−270差為−.02447±.00539／+.05270±.00540。Passive500接近零；resetπphase180時變成+.04212±.00537／−.04136±.00583；π後等待20µs變成+.00151±.00526／−.00804±.00570。誤差為100shot block SEM，未計跨run漂移。
@@ -30,11 +34,21 @@ Cavity後、Rabi前加2µs/+50MHz qubit drive，可將Rabi由約1.980→1.919MHz
 
 ![Conditioning與等待位置](conditioning-controls.png)
 
-频率不對稱不支持未加限制的「broadband amplifier compression」斷言；需要直接RF／線路證據才能指認元件。Readout gain .01/.02/.04的長Rabi速率相近，16倍readout功率差未移除duration dependence。
+頻率不對稱不支持未加限制的「broadband amplifier compression」斷言；需要直接RF／線路證據才能指認元件。Readout gain .01/.02/.04的長Rabi速率相近，16倍readout功率差未移除duration dependence。
+
+後續dummy offsets −75/−50/−25/+25/+50/+75MHz的全窗口effective Rabi f約1.93708/1.93652/1.93334/1.92066/1.90092/1.89480MHz；高頻側影響較強，並非只有單一+50MHz點。Same physical RF、mixer300/317.5/400MHz的active−zero差為−38.64±.83/−39.53±.84/−39.66±.83kHz。400MHz連dummy IF符號也翻轉，返回317.5仍再現，限制單純IF符號／mixer配置錯誤解釋。Formal誤差不含模型／跨時段系統誤差。
+
+![Conditioning頻率與IF符號控制](conditioning-frequency-map.png)
 
 ## 目標benchmark與限制
 
-80共同seeds×2rounds、200reps、depth0:4:160、root2026100701，原gate/readout、同MIST：relax20 F98.4747%，500 F98.8764%。共同seed bootstrap3000次得ΔF=+.4018pp、95%CI[+.2351,+.5756]pp；逐round及depth窗口保留方向。改善不只是zigzag代理，但CI不包含序列模型偏差與時段drift。後續passive與重驗的最終數字看task報告。
+80共同seeds×2rounds、200reps、depth0:4:160、root2026100701，原gate/readout、同MIST：relax20 F98.4747%，500 F98.8764%。共同seed bootstrap3000次得ΔF=+.4018pp、95%CI[+.2351,+.5756]pp；逐round及depth窗口保留方向。改善不只是zigzag代理，但CI不包含序列模型偏差與時段drift。
+
+同日passive500 F98.9462%，相對MIST500差+.0698pp、CI[−.0754,+.2135]，未解析到長等待下MIST的额外penalty。原MIST20重驗98.4855%，相對初測+.0109pp、CI[−.1141,+.1420]，不支持以簡單整體漂移解釋長等待改善。
+
+Reset前／resetπ後各加20µs且relax仍20，F分別98.6679／98.6804%。等總cycle比較post−pre為+.0125pp、CI[−.1109,+.1419]，沒有解析到等待位置的額外IRB收益。Post20雖使phase witness接近零，但不能把IRB改善全歸因於消除coherence；shot cycle/history也是重要混淆。不同實驗／sequence的coherence敏感性不可互相等同。
+
+![最終配對IRB](final-irb-summary.png)
 
 ## 原始來源與分析修正
 
@@ -46,6 +60,6 @@ Cavity後、Rabi前加2µs/+50MHz qubit drive，可將Rabi由約1.980→1.919MHz
 - `phase_cycle.json`、`tomography_*`、`zigzag_resetphase180`、`zigzag_post20`：相位及等待控制。
 - `drive_on_chevron.json`與`rabi_long_chevron_*`：drive-on中心／Ω。
 - `rabi_long_dummy*`與`conditioning_controls.png`：離共振conditioning；各cfg保存了prep及等待差異。
-- `paired_irb.json`、`irb_ground20_80`、`irb_ground500_80`：目標benchmark。
+- `irb_final_conditions.json`、`irb_condition_analysis.py`、六份`irb_*80`：目標benchmark與同seed統計，native分析另存。
 
-Raw位於`Database/Q12_2D[10]/Q1/2026/10/Data_1006/`，folder1006是當時GUI保存位置，不改日期。新發現的cos phase optimizer邊界與time-axis量化缺陷在隔離worktree修正並測試；raw保持不變，重建軸有provenance。這些缺陷影響分析／保存座標，不能解釋整數n raw zigzag形狀。詳見task `development_validation.md`及知識库Rabi／calibration-provenance條目。
+Raw位於`Database/Q12_2D[10]/Q1/2026/10/Data_1006/`及重啟GUI後的`Data_1007/`；1006是當時GUI保存位置，不搬動改日期。Cos phase optimizer邊界、下降座標auto-init及time-axis量化缺陷已修正並整合回原workspace，249項相關測試通過；native forward/reverse Rabi保存軸與compiler差<1e−15µs且fit成功。Raw保持不變，重建軸有provenance。這些缺陷影響分析／保存座標，不能解釋整數n raw zigzag形狀。詳見task `development_validation.md`及知識庫Rabi／calibration-provenance條目。
