@@ -20,6 +20,8 @@ Ringdown 拉長仍有 zigzag transient／累積 parity、需要區分初態 cohe
 
 需要核對ZCU216/QICK phase frame、固定shot frame仍有scan方向差、RF tail跨shot效應或Rabi模型未通過echo holdout時，讀[獨立機制排查案例](experiences/cavity-reset-validation/cases/q1-half-mechanism-20261007/README.md)。
 
+需要分析pump頻率/gain/長度、辨別initialization contrast與gate response、等gain²T反例或ABBA方向排查時，讀[三參數與actual-gate驗證案例](experiences/cavity-reset-validation/cases/q1-half-pump-dependence-20261007/README.md)。
+
 Readout gain 最佳點碰到掃描邊界、length 要在短窗口與 SNR 間取捨，或準備 two-tone／flux map 的讀出條件時，讀 [readout 優化](experiences/readout-optimization/README.md)。
 
 判讀 Rabi 的週期、第一個峰、參數誤差或 repeat，以及振盪存在但 fit 不符時，讀 [Rabi fit 驗證](experiences/rabi-fit-validation/README.md)。條目說明同一 Run 的模型比較，並保留 Length Rabi mock 案例與限制。Zigzag／AllXY 交叉檢查、gain 候選不一致與 AllXY 誤差指標的限制也由此進入。

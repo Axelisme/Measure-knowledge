@@ -67,6 +67,18 @@ Rabi窗口fit建立的模型必須用rotary echo、不同frame或不同scan orde
 
 版本來源、獨立實驗與反例見[Q1機制排查案例](cases/q1-half-mechanism-20261007/README.md)。
 
+## 分辨 pumping 三參數與後續 gate
+
+把cavity MIST與qubit-line RF分開。掃pulse長度時同時固定pump末端、resetπ、probe與frame；不同channel clock可用共同整數格點移動pump起點。各RF頻率加入同頻率zero-gain pulse，核對compiled pulse仍存在、實際頻率／gain／length與integer gaps，避免將寄存器切換與實際RF混在一起。這是軟體schedule證據，不是DAC輸出量測。
+
+初始化對比、phase-odd初態項與phase-even累積旋轉分開分析。低contrast的raw zigzag小，不代表gate較好；保留signed witness、局部零交叉及fit residual。完整complex IQ主軸檢查可辨別單純投影角度，但不能排除leakage或非二能級readout。
+
+等gain²T只是數位劑量proxy。固定pulse末端時，較長RF的早段有更多恢復時間；等劑量不重合也可能是線性功率加衰退記憶，不能立即命名為功率非線性。相同digital gain跨頻率更不代表chip吸收功率相同。對窗口依賴的p、tau，只稱描述參數，不指定硬體元件常數。
+
+使用前瞻驗證：先存係數或無可調係數的Rabi→gate預測，再採集實際gate。小holdout沒有區別模型，不可只挑好看的training或endpoint；RF條件重複不一致時，以ABBA正反掃描拆開方向與時段，不刪掉不合模型的點。Q1的+75MHz差22kHz未在ABBA中重現為方向效應。
+
+方法及actual-gate等劑量反例見[Q1 pumping三參數案例](cases/q1-half-pump-dependence-20261007/README.md)。
+
 ## 分別驗收 reset 的收益
 
 初態分布、採樣時間與目標估計的 precision 要分開驗證。更純的 g/e 初態及更短 relax_delay 可以改善對比和吞吐；若要主張 averages 可減少，還需比較固定目標不確定性所需的 shots／時間，或固定 shots 下的不確定性。不能只由 ground model estimate 推出所需平均數。
