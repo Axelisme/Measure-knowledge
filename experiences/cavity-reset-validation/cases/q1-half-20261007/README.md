@@ -50,6 +50,26 @@ Reset前／resetπ後各加20µs且relax仍20，F分別98.6679／98.6804%。等�
 
 ![最終配對IRB](final-irb-summary.png)
 
+## 同日短等待硬體重驗（10:44起、4小時上限）
+
+重新啟動GUI載入time/phase diagnostics後，同一108-cycle waveform只改occupied time一tick，4 ABBA blocks之late parity slope差−.0003743、95%block CI[−.0013185,+.0005699]；loop/unrolled差−.0000464、CI[−.0006344,+.0005416]。全部28個相對clock residue正反掃描亦保留主parity。Ch14 .400543Hz DDS grid的同word與相鄰word對照均保留異常。這些實驗限制普通量化／執行路徑為主要原因，並不證明任意微小timing效應皆為零。
+
+四相位與零seed初態探針顯示zero-reset之初始Z尺度約為active的四分之一。將phase-cycle cos項依初始尺度正規化，主要累積仍存在；不把raw振幅比當gate error比或因果占比。
+
+高gain .94686長Rabi兩次的late−early為−41.09±2.88／−46.51±2.99kHz；gain .35為−.42±2.56／+1.73±2.57kHz。降低gain後duration dependence較小，但以450/650ns重新校準π與π2，X180 IRB只有98.0927/97.5118%，低於250ns原gain98.6307%。所以更平的zigzag不保證較好的隨機gate。
+
+保持250/125ns、MIST與resetπ原值、relax20us，只把gate gain換.9692/.9689。固定候選後，各gate用新root seed、80共同seeds×2獨立run ABBA：X180原98.46890→98.88629%，Δ+.41738pp，95%paired-seed CI[+.26230,+.57321]pp；Y180原98.63271→98.85640%，Δ+.22369pp，CI[+.10716,+.33334]pp。X90原98.89509→98.96172%，Δ+.06663pp，CI[−.03631,+.18057]pp，未解析出改善。沒有把MD/ML自動改成這組值；gain是此工作點的短等待候選，非跨工作點模板。每gate個別CI不含IRB模型／所有drift，也非跨gate同時區間。
+
+另以既有BathReset保留最後ground resetπ，加入+50MHz/2us drive：與cavity尾段重疊時initialization投影劣化；移到cavity結束後，active仍把早晚Rabi1.971→1.929MHz改為1.891→1.898MHz。故改變響應不需要兩channel同時出力。將gate/resetπ重新校準後，32seed IRB初篩仍未解析出優於單純gain候選的收益，未採用conditioning。這個反例也限制「Rabi較平便應採用predrive」的推論。
+
+Y90同樣80seeds×2 ABBA：原99.03156→99.01291%，Δ−.01865pp、95%CI[−.11922,+.08121]pp，亦未解析出差異。候選對180° gate有收益，不能擴張成所有gate均改善，也未進行正式非劣性驗證。
+
+![短等待硬體重驗](short-wait-hardware.png)
+
+左圖誤差棒是Rabi windows的合併formal SE；右圖是各gate配對seed bootstrap 95%CI。來源`hardware_4h/final_evidence.png`及`final_gate_summary.json`；右圖IRB保持20us relax、250/125ns requested pulses與原resetπ。較小Rabi速率變化不直接等同較好IRB。
+
+新raw與完整cfg、paired分析、時序audit及收尾狀態位於下列repo任務之`hardware_4h/REPORT.md`，共269筆測量raw另附SHA256/cfg audit。這些是qubit回應量測；沒有直接RF取樣與接線元件證據，尚不能指認特定放大器或filter故障，也不能把殘餘效應完全歸零。
+
 ## 原始來源與分析修正
 
 量測repo：`C:/Users/QEL/Desktop/MeasureScriptX/QuantumMeasurementProcedures/Members/Codex-agent/Qubit-measure`。
