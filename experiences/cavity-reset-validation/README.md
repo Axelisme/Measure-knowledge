@@ -39,6 +39,18 @@ Zigzag 的 step-difference loss 可能被前幾點 transient 或初態 coherence
 
 相位偏向消失而主要parity仍在，表示初始化coherence不是唯一原因。這也解釋為何單一gain可改善某種zigzag loss，卻未必改善隨機gate序列。最終仍以相同seed／pulse／readout的目標benchmark驗證；共同seed bootstrap只涵蓋統計變異，不涵蓋時段drift與IRB模型偏差。
 
+## 把 reset coherence 與共同累積項分開
+
+因果比較先固定全部waveform佔用時間、shot週期、gate/readout與採集順序，做cavity on/zero × terminal resetπ on/zero的2×2控制。每組量相反resetπ相位與probe +π/2、−π/2、同長度zero；先平均相反reset相位，再比較probe difference與zero-probe contrast。這可以分離相位奇分量與主要累積形狀，但short-cycle zero-reset穩態仍可能依前一shot而變，不能稱完整process tomography。Q1的四組late角尺度皆約.119rad/π；relax500時zero-both與MIST都約.067，說明「reset20 vs passive500」不是reset專屬因果比較。
+
+Photon wait若放在terminal resetπ之前，不能消除之後由不完美π造成的coherence。若相反π相位使初態偏向反號，可在保持RF/gain/length時交替terminalπ的0/180相位，使每個採集點有等量兩相位；它處理平均transverse preparation error，不保證每shot純G、population正確或後續gate無誤差。Q1普通zigzag新增reset_phase_cycle，以outer reps sweep交替，偶數reps才平衡；不加RFpulse或programmed wait。需核對只有reset phase word變化，gate words與事件時間保持，並用不同sequence長度、反序blocks及DDS phase reference控制驗證。此feature不自動推廣到其他adapter。
+
+Resetπ的單點frequency/gain null必須在實際sequence history重新驗證。Q1單點C .0275→.00337的候選，在long-history且DDS reference鎖定時只.0582→.0448，未轉移；不同RF配合free-running DDS還可能把相位平均冒充coherence消失。不能依單點null永久writeback。四phase witness採用同一GE投影，數值不是corrected Pe或已校準Bloch長度；norm有正噪聲偏置，兩blocks只給repeatability，不提供可靠母體CI。
+
+等待位置控制須按compiled ticks配對，不能只比較名義微秒。Q1名義3.504µs的gap曾讓π→probe多1tick；離線發現後換成實際匹配的條件才量測。對比長ringdown與等cycle前置wait時，coherence沒有after-tone專屬改善，population projection反而更差；不能把加長wait當成無代價修復。已找到rounding差與它是否主導異常是兩個問題。
+
+當使用者問「原因占比」，分別報coherence witness抑制幅度、contrast尺度與累積角尺度，不把它們轉成相加100%的責任比例。改善某個初態witness也不代表整條zigzag已修復；保留未消除的主累積圖與未唯一定位的RF/qubit機制。
+
 詳見 [Q1 2026-10-07 診斷案例](cases/q1-half-20261007/README.md)。
 
 ## 分別驗收 reset 的收益

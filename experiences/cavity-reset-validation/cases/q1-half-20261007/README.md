@@ -68,7 +68,35 @@ Y90同樣80seeds×2 ABBA：原99.03156→99.01291%，Δ−.01865pp、95%CI[−.1
 
 左圖誤差棒是Rabi windows的合併formal SE；右圖是各gate配對seed bootstrap 95%CI。來源`hardware_4h/final_evidence.png`及`final_gate_summary.json`；右圖IRB保持20us relax、250/125ns requested pulses與原resetπ。較小Rabi速率變化不直接等同較好IRB。
 
-新raw與完整cfg、paired分析、時序audit及收尾狀態位於下列repo任務之`hardware_4h/REPORT.md`，共269筆測量raw另附SHA256/cfg audit。這些是qubit回應量測；沒有直接RF取樣與接線元件證據，尚不能指認特定放大器或filter故障，也不能把殘餘效應完全歸零。
+上述269筆是4小時排查的前階段，gate優化只是附帶；使用者要求的核心是reset→zigzag因果與解法，後續新增對照如下。這些是qubit回應量測；沒有直接RF取樣與接線元件證據，尚不能指認特定放大器或filter故障，也不能把殘餘效應完全歸零。
+
+## 同時序因果控制與無額外等待的 reset phase cycling
+
+固定20µs relax、所有waveform timing與gates，做cavity on/zero × resetπ on/zero，再用resetπ phase0/180與probe±X90/zero取得S/Z（48條，兩個反序blocks）。四組late empirical角尺度為.11832/.11982/.11846/.11935rad/π，formal SE約.0010–.0017，模型殘差有結構。Zero-both的raw S幅度約為完整reset的.192倍，但累積形狀相似，縮放殘差約12%。這不是gate infidelity比值或物理原因占比，也不是完整process tomography。
+
+同timing zero-both/MIST改成relax500（24條），角尺度同時變成.06661/.06780rad/π。重要結論是主要累積項不需要MIST存在，且兩者都依shot history改變；「reset20 vs passive500」混淆了cycle與初始化。長等待只是因果控制，不作解法。
+
+Resetπ單點phase-referenced RF/gain grid與反序驗證找到309.10MHz/.963，C由.02750降到.00337；但在實際n0…64 history且reset/probe DDS均reset時，只有.05817→.04476。候選沒有跨history轉移。Free-running DDS下off-frequency的更小witness還可能包含phase averaging，不能作為完整初始化修復。Long-history grid的null估計gain1.00463在範圍外，未採用。
+
+本repo普通zigzag新增`reset_phase_cycle`：每一輪完整n sweep後交替terminal resetπ的0/180相位，reps為偶數，保持每n等量兩相位；原RF/gain/pulse/20µs relax不变，不加RFpulse或programmed wait。60條跨nmax、反序驗證的四phase初態witness norm（兩blocks各自norm平均）如下：
+
+| n掃描最大值 | 固定reset phase | Phase cycling | witness降低 |
+| --- | --- | --- | --- |
+| 0 | .02693 | .00323 | 88.0% |
+| 16 | .04443 | .00720 | 83.8% |
+| 64 | .06669 | .00826 | 87.6% |
+
+原DDS設定下zero-probe投影變化為+.00198/−.00415/−.00277；只是population check，不是corrected Pe或非劣性證明。另20條n64的reset/probe DDS reset控制，C .06012→.00581（90.3%），投影.11092→.11989，未宣稱population完全不受影響。兩blocks只提供repeatability，norm有正噪聲偏置，不能當作完整Bloch長度。
+
+![Reset coherence與共同累積項](reset-phase-cycle.png)
+
+圖源hardware_4h/phase_cycle_causal_evidence.png與phase_cycle_summary.json；所有gates保持原參數。上方顯示跨history的coherence抑制，下方顯示累積zigzag仍在。Late角尺度fixed/cycled .12146/.12028rad/π。這是對初態平均coherence的處理，不是每shot完美reset、不是整條zigzag修復、也未驗證phase cycling的IRB收益。Photon wait在terminalπ之前，不能消除之後π產生的相位相關準備誤差。
+
+Ringdown原gap/1.402µs/約3.506µs/等cycle前置wait的C為.06701/.05776/.04889/.04298；延長after-tone gap没有獨有收益，zero-probe投影.11911→.16822，前置wait為.11733。名義3.504µs曾被離線核對出π→probe多1tick，沒有上硬體；實際配對π@10114、probe@10222相同。另2µs/+50MHz conditioning在long-history C zero/on為.00798/.07669，未通過reset初態驗收，不能因Rabi變平採用。
+
+共同累積項較受支持的描述為驅動強度／sequence/history相关的有效控制響應，尚未唯一區分RF鏈與qubit微觀機制。下一步若要追到元件，需要同pulse history的RF amplitude/phase直接取樣或獨立控制history與qubit狀態。不要將coherence抑制百分比說成photon/RF等各原因的責任百分比。
+
+完整因果報告、raw/cfg/SHA256及GUI收尾在`hardware_4h/REPORT.md`；前階段gate報告另存`phase1_gate_report.md`。新功能預設false，未自動改正式MD/ML或其他adapter；183項相關tests、targeted type/lint及16個import contracts通過。
 
 ## 原始來源與分析修正
 
