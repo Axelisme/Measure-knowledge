@@ -95,6 +95,18 @@ Zigzag 的平坦度與 AllXY 的模型偏差應共同檢查。改 gain 時記錄
 
 ## Sequence 時序與分析模型要一致
 
+頻率量化要以 compiled absolute RF 核對：先量化 mixer，再對 DDS offset 量化；readout
+配對時還有 DAC/ADC 共同 grid。負 IF 與負向 sweep 不能用 unsigned register 當作頻率軸。
+同一名義 RF 在不同 mixer 下的 register rounding 差，應先換成 Hz 與可累積 phase，
+再判斷是否足以解釋異常；不能把「存在量化」直接等同於主因。
+
+時序辨別可設計「相同 waveform cycles、排程相差一 tick」的配對，另用整段 sequence
+平移與 loop/unrolled 對照。Zero-gain pulse 保留 channel／時序，不能用純 Delay 冒充。
+DDS phase reset 不重置 RFDC mixer，改變了相位原點；需四相位控制與相同短 shot relax
+下的 gate 驗收。Software Bloch model 未追蹤兩個相位累加器時不能作為此控制的真值。
+Q1 2026-10-07 的此組新實驗只完成 compiler 驗證，未取得新增硬體量測；設計來源為
+Qubit-measure repo 的 `zcu_lab/v2/twotone/zigzag/diagnostic-protocol.md`，不可引用為已修復案例。
+
 Gate 名稱不完整描述實驗。核對 pulse duration、identity 的等待時間、gate slot、padding、pre/post delay 及 pulse 間隔。I 表示不旋轉，不保證零時間。Fixed-slot 與 back-to-back 在有耗散或 detuning 時不同，不能預設其中一種一定正確。先確認要執行的 sequence，再決定分析模型；不能把非預期等待一律交給更多 fit 參數吸收。
 
 時間資訊應來自該筆 Run 的保存條件，不由目前 library 反推。Length-calibrated π／π2 改成等長、不同 gain，需要新的 amplitude calibration，不能當作無影響的實作調整。
