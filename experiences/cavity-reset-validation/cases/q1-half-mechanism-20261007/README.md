@@ -1,3 +1,5 @@
+> 2026-10-08收尾：臨時診斷程式已封存並移出正式runtime；phase cycling與通用bug修正保留。完整波序列、重現與封存入口見[四輪整合](../q1-half-investigation-20261007/README.md)。下文是當輪歷史證據。
+
 # Q1 half：版本調查、RF歷史干預與模型反例
 
 2026-10-07新的4小時機制排查。Q12_2D[10]/Q1、+7.1804mA，沿用309.15320594MHz qubit drive、MIST5345.80198085MHz/gain.11/20.01us、terminal250nsπ與readout gain.02。用途是分辨reset後zigzag成因；數值非其他設備模板。先研究ZCU216/QICK並登記5候選，再以新增的獨立native experiments量測，未擴充舊實驗或writeback校準。

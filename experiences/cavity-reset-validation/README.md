@@ -6,6 +6,8 @@
 
 ## 可辨別的工作路線
 
+需要從症狀到收尾的最小可重現調查時，讀 [調查流程](investigation-playbook.md)；[Q1四輪整合](cases/q1-half-investigation-20261007/README.md)提供完整報告與八組波序列圖。這些圖是保存cfg的示意，不是直接RF量測。
+
 1. 先核對完整 singleshot cfg，尤其 reset、init_pulse、probe 與 readout。可選 init 即使未主動設定也可能預設為 π pulse。PreparedState 是 acquisition 的 off/on 標記，不能單憑名字認定為物理純 G/E。
 2. 在明確的 no-init passive reference 下核對 IQ centres 的物理標籤，再校準分類。初態有熱混合時，raw assignment、Gaussian 分離、推估初始分布及 confusion matrix 是不同量。
 3. 以 MIST power 找有用的 steady-state 區域，同時看 Other 及不同 prep 的收斂。先前錯標的 centres 必須更正；兩個 prep 曲線一致可以支持收斂，但不能把分類校正後的 clipping=1 當作完美 reset。

@@ -1,3 +1,5 @@
+> 2026-10-08收尾：臨時診斷程式已封存並移出正式runtime；phase cycling與通用bug修正保留。完整波序列、重現與封存入口見[四輪整合](../q1-half-investigation-20261007/README.md)。下文是當輪歷史證據。
+
 # Q1 half flux：初始化 coherence 與 drive 歷史分開辨別
 
 2026-10-07，Q12_2D[10]/Q1，flux +7.1804mA；qubit309.15320594MHz、ch14/NQZ1/mixer317.5，readout5349.92185792MHz、gain.02。MIST5345.80198085MHz/gain.11/20.01µs，tone後約.350µs才做250ns resetπ。這些是案例條件，不能直接移植。

@@ -1,3 +1,5 @@
+> 2026-10-08收尾：臨時診斷程式已封存並移出正式runtime；phase cycling與通用bug修正保留。完整波序列、重現與封存入口見[四輪整合](../q1-half-investigation-20261007/README.md)。下文是當輪歷史證據。
+
 # Q1 half：pumping 三參數、等劑量反例與 actual-gate 驗證
 
 2026-10-07新增4h。Q12_2D[10]/Q1，+7.1804mA；沿用309.153205939MHz drive、MIST5345.801980847MHz/gain.11、原250/125ns gates與readout gain.02。數值只供此案例追溯，不能直接移作其他設備設定。未改gate/calibration或量測production source。

@@ -14,6 +14,8 @@ Flux map 有 extrema 但分支不確定，或 two-tone 自動 fit 選到雜訊�
 
 ## Pulse calibration
 
+需要完整reset→gate異常調查、候選排除邊界、可重現流程與波序列時，讀 [reset調查流程](experiences/cavity-reset-validation/investigation-playbook.md)與[Q1四輪整合](experiences/cavity-reset-validation/cases/q1-half-investigation-20261007/README.md)。
+
 以 cavity tone 準備非熱平衡初態、計算 photon ringdown、核對 singleshot 預設 init 或 reset 後 gain 改變時，讀 [cavity reset 驗證](experiences/cavity-reset-validation/README.md)。包含錯誤物理標籤、雙 tone 時序與獨立 gate 檢查的真實反例。
 
 Ringdown 拉長仍有 zigzag transient／累積 parity、需要區分初態 coherence、drive-on detune及shot歷史時，讀同條目的 [辨別控制](experiences/cavity-reset-validation/README.md#ringdown-足夠但-zigzag-仍異常時)，以及帶原始來源的 [Q1 後續診斷案例](experiences/cavity-reset-validation/cases/q1-half-20261007/README.md)。
