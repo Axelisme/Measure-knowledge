@@ -53,6 +53,20 @@ Resetπ的單點frequency/gain null必須在實際sequence history重新驗證�
 
 詳見 [Q1 2026-10-07 診斷案例](cases/q1-half-20261007/README.md)。
 
+## 用獨立QICK實驗分開phase frame與RF歷史
+
+先核對live SoC類型、firmware日期、PC/board QICK版本及generator/RFDC配置，再讀對應版本的primary source。ZCU216型號本身不能決定每個channel的時鐘、mixer或類比接線。int4的const可選DDS直接路徑，繞過PL envelope FIR；不能把flat_top的FIR workaround套到const，也不能因此排除後級RFDC interpolation。Per-pulse DDS phrst與RFDC mixer NCO reset是不同層；用actual signed IF和pulse start separation預測未補償fringe，再以硬體正控制驗證。
+
+固定shot frame只固定週期，沒有固定RF能量、上一點pulse history或初態。Point averaging與full-sweep averaging、forward/reverse應當視為不同干預。Post-ADC active/zero RF tail若改下一shot，可建立跨shot影響；固定能量與period而只改tail recency能辨別單純平均功率。再用單次pump後的固定gate探針，避免把length sweep curvature直接當RF包絡。
+
+Rabi窗口fit建立的模型必須用rotary echo、不同frame或不同scan order作完整曲線holdout。尾端符合而早段有結構殘差，不能宣布模型通過或將effective τ命名為放大器時間常數。RFconditioning使Rabi較平也不能代替目標zigzag驗收；Q1的pre/post/complement conditioning均未修復主要parity。
+
+四相位analysis得到的Bloch witness magnitude下降，不一定是初態混合。Analysis π/2可能受同樣RF history影響。加同時間槽zero probe與no-analysis arm，在affine兩能級readout假設下可比較直接Z與四axis平均的`Z cos(alpha)`；這有助於發現analysis gate旋轉角改變，但GE中心drift、leakage、軸不對稱與不同arm的history仍限制推導，不當作無假設tomography。
+
+短窗口四相位Ramsey應保留共同phase reference、reset-phase even/odd、visibility及相反block順序。沒有可重現short−long phase差只限制所測窗口的Stark解釋；不要由free-phase長Ramsey或單次中心fit宣稱photon完全排除。浮點schedule warning需回到integer ticks核對，軟體timestamp與真正DAC輸出仍是不同證據。
+
+版本來源、獨立實驗與反例見[Q1機制排查案例](cases/q1-half-mechanism-20261007/README.md)。
+
 ## 分別驗收 reset 的收益
 
 初態分布、採樣時間與目標估計的 precision 要分開驗證。更純的 g/e 初態及更短 relax_delay 可以改善對比和吞吐；若要主張 averages 可減少，還需比較固定目標不確定性所需的 shots／時間，或固定 shots 下的不確定性。不能只由 ground model estimate 推出所需平均數。

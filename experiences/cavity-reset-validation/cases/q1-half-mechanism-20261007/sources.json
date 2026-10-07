@@ -1,0 +1,79 @@
+{
+  "repo": "C:\\Users\\QEL\\Desktop\\MeasureScriptX\\QuantumMeasurementProcedures\\Members\\Codex-agent\\Qubit-measure",
+  "task": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h",
+  "records": 441,
+  "hardware_finished_utc": "2026-10-07 09:58:06 UTC",
+  "source_documents": [
+    {
+      "path": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\REPORT.md",
+      "sha256": "012f5b18eeb652343a999b6dab32b596a7f8a2ee4d7f0eb7791b38b14901047c"
+    },
+    {
+      "path": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\RESEARCH.md",
+      "sha256": "cd5a9a956e0a6fe9da54efc044abd9c51bcf7d938eb6b1416de2b67aae26d43b"
+    },
+    {
+      "path": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\native_record_audit.json",
+      "sha256": "776a8dc7fbbc6a37a727f039a1f3824e262b5a04299bb3f769fb723d40ece429"
+    },
+    {
+      "path": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\final_audit_summary.json",
+      "sha256": "2a134d86c11d6fc7fc0b52f5eada1ed366222f97ac70e6e3e160d514b6e00b63"
+    },
+    {
+      "path": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\disp13_dispersion_analysis.json",
+      "sha256": "14355d5e5db094014a47b312d4feb5aa6f017892a6b987a033af56b6f74f5332"
+    },
+    {
+      "path": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\disp13_free_curvature.json",
+      "sha256": "d6b10802752ccb2a0f327289557cfb14b9ed0436e6039c31d292644cd6723cf1"
+    },
+    {
+      "path": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\impulse_controls_summary.json",
+      "sha256": "a1768801eb2baf7a98eb5df2c371e7c7f844b679a777463eb18399f92f3641ad"
+    },
+    {
+      "path": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\zero_probe_rotation.json",
+      "sha256": "1637c9ff39345a569dced2ba30f4b38d757b7809d31a58194abd80610e627310"
+    },
+    {
+      "path": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\memory_model_frozen.json",
+      "sha256": "011ffb7706d31ddde454271c72a431ef836e2ef84ea56ab87b7f8dea23a7522a"
+    },
+    {
+      "path": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\echo_prospective_validation.json",
+      "sha256": "39c1f2bdae9537b7a540f6a403f882112aecb03e09d6222873bef33c1053a0a6"
+    },
+    {
+      "path": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\scan_phase_even.json",
+      "sha256": "3d339c6784b470eb3964d3f62b6d0ff559e0dbe95e0f42c94935dd1245895cfa"
+    },
+    {
+      "path": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\POLICY_DEVIATION.md",
+      "sha256": "f5e9822d10bc3a885d3a229056ef8595a641b9c70b8578a09994c7a1fd766542"
+    }
+  ],
+  "figures": [
+    {
+      "file": "evidence-summary.png",
+      "source": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\evidence_summary.png",
+      "sha256": "1c3bd1156081c2dfde2006d40b8027c3098379b092f2dcc010a7ba9d2870e8eb"
+    },
+    {
+      "file": "echo-holdout.png",
+      "source": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\echo_prospective_validation.png",
+      "sha256": "0f847d0b151de6780d3496f2dc826aac354b5deff13d2bf2b755afa486bf6067"
+    },
+    {
+      "file": "impulse-controls.png",
+      "source": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\impulse_controls.png",
+      "sha256": "290249d2431e250166d967029401256b55765febcc8beddbb7c5a717c30c736a"
+    },
+    {
+      "file": "final-evidence.png",
+      "source": ".agent_state\\measurement-tasks\\20261007-q1-mist-debug\\mechanism_4h\\final_evidence.png",
+      "sha256": "bb00fc079a0fbfe84df9227a9ec29f1262ec2a3a6a57479d3df24f4ecc13d1d3"
+    }
+  ],
+  "limits": "Raw data remain in measurement Database. First83 receipts predate immutable source snapshots; task-minimum deviation and independent compliant revalidation are explicitly retained. No RF waveform or unique physical component identification."
+}

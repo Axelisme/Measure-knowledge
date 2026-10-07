@@ -18,6 +18,8 @@ Flux map 有 extrema 但分支不確定，或 two-tone 自動 fit 選到雜訊�
 
 Ringdown 拉長仍有 zigzag transient／累積 parity、需要區分初態 coherence、drive-on detune及shot歷史時，讀同條目的 [辨別控制](experiences/cavity-reset-validation/README.md#ringdown-足夠但-zigzag-仍異常時)，以及帶原始來源的 [Q1 後續診斷案例](experiences/cavity-reset-validation/cases/q1-half-20261007/README.md)。
 
+需要核對ZCU216/QICK phase frame、固定shot frame仍有scan方向差、RF tail跨shot效應或Rabi模型未通過echo holdout時，讀[獨立機制排查案例](experiences/cavity-reset-validation/cases/q1-half-mechanism-20261007/README.md)。
+
 Readout gain 最佳點碰到掃描邊界、length 要在短窗口與 SNR 間取捨，或準備 two-tone／flux map 的讀出條件時，讀 [readout 優化](experiences/readout-optimization/README.md)。
 
 判讀 Rabi 的週期、第一個峰、參數誤差或 repeat，以及振盪存在但 fit 不符時，讀 [Rabi fit 驗證](experiences/rabi-fit-validation/README.md)。條目說明同一 Run 的模型比較，並保留 Length Rabi mock 案例與限制。Zigzag／AllXY 交叉檢查、gain 候選不一致與 AllXY 誤差指標的限制也由此進入。
