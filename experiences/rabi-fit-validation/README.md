@@ -53,6 +53,8 @@ Length Rabi 已顯示振盪，但自動 fit 幾乎平坦、擬合頻率與目視
 
 反向掃描還要區分座標正確與fitter支援下降座標兩件事：舊auto-init以負span處理descending data，cos可選到DC而產生零寬frequency bounds，decaycos則產生負decay初猜。Q1案例修正後以真實forward/reverse Rabi驗證，保存軸與compiler差<1e−15µs且native fit成功；原始raw未改寫。這不是看到反向fit失敗就把所有資料重新量化的理由。
 
+2026-10-07使用者提醒：pulse duration依channel量化，無pulse等待依reference timing clock量化，不能直接假定相同。Q1 saved SoC的ch14與tProc f_time恰同430.08MHz、ch0為599.04MHz；此外QICK waveform nearest與module scheduler ceil也不同，名義245ns在ch14輸出105ticks但排程106ticks，250/125ns則無差值。應分開保存generator actual duration、scheduler occupied time及idle時間；zero-gain pulse與移除pulse換Delay不可未驗證便稱同timing。案例離線證據為task clock_domain_audit.py/json，並非直接RF waveform量測。
+
 ## Zigzag 與獨立 pulse 檢查
 
 2026-10-05使用者進一步區分用途：一般zigzag主要用來確認；校準可用特化的zigzag scan。Amplitude Rabi取得候選後，先用一般zigzag確認；若存在系統性偏差，優先依live adapter選gain或frequency scan，以掃描資料決定候選，再回到一般zigzag驗證。不是每點都要掃描所有參數；先判斷偏差較可能來自gain或frequency，避免盲目調整。當次真實GUI已提供twotone/zigzag_scan/gain與freq，早期無此入口的記錄只是當時版本狀態。
